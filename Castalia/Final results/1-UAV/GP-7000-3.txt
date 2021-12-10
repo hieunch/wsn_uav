@@ -1,0 +1,63 @@
+
+51.023510199666   SN.node[434].Communication.Routing       save config
+51.023510199666   SN.node[434].Communication.Routing       save config
+51.023510199666   SN.node[434].Communication.Routing       save config
+51.023510199666   SN.node[434].Communication.Routing       save config
+51.023510199666   SN.node[434].Communication.Routing       save config
+51.023510199666   SN.node[434].Communication.Routing       save config
+51.023510199666   SN.node[434].Communication.Routing       maxLength 6848.81
+53.023491957866   SN.node[434].Communication.Routing       Energy	4.63562	4.67522	1.42835	0.0464	29250	36
+56.023464595166   SN.node[434].Communication.Routing       save config
+56.023464595166   SN.node[434].Communication.Routing       maxLength 6687.69
+58.023446353366   SN.node[434].Communication.Routing       Energy	4.60483	4.64375	1.35742	0.0343	21500	40
+61.023418990666   SN.node[434].Communication.Routing       save config
+61.023418990666   SN.node[434].Communication.Routing       maxLength 6614.88
+63.023400748866   SN.node[434].Communication.Routing       Energy	4.56625	4.61225	1.37882	0.0351	22000	36
+66.023373386166   SN.node[434].Communication.Routing       save config
+66.023373386166   SN.node[434].Communication.Routing       maxLength 6925.04
+68.023355144366   SN.node[434].Communication.Routing       Energy	4.53598	4.58075	1.38108	0.0363	22750	41
+71.023327781666   SN.node[434].Communication.Routing       save config
+71.023327781666   SN.node[434].Communication.Routing       maxLength 6865.43
+73.023309539866   SN.node[434].Communication.Routing       Energy	4.50586	4.54921	1.4087	0.033	20750	38
+76.023282177166   SN.node[434].Communication.Routing       save config
+76.023282177166   SN.node[434].Communication.Routing       maxLength 6996.89
+78.023263935366   SN.node[434].Communication.Routing       Energy	4.47572	4.51775	1.34505	0.0294	18500	44
+81.023236572666   SN.node[434].Communication.Routing       save config
+81.023236572666   SN.node[434].Communication.Routing       maxLength 6639.18
+83.023218330866   SN.node[434].Communication.Routing       Energy	4.44556	4.48623	1.39897	0.0306	19250	37
+86.023190968166   SN.node[434].Communication.Routing       save config
+86.023190968166   SN.node[434].Communication.Routing       maxLength 6806.17
+88.023172726366   SN.node[434].Communication.Routing       Energy	4.4154	4.45473	1.37816	0.0303	19000	40
+91.023145363666   SN.node[434].Communication.Routing       save config
+91.023145363666   SN.node[434].Communication.Routing       maxLength 6973.67
+93.023127121866   SN.node[434].Communication.Routing       Energy	4.38515	4.42323	1.38461	0.0306	19250	40
+96.023099759166   SN.node[434].Communication.Routing       save config
+96.023099759166   SN.node[434].Communication.Routing       maxLength 6793.79
+98.023081517366   SN.node[434].Communication.Routing       Energy	4.35377	4.39173	1.38071	0.0315	19750	40
+101.023054154666  SN.node[434].Communication.Routing       save config
+101.023054154666  SN.node[434].Communication.Routing       maxLength 6926.55
+103.023035912866  SN.node[434].Communication.Routing       Energy	4.32319	4.36025	1.36548	0.0322	20250	41
+106.023008550166  SN.node[434].Communication.Routing       save config
+106.023008550166  SN.node[434].Communication.Routing       maxLength 6900.42
+108.022990308366  SN.node[434].Communication.Routing       Energy	4.29251	4.3287	1.42239	0.0355	22250	39
+111.022962945666  SN.node[434].Communication.Routing       save config
+111.022962945666  SN.node[434].Communication.Routing       maxLength 6934.14
+113.022944703866  SN.node[434].Communication.Routing       Energy	4.25181	4.29714	1.43421	0.0523	32750	38
+116.022917341166  SN.node[434].Communication.Routing       save config
+116.022917341166  SN.node[434].Communication.Routing       maxLength 6901.22
+118.022899099366  SN.node[434].Communication.Routing       Energy	4.22166	4.26567	1.35274	0.0339	21250	41
+121.022871736666  SN.node[434].Communication.Routing       save config
+121.022871736666  SN.node[434].Communication.Routing       maxLength 6685.73
+123.022853494866  SN.node[434].Communication.Routing       Energy	4.19142	4.23414	1.40581	0.0427	26750	41
+126.022826132166  SN.node[434].Communication.Routing       save config
+126.022826132166  SN.node[434].Communication.Routing       maxLength 6840.12
+128.022807890366  SN.node[434].Communication.Routing       Energy	4.16115	4.20269	1.33478	0.0326	20500	44
+131.022780527666  SN.node[434].Communication.Routing       save config
+131.022780527666  SN.node[434].Communication.Routing       maxLength 6926.93
+133.022762285866  SN.node[434].Communication.Routing       Energy	4.11901	4.17118	1.39032	0.046	29000	42
+136.022734923166  SN.node[434].Communication.Routing       save config
+136.022734923166  SN.node[434].Communication.Routing       maxLength 6991.57
+138.022716681366  SN.node[434].Communication.Routing       Energy	4.08803	4.13972	1.34126	0.0295	18500	44
+141.022689318666  SN.node[434].Communication.Routing       save config
+141.022689318666  SN.node[434].Communication.Routing       maxLength 6852.53
+143.022671076866  SN.node[434].Communication.Routing       Energy	4.0571	4.10826	1.35087	0.0342	21500	43

@@ -1,0 +1,1561 @@
+
+51.002469185814   SN.node[1000].Communication.Routing      maxLength 2324.33
+53.002358677342   SN.node[1000].Communication.Routing      Energy	49.7226	288	1	322	0	4000	74.6771	18.898	1.212	758000	25	14.5819
+56.002192914632   SN.node[1000].Communication.Routing      maxLength 2384.71
+58.00208240616    SN.node[1000].Communication.Routing      Energy	49.4969	544	0	-1	164000	2000	74.6284	18.7047	1.2608	790000	22	14.5844
+61.00191664345    SN.node[1000].Communication.Routing      maxLength 2360.37
+63.001806134978   SN.node[1000].Communication.Routing      Energy	49.414	544	1	402	34000	2000	74.5807	17.7962	1.2832	804000	27	14.5855
+66.001640372268   SN.node[1000].Communication.Routing      maxLength 2396.95
+68.001529863796   SN.node[1000].Communication.Routing      Energy	49.3694	544	1	551	8000	2000	74.5313	19.4007	1.6976	1062000	20	14.5844
+71.001364101086   SN.node[1000].Communication.Routing      maxLength 2395.97
+73.001253592614   SN.node[1000].Communication.Routing      Energy	49.2626	544	1	402	50000	2000	74.4823	19.0528	1.3976	874000	26	14.5843
+76.001087829904   SN.node[1000].Communication.Routing      maxLength 2392.41
+78.000977321432   SN.node[1000].Communication.Routing      Energy	49.2317	544	1	518	0	2000	74.4339	18.4653	1.2096	758000	19	14.5847
+81.000811558722   SN.node[1000].Communication.Routing      maxLength 2304.58
+83.00070105025    SN.node[1000].Communication.Routing      Energy	49.1123	850	0	-1	522000	4000	74.3846	19.3737	1.12	702000	20	14.5845
+86.00053528754    SN.node[1000].Communication.Routing      maxLength 2373.77
+88.000424779068   SN.node[1000].Communication.Routing      Energy	49.08	850	1	784	0	4000	74.3347	19.9079	1.9136	1198000	22	14.5822
+91.000259016358   SN.node[1000].Communication.Routing      maxLength 2280.77
+93.000148507886   SN.node[1000].Communication.Routing      Energy	48.8314	288	0	-1	388000	4000	74.2861	18.6483	1.2496	782000	20	14.5862
+95.999982745176   SN.node[1000].Communication.Routing      maxLength 2383.92
+97.999872236704   SN.node[1000].Communication.Routing      Energy	48.7986	288	1	397	0	4000	74.2367	19.4703	1.2952	810000	17	14.5831
+100.999706473994  SN.node[1000].Communication.Routing      maxLength 2278.42
+102.999595965522  SN.node[1000].Communication.Routing      Energy	48.7656	288	1	353	0	4000	74.188	18.8174	1.7056	1068000	16	14.5821
+105.999430202812  SN.node[1000].Communication.Routing      maxLength 2361.61
+107.99931969434   SN.node[1000].Communication.Routing      Energy	48.731	288	1	129	0	4000	74.1397	18.2615	1.2624	790000	19	14.5825
+110.99915393163   SN.node[1000].Communication.Routing      maxLength 2364.11
+112.999043423158  SN.node[1000].Communication.Routing      Energy	48.6965	288	1	145	0	4000	74.0911	18.646	1.1064	692000	25	14.58
+115.998877660448  SN.node[1000].Communication.Routing      maxLength 2334.32
+117.998767151976  SN.node[1000].Communication.Routing      Energy	48.664	288	1	327	0	4000	74.0429	18.2759	1.2624	790000	24	14.5809
+120.998601389266  SN.node[1000].Communication.Routing      maxLength 2394.44
+122.998490880794  SN.node[1000].Communication.Routing      Energy	48.6307	288	1	235	0	4000	73.9946	18.3484	0.9376	590000	24	14.5784
+125.998325118084  SN.node[1000].Communication.Routing      maxLength 2390.13
+127.998214609612  SN.node[1000].Communication.Routing      Energy	48.4525	850	0	-1	210000	4000	73.9455	19.1318	1.5296	960000	21	14.5821
+130.998048846902  SN.node[1000].Communication.Routing      maxLength 2338.83
+132.99793833843   SN.node[1000].Communication.Routing      Energy	48.4186	850	1	810	0	4000	73.8969	18.7187	1.6496	1032000	23	14.5828
+135.99777257572   SN.node[1000].Communication.Routing      maxLength 2395.45
+137.997662067248  SN.node[1000].Communication.Routing      Energy	48.3732	850	1	700	8000	4000	73.8485	18.4019	0.9632	606000	23	14.5875
+140.997496304538  SN.node[1000].Communication.Routing      maxLength 2290.98
+142.997385796066  SN.node[1000].Communication.Routing      Energy	48.3412	850	1	836	0	4000	73.8001	18.5219	1.3296	832000	20	14.5859
+145.997220033356  SN.node[1000].Communication.Routing      maxLength 2393.59
+147.997109524884  SN.node[1000].Communication.Routing      Energy	48.309	850	1	833	0	4000	73.7511	19.0326	1.3536	848000	25	14.5839
+150.996943762174  SN.node[1000].Communication.Routing      maxLength 2361.99
+152.996833253702  SN.node[1000].Communication.Routing      Energy	48.2772	850	1	883	0	4000	73.702	19.1327	1.552	974000	21	14.5847
+155.996667490992  SN.node[1000].Communication.Routing      maxLength 2398.41
+157.99655698252   SN.node[1000].Communication.Routing      Energy	48.244	850	1	941	0	4000	73.6537	18.3641	1.3792	866000	26	14.5827
+160.99639121981   SN.node[1000].Communication.Routing      maxLength 2317.52
+162.996280711338  SN.node[1000].Communication.Routing      Energy	48.212	850	1	830	0	4000	73.605	18.7448	1.3368	836000	25	14.5808
+165.996114948628  SN.node[1000].Communication.Routing      maxLength 2373.15
+167.996004440156  SN.node[1000].Communication.Routing      Energy	48.1801	850	1	827	0	4000	73.5562	18.82	1.7728	1110000	23	14.5805
+170.995838677446  SN.node[1000].Communication.Routing      maxLength 2346.73
+172.995728168974  SN.node[1000].Communication.Routing      Energy	48.1472	850	1	838	0	4000	73.5068	19.4367	1.2384	778000	18	14.5858
+175.995562406264  SN.node[1000].Communication.Routing      maxLength 2398.94
+177.995451897792  SN.node[1000].Communication.Routing      Energy	48.109	850	1	822	8000	4000	73.4584	18.4566	1.3152	826000	28	14.5825
+180.995286135082  SN.node[1000].Communication.Routing      maxLength 2346.7
+182.99517562661   SN.node[1000].Communication.Routing      Energy	48.069	850	1	833	8000	4000	73.4102	18.233	1.4648	916000	19	14.5821
+185.9950098639    SN.node[1000].Communication.Routing      maxLength 2380.36
+187.994899355428  SN.node[1000].Communication.Routing      Energy	48.0373	850	1	834	0	4000	73.362	18.305	1.484	928000	19	14.5829
+190.994733592718  SN.node[1000].Communication.Routing      maxLength 2399.1
+192.994623084246  SN.node[1000].Communication.Routing      Energy	48.0051	850	1	784	0	4000	73.3131	18.9763	1.0864	680000	19	14.5771
+195.994457321536  SN.node[1000].Communication.Routing      maxLength 2399.52
+197.994346813064  SN.node[1000].Communication.Routing      Energy	47.9734	850	1	828	0	4000	73.2647	18.3913	1.488	934000	22	14.5779
+200.994181050354  SN.node[1000].Communication.Routing      maxLength 2319.34
+202.994070541882  SN.node[1000].Communication.Routing      Energy	47.9414	850	1	862	0	4000	73.2166	18.1702	1.6344	1022000	24	14.5776
+205.993904779172  SN.node[1000].Communication.Routing      maxLength 2321.17
+207.9937942707    SN.node[1000].Communication.Routing      Energy	47.909	850	1	994	0	4000	73.1673	19.3755	2.3952	1498000	18	14.5804
+210.99362850799   SN.node[1000].Communication.Routing      maxLength 2395.68
+212.993517999518  SN.node[1000].Communication.Routing      Energy	47.8764	850	1	808	0	4000	73.1186	18.6813	1.1704	732000	18	14.5775
+215.993352236808  SN.node[1000].Communication.Routing      maxLength 2381.06
+217.993241728336  SN.node[1000].Communication.Routing      Energy	47.8442	850	1	784	0	4000	73.0698	18.9203	1.1608	726000	22	14.5804
+220.993075965626  SN.node[1000].Communication.Routing      maxLength 2383.74
+222.992965457154  SN.node[1000].Communication.Routing      Energy	47.8007	850	1	722	8000	4000	73.0213	18.4993	1.5512	970000	31	14.5832
+225.992799694444  SN.node[1000].Communication.Routing      maxLength 2391.49
+227.992689185972  SN.node[1000].Communication.Routing      Energy	47.7683	850	1	898	0	4000	72.9724	18.9358	1.6544	1038000	18	14.5805
+230.992523423262  SN.node[1000].Communication.Routing      maxLength 2328.93
+232.99241291479   SN.node[1000].Communication.Routing      Energy	47.7355	850	1	838	0	4000	72.9241	18.3918	1.4176	890000	26	14.5753
+235.99224715208   SN.node[1000].Communication.Routing      maxLength 2372.47
+237.992136643608  SN.node[1000].Communication.Routing      Energy	47.7035	850	1	734	0	4000	72.8754	18.7173	1.3752	860000	19	14.578
+240.991970880898  SN.node[1000].Communication.Routing      maxLength 2374.11
+242.991860372426  SN.node[1000].Communication.Routing      Energy	47.6587	850	1	828	16000	4000	72.8272	18.2928	1.04	652000	26	14.579
+245.991694609716  SN.node[1000].Communication.Routing      maxLength 2370.38
+247.991584101244  SN.node[1000].Communication.Routing      Energy	47.6262	850	1	771	0	4000	72.7789	18.337	1.056	664000	27	14.579
+250.991418338534  SN.node[1000].Communication.Routing      maxLength 2374.28
+252.991307830062  SN.node[1000].Communication.Routing      Energy	47.5927	850	1	729	0	4000	72.7294	19.5667	1.9056	1192000	19	14.5822
+255.991142067352  SN.node[1000].Communication.Routing      maxLength 2343.72
+257.99103155888   SN.node[1000].Communication.Routing      Energy	47.5586	850	1	844	0	4000	72.6812	18.1985	1.1616	728000	23	14.581
+260.99086579617   SN.node[1000].Communication.Routing      maxLength 2386.56
+262.990755287698  SN.node[1000].Communication.Routing      Energy	47.5266	850	1	897	0	4000	72.6326	18.6853	1.592	996000	20	14.5817
+265.990589524988  SN.node[1000].Communication.Routing      maxLength 2346.97
+267.990479016516  SN.node[1000].Communication.Routing      Energy	47.493	850	1	765	0	4000	72.5845	18.098	1.5672	980000	20	14.579
+270.990313253806  SN.node[1000].Communication.Routing      maxLength 2362.27
+272.990202745334  SN.node[1000].Communication.Routing      Energy	47.461	850	1	830	0	4000	72.5364	18.2349	1.1416	714000	22	14.586
+275.990036982624  SN.node[1000].Communication.Routing      maxLength 2344.83
+277.989926474152  SN.node[1000].Communication.Routing      Energy	47.4293	850	1	834	0	4000	72.4876	18.8202	1.392	872000	20	14.5868
+280.989760711442  SN.node[1000].Communication.Routing      maxLength 2369.86
+282.98965020297   SN.node[1000].Communication.Routing      Energy	47.3962	850	1	735	0	4000	72.4379	19.7136	1.6128	1010000	24	14.591
+285.98948444026   SN.node[1000].Communication.Routing      maxLength 2393.97
+287.989373931788  SN.node[1000].Communication.Routing      Energy	47.3646	850	1	857	0	4000	72.3899	18.0776	1.0944	688000	27	14.5908
+290.989208169078  SN.node[1000].Communication.Routing      maxLength 2397.53
+292.989097660606  SN.node[1000].Communication.Routing      Energy	47.3323	850	1	898	0	4000	72.3412	18.7068	1.2288	772000	23	14.5852
+295.988931897896  SN.node[1000].Communication.Routing      maxLength 2376.26
+297.988821389424  SN.node[1000].Communication.Routing      Energy	47.3	850	1	833	0	4000	72.2923	19.0236	1.4016	878000	21	14.5828
+300.988655626714  SN.node[1000].Communication.Routing      maxLength 2366.97
+302.988545118242  SN.node[1000].Communication.Routing      Energy	47.2655	850	1	686	0	4000	72.2429	19.4208	1.0304	646000	18	14.5789
+305.988379355532  SN.node[1000].Communication.Routing      maxLength 2380.06
+307.98826884706   SN.node[1000].Communication.Routing      Energy	47.0234	288	0	-1	192000	4000	72.194	18.9732	1.68	1054000	29	14.576
+310.98810308435   SN.node[1000].Communication.Routing      maxLength 2396.24
+312.987992575878  SN.node[1000].Communication.Routing      Energy	46.991	288	1	280	0	4000	72.145	19.0557	1.8496	1160000	19	14.5734
+315.987826813168  SN.node[1000].Communication.Routing      maxLength 2391.4
+317.987716304696  SN.node[1000].Communication.Routing      Energy	46.9587	288	1	214	0	4000	72.096	19.045	1.504	942000	17	14.5735
+320.987550541986  SN.node[1000].Communication.Routing      maxLength 2341.14
+322.987440033514  SN.node[1000].Communication.Routing      Energy	46.9267	288	1	329	0	4000	72.0481	17.9592	0.9728	610000	21	14.5739
+325.987274270804  SN.node[1000].Communication.Routing      maxLength 2387.85
+327.987163762332  SN.node[1000].Communication.Routing      Energy	46.8941	288	1	354	0	4000	71.9996	18.5054	0.9944	622000	23	14.5713
+330.986997999622  SN.node[1000].Communication.Routing      maxLength 2397.24
+332.98688749115   SN.node[1000].Communication.Routing      Energy	46.8617	288	1	203	0	4000	71.9507	19.0017	1.104	694000	17	14.5686
+335.98672172844   SN.node[1000].Communication.Routing      maxLength 2395.63
+337.986611219968  SN.node[1000].Communication.Routing      Energy	46.7937	288	1	329	40000	4000	71.9018	18.953	1.0336	648000	21	14.5666
+340.986445457258  SN.node[1000].Communication.Routing      maxLength 2362.83
+342.986334948786  SN.node[1000].Communication.Routing      Energy	46.2036	284	0	-1	434000	16000	71.8522	19.5771	1.2576	788000	20	14.5696
+345.986169186076  SN.node[1000].Communication.Routing      maxLength 2394.34
+347.986058677604  SN.node[1000].Communication.Routing      Energy	46.1652	284	1	292	0	16000	71.8037	18.6156	1.2032	756000	25	14.5697
+350.985892914894  SN.node[1000].Communication.Routing      maxLength 2377.65
+352.985782406422  SN.node[1000].Communication.Routing      Energy	46.1197	284	1	340	10000	16000	71.7547	19.0649	1.4256	892000	22	14.5626
+355.985616643712  SN.node[1000].Communication.Routing      maxLength 2345.46
+357.98550613524   SN.node[1000].Communication.Routing      Energy	46.0795	284	1	369	0	16000	71.705	19.7157	1.7304	1082000	17	14.5606
+360.98534037253   SN.node[1000].Communication.Routing      maxLength 2374.94
+362.985229864058  SN.node[1000].Communication.Routing      Energy	46.0342	284	1	428	0	16000	71.6568	18.2861	1.1168	702000	23	14.5622
+365.985064101348  SN.node[1000].Communication.Routing      maxLength 2366.22
+367.984953592876  SN.node[1000].Communication.Routing      Energy	45.99	284	1	336	0	16000	71.6082	18.6317	1.632	1022000	22	14.5647
+370.984787830166  SN.node[1000].Communication.Routing      maxLength 2369.65
+372.984677321694  SN.node[1000].Communication.Routing      Energy	45.9322	284	1	342	24000	16000	71.5593	18.9563	0.9496	594000	21	14.5643
+375.984511558984  SN.node[1000].Communication.Routing      maxLength 2347.32
+377.984401050512  SN.node[1000].Communication.Routing      Energy	45.8848	284	1	415	4000	16000	71.5102	19.0804	1.3944	872000	26	14.5634
+380.984235287802  SN.node[1000].Communication.Routing      maxLength 2373.3
+382.98412477933   SN.node[1000].Communication.Routing      Energy	45.8442	284	1	297	0	16000	71.4613	19.0134	1.2032	756000	27	14.567
+385.98395901662   SN.node[1000].Communication.Routing      maxLength 2397.27
+387.983848508148  SN.node[1000].Communication.Routing      Energy	45.8076	284	1	276	0	16000	71.413	18.3316	1.2208	764000	22	14.5654
+390.983682745438  SN.node[1000].Communication.Routing      maxLength 2355.66
+392.983572236966  SN.node[1000].Communication.Routing      Energy	45.7648	284	1	408	0	16000	71.3654	17.6012	1.0304	646000	27	14.5667
+395.983406474256  SN.node[1000].Communication.Routing      maxLength 2375.2
+397.983295965784  SN.node[1000].Communication.Routing      Energy	45.4741	800	0	-1	246000	16000	71.3169	18.5615	0.9136	572000	27	14.5717
+400.983130203074  SN.node[1000].Communication.Routing      maxLength 2350.99
+402.983019694602  SN.node[1000].Communication.Routing      Energy	45.4323	800	1	799	0	16000	71.2683	18.6745	1.2416	780000	17	14.5718
+405.982853931892  SN.node[1000].Communication.Routing      maxLength 2383.23
+407.98274342342   SN.node[1000].Communication.Routing      Energy	45.3901	800	1	729	4000	16000	71.2201	18.2777	1.3328	834000	21	14.5753
+410.98257766071   SN.node[1000].Communication.Routing      maxLength 2367.12
+412.982467152238  SN.node[1000].Communication.Routing      Energy	45.3536	800	1	797	0	16000	71.1721	18.0036	1.0944	686000	27	14.5764
+415.982301389528  SN.node[1000].Communication.Routing      maxLength 2399.8
+417.982190881056  SN.node[1000].Communication.Routing      Energy	45.3142	800	1	866	0	16000	71.1244	17.8224	1.1552	726000	21	14.575
+420.982025118346  SN.node[1000].Communication.Routing      maxLength 2370.96
+422.981914609874  SN.node[1000].Communication.Routing      Energy	45.2699	800	1	822	0	16000	71.0759	18.4732	1.0496	660000	23	14.5725
+425.981748847164  SN.node[1000].Communication.Routing      maxLength 2334.66
+427.981638338692  SN.node[1000].Communication.Routing      Energy	45.2299	800	1	801	0	16000	71.0279	18.0395	1.216	764000	28	14.5738
+430.981472575982  SN.node[1000].Communication.Routing      maxLength 2388.3
+432.98136206751   SN.node[1000].Communication.Routing      Energy	45.1903	800	1	876	0	16000	70.9778	20.1497	1.4552	910000	22	14.5724
+435.9811963048    SN.node[1000].Communication.Routing      maxLength 2344.3
+437.981085796328  SN.node[1000].Communication.Routing      Energy	45.1485	800	1	875	0	16000	70.9297	18.1758	1.1832	740000	23	14.5749
+440.980920033618  SN.node[1000].Communication.Routing      maxLength 2381.05
+442.980809525146  SN.node[1000].Communication.Routing      Energy	45.1007	800	1	667	0	16000	70.8807	19.0782	1.4176	888000	20	14.5771
+445.980643762436  SN.node[1000].Communication.Routing      maxLength 2348.15
+447.980533253964  SN.node[1000].Communication.Routing      Energy	45.0642	800	1	797	0	16000	70.8321	18.6822	1.468	918000	20	14.5806
+450.980367491254  SN.node[1000].Communication.Routing      maxLength 2383.02
+452.980256982782  SN.node[1000].Communication.Routing      Energy	45.0205	800	1	828	0	16000	70.7837	18.4191	1.2704	798000	19	14.5796
+455.980091220072  SN.node[1000].Communication.Routing      maxLength 2399.36
+457.9799807116    SN.node[1000].Communication.Routing      Energy	44.9781	800	1	709	0	16000	70.7353	18.4825	1.2184	762000	16	14.5804
+460.97981494889   SN.node[1000].Communication.Routing      maxLength 2395.57
+462.979704440418  SN.node[1000].Communication.Routing      Energy	44.9404	800	1	916	0	16000	70.686	19.3	1.8992	1188000	19	14.5851
+465.979538677708  SN.node[1000].Communication.Routing      maxLength 2378.33
+467.979428169236  SN.node[1000].Communication.Routing      Energy	44.8971	800	1	690	0	16000	70.6376	18.4277	1.4336	900000	22	14.584
+470.979262406526  SN.node[1000].Communication.Routing      maxLength 2396.38
+472.979151898054  SN.node[1000].Communication.Routing      Energy	44.8527	800	1	794	0	16000	70.5895	18.1713	1.2384	776000	22	14.5845
+475.978986135344  SN.node[1000].Communication.Routing      maxLength 2391.34
+477.978875626872  SN.node[1000].Communication.Routing      Energy	44.8142	800	1	729	0	16000	70.54	19.6004	1.72	1076000	18	14.5889
+480.978709864162  SN.node[1000].Communication.Routing      maxLength 2392.79
+482.97859935569   SN.node[1000].Communication.Routing      Energy	44.7725	800	1	905	0	16000	70.4907	19.2759	1.3808	864000	18	14.5879
+485.97843359298   SN.node[1000].Communication.Routing      maxLength 2385.09
+487.978323084508  SN.node[1000].Communication.Routing      Energy	44.7306	800	1	694	0	16000	70.4424	18.4127	1.2824	802000	23	14.5913
+490.978157321798  SN.node[1000].Communication.Routing      maxLength 2383.39
+492.978046813326  SN.node[1000].Communication.Routing      Energy	44.1983	284	0	-1	450000	16000	70.3946	17.8562	0.8272	518000	29	14.5952
+495.977881050616  SN.node[1000].Communication.Routing      maxLength 2398.93
+497.977770542144  SN.node[1000].Communication.Routing      Energy	44.1618	284	1	287	0	16000	70.3467	17.9082	1.0432	654000	34	14.5954
+500.977604779434  SN.node[1000].Communication.Routing      maxLength 2390.61
+502.977494270962  SN.node[1000].Communication.Routing      Energy	44.1117	284	1	358	8000	16000	70.2987	18.1013	1.0608	664000	27	14.5951
+505.977328508252  SN.node[1000].Communication.Routing      maxLength 2347.22
+507.97721799978   SN.node[1000].Communication.Routing      Energy	44.073	284	1	361	0	16000	70.2502	18.471	1.504	944000	21	14.5983
+510.97705223707   SN.node[1000].Communication.Routing      maxLength 2398.98
+512.976941728598  SN.node[1000].Communication.Routing      Energy	43.9647	284	1	224	64000	16000	70.2025	17.78	0.8832	554000	27	14.6
+515.976775965888  SN.node[1000].Communication.Routing      maxLength 2395.35
+517.976665457416  SN.node[1000].Communication.Routing      Energy	43.9239	284	1	396	0	16000	70.1541	18.436	1.0912	686000	31	14.6029
+520.976499694706  SN.node[1000].Communication.Routing      maxLength 2396.11
+522.976389186234  SN.node[1000].Communication.Routing      Energy	43.8801	284	1	231	0	16000	70.1059	18.2142	1.1968	750000	19	14.6025
+525.976223423524  SN.node[1000].Communication.Routing      maxLength 2383.16
+527.976112915052  SN.node[1000].Communication.Routing      Energy	43.8397	284	1	197	0	16000	70.0582	17.763	0.9792	614000	33	14.605
+530.975947152342  SN.node[1000].Communication.Routing      maxLength 2395.11
+532.97583664387   SN.node[1000].Communication.Routing      Energy	43.3554	800	0	-1	434000	16000	70.0097	18.6139	1.2928	812000	25	14.6035
+535.97567088116   SN.node[1000].Communication.Routing      maxLength 2391.75
+537.975560372688  SN.node[1000].Communication.Routing      Energy	43.3153	800	1	830	0	16000	69.9609	18.7832	1.2408	776000	22	14.6002
+540.975394609978  SN.node[1000].Communication.Routing      maxLength 2328.76
+542.975284101506  SN.node[1000].Communication.Routing      Energy	43.2669	800	1	942	0	16000	69.9118	19.2109	1.9712	1234000	21	14.6003
+545.975118338796  SN.node[1000].Communication.Routing      maxLength 2256.64
+547.975007830324  SN.node[1000].Communication.Routing      Energy	43.2216	800	1	689	0	16000	69.8631	18.7324	1.4912	934000	20	14.6006
+550.974842067614  SN.node[1000].Communication.Routing      maxLength 2335.42
+552.974731559142  SN.node[1000].Communication.Routing      Energy	43.1808	800	1	712	0	16000	69.8151	18.0323	1.5712	984000	25	14.6021
+555.974565796432  SN.node[1000].Communication.Routing      maxLength 2324.52
+557.97445528796   SN.node[1000].Communication.Routing      Energy	43.1404	800	1	836	0	16000	69.7656	19.523	1.0304	646000	24	14.6031
+560.97428952525   SN.node[1000].Communication.Routing      maxLength 2335.14
+562.974179016778  SN.node[1000].Communication.Routing      Energy	43.0971	800	1	849	0	16000	69.717	18.6964	1.6664	1042000	21	14.6065
+565.974013254068  SN.node[1000].Communication.Routing      maxLength 2338.66
+567.973902745596  SN.node[1000].Communication.Routing      Energy	43.0606	800	1	797	0	16000	69.6688	18.2848	1.5352	960000	21	14.6082
+570.973736982886  SN.node[1000].Communication.Routing      maxLength 2354.24
+572.973626474414  SN.node[1000].Communication.Routing      Energy	43.0202	800	1	836	0	16000	69.6204	18.4038	1.1008	692000	24	14.6067
+575.973460711704  SN.node[1000].Communication.Routing      maxLength 2381.52
+577.973350203232  SN.node[1000].Communication.Routing      Energy	42.9735	800	1	850	0	16000	69.572	18.4279	1.4336	900000	21	14.6105
+580.973184440522  SN.node[1000].Communication.Routing      maxLength 2376.33
+582.97307393205   SN.node[1000].Communication.Routing      Energy	42.9369	800	1	781	0	16000	69.523	19.0479	1.4128	884000	19	14.6051
+585.97290816934   SN.node[1000].Communication.Routing      maxLength 2396.45
+587.972797660868  SN.node[1000].Communication.Routing      Energy	42.8997	800	1	763	0	16000	69.4745	18.5847	1.3984	878000	26	14.6074
+590.972631898158  SN.node[1000].Communication.Routing      maxLength 2397.05
+592.972521389686  SN.node[1000].Communication.Routing      Energy	42.8631	800	1	781	0	16000	69.4256	18.9092	1.4048	880000	23	14.6039
+595.972355626976  SN.node[1000].Communication.Routing      maxLength 2386.77
+597.972245118504  SN.node[1000].Communication.Routing      Energy	42.8213	800	1	799	0	16000	69.3777	18.0379	1.208	756000	22	14.6047
+600.972079355794  SN.node[1000].Communication.Routing      maxLength 2336.04
+602.971968847322  SN.node[1000].Communication.Routing      Energy	42.7747	800	1	897	0	16000	69.3284	19.3079	1.6152	1010000	21	14.6093
+605.971803084612  SN.node[1000].Communication.Routing      maxLength 2356.81
+607.97169257614   SN.node[1000].Communication.Routing      Energy	42.7311	800	1	789	0	16000	69.2796	18.8092	1.3856	870000	22	14.6082
+610.97152681343   SN.node[1000].Communication.Routing      maxLength 2341
+612.971416304958  SN.node[1000].Communication.Routing      Energy	42.6914	800	1	725	0	16000	69.2312	18.5158	1.4072	880000	20	14.6082
+615.971250542248  SN.node[1000].Communication.Routing      maxLength 2382.76
+617.971140033776  SN.node[1000].Communication.Routing      Energy	42.6472	800	1	762	0	16000	69.1834	17.7824	1.5744	988000	23	14.6057
+620.970974271066  SN.node[1000].Communication.Routing      maxLength 2358.8
+622.970863762594  SN.node[1000].Communication.Routing      Energy	42.606	800	1	784	0	16000	69.1354	18.0406	1.3072	818000	22	14.6066
+625.970697999884  SN.node[1000].Communication.Routing      maxLength 2394.7
+627.970587491412  SN.node[1000].Communication.Routing      Energy	42.5642	800	1	799	0	16000	69.0873	18.1863	1.4008	876000	30	14.6051
+630.970421728702  SN.node[1000].Communication.Routing      maxLength 2388
+632.97031122023   SN.node[1000].Communication.Routing      Energy	42.5227	800	1	713	0	16000	69.0392	18.1294	1.0944	688000	21	14.602
+635.97014545752   SN.node[1000].Communication.Routing      maxLength 2326.95
+637.970034949048  SN.node[1000].Communication.Routing      Energy	42.4861	800	1	781	0	16000	68.9907	18.5415	1.5128	946000	21	14.6071
+640.969869186338  SN.node[1000].Communication.Routing      maxLength 2354.75
+642.969758677866  SN.node[1000].Communication.Routing      Energy	42.4439	800	1	783	0	16000	68.9416	19.1468	1.4176	888000	26	14.6089
+645.969592915156  SN.node[1000].Communication.Routing      maxLength 2316.7
+647.969482406684  SN.node[1000].Communication.Routing      Energy	42.4074	800	1	797	0	16000	68.8925	19.1748	1.3424	840000	25	14.6146
+650.969316643974  SN.node[1000].Communication.Routing      maxLength 2396.02
+652.969206135502  SN.node[1000].Communication.Routing      Energy	42.3689	800	1	740	0	16000	68.8441	18.4328	0.944	592000	27	14.6178
+655.969040372792  SN.node[1000].Communication.Routing      maxLength 2275.92
+657.96892986432   SN.node[1000].Communication.Routing      Energy	42.3315	800	1	772	0	16000	68.7951	19.105	1.264	794000	16	14.6145
+660.96876410161   SN.node[1000].Communication.Routing      maxLength 2354.35
+662.968653593138  SN.node[1000].Communication.Routing      Energy	42.295	800	1	797	0	16000	68.7465	18.6812	1.4656	920000	23	14.6195
+665.968487830428  SN.node[1000].Communication.Routing      maxLength 2373
+667.968377321956  SN.node[1000].Communication.Routing      Energy	42.2579	800	1	763	0	16000	68.6966	19.9242	1.184	742000	20	14.6176
+670.968211559246  SN.node[1000].Communication.Routing      maxLength 2344.57
+672.968101050774  SN.node[1000].Communication.Routing      Energy	42.2215	800	1	792	0	16000	68.6475	19.1208	1.3784	862000	21	14.6207
+675.967935288064  SN.node[1000].Communication.Routing      maxLength 2373.83
+677.967824779592  SN.node[1000].Communication.Routing      Energy	42.1738	800	1	845	0	16000	68.5991	18.4173	1.5648	980000	24	14.6198
+680.967659016882  SN.node[1000].Communication.Routing      maxLength 2230.58
+682.96754850841   SN.node[1000].Communication.Routing      Energy	42.1362	800	1	832	0	16000	68.5501	19.0802	1.2152	760000	23	14.6176
+685.9673827457    SN.node[1000].Communication.Routing      maxLength 2397.7
+687.967272237228  SN.node[1000].Communication.Routing      Energy	40.759	800	0	-1	830000	16000	68.5013	18.8466	1.5384	962000	25	14.622
+690.967106474518  SN.node[1000].Communication.Routing      maxLength 2278.25
+692.966995966046  SN.node[1000].Communication.Routing      Energy	40.7223	800	1	781	0	16000	68.4529	18.4416	1.2064	758000	22	14.6226
+695.966830203336  SN.node[1000].Communication.Routing      maxLength 2370.51
+697.966719694864  SN.node[1000].Communication.Routing      Energy	40.6771	800	1	702	0	16000	68.4044	18.5798	1.2416	780000	28	14.6241
+700.966553932154  SN.node[1000].Communication.Routing      maxLength 2310.6
+702.966443423682  SN.node[1000].Communication.Routing      Energy	40.6397	800	1	756	0	16000	68.3565	17.931	1.2544	786000	25	14.6252
+705.966277660972  SN.node[1000].Communication.Routing      maxLength 2294.35
+707.9661671525    SN.node[1000].Communication.Routing      Energy	40.5964	800	1	849	0	16000	68.3081	18.4477	1.292	808000	25	14.6233
+710.96600138979   SN.node[1000].Communication.Routing      maxLength 2363.38
+712.965890881318  SN.node[1000].Communication.Routing      Energy	40.557	800	1	866	0	16000	68.2602	18.0014	1.3488	844000	24	14.6242
+715.965725118608  SN.node[1000].Communication.Routing      maxLength 2391.69
+717.965614610136  SN.node[1000].Communication.Routing      Energy	40.5189	800	1	958	0	16000	68.2119	18.2628	1.2976	812000	26	14.6267
+720.965448847426  SN.node[1000].Communication.Routing      maxLength 2276.7
+722.965338338954  SN.node[1000].Communication.Routing      Energy	40.4823	800	1	781	0	16000	68.1635	18.5162	1.4016	880000	22	14.6253
+725.965172576244  SN.node[1000].Communication.Routing      maxLength 2316.19
+727.965062067772  SN.node[1000].Communication.Routing      Energy	40.4366	800	1	700	0	16000	68.1137	19.8835	1.3056	820000	22	14.6228
+730.964896305062  SN.node[1000].Communication.Routing      maxLength 2362.82
+732.96478579659   SN.node[1000].Communication.Routing      Energy	40.3885	800	1	801	8000	16000	68.0646	19.0998	1.576	986000	17	14.6246
+735.96462003388   SN.node[1000].Communication.Routing      maxLength 2317.19
+737.964509525408  SN.node[1000].Communication.Routing      Energy	40.345	800	1	803	0	16000	68.0153	19.3199	1.4	876000	23	14.626
+740.964343762698  SN.node[1000].Communication.Routing      maxLength 2390.94
+742.964233254226  SN.node[1000].Communication.Routing      Energy	40.3015	800	1	803	0	16000	67.9674	17.9983	1.0488	656000	21	14.6261
+745.964067491516  SN.node[1000].Communication.Routing      maxLength 2381.99
+747.963956983044  SN.node[1000].Communication.Routing      Energy	40.258	800	1	791	0	16000	67.9193	18.1311	1.1864	742000	24	14.63
+750.963791220334  SN.node[1000].Communication.Routing      maxLength 2364.1
+752.963680711862  SN.node[1000].Communication.Routing      Energy	40.2098	800	1	724	0	16000	67.8711	18.2051	1.2568	786000	24	14.6318
+755.963514949152  SN.node[1000].Communication.Routing      maxLength 2382.77
+757.96340444068   SN.node[1000].Communication.Routing      Energy	40.1734	800	1	792	0	16000	67.8223	18.8734	1.4496	910000	24	14.6306
+760.96323867797   SN.node[1000].Communication.Routing      maxLength 2388
+762.963128169498  SN.node[1000].Communication.Routing      Energy	40.1262	800	1	720	0	16000	67.7732	19.1459	1.5568	974000	16	14.6272
+765.962962406788  SN.node[1000].Communication.Routing      maxLength 2382.98
+767.962851898316  SN.node[1000].Communication.Routing      Energy	40.0886	800	1	832	0	16000	67.7244	18.8747	1.1104	698000	21	14.6304
+770.962686135606  SN.node[1000].Communication.Routing      maxLength 2371.3
+772.962575627134  SN.node[1000].Communication.Routing      Energy	40.0478	800	1	712	0	16000	67.676	18.4339	1.2112	758000	25	14.6319
+775.962409864424  SN.node[1000].Communication.Routing      maxLength 2399.57
+777.962299355952  SN.node[1000].Communication.Routing      Energy	40.0105	800	1	844	0	16000	67.628	18.0522	0.9624	602000	25	14.6316
+780.962133593242  SN.node[1000].Communication.Routing      maxLength 2330.95
+782.96202308477   SN.node[1000].Communication.Routing      Energy	39.9664	800	1	688	0	16000	67.58	18.0705	0.9488	594000	24	14.6319
+785.96185732206   SN.node[1000].Communication.Routing      maxLength 2369.54
+787.961746813588  SN.node[1000].Communication.Routing      Energy	39.9297	800	1	798	0	16000	67.5313	18.7302	1.272	796000	25	14.6287
+790.961581050878  SN.node[1000].Communication.Routing      maxLength 2378.61
+792.961470542406  SN.node[1000].Communication.Routing      Energy	39.8862	800	1	803	0	16000	67.4833	18.0552	1.1704	732000	24	14.6336
+795.961304779696  SN.node[1000].Communication.Routing      maxLength 2380.55
+797.961194271224  SN.node[1000].Communication.Routing      Energy	39.8425	800	1	828	0	16000	67.4348	18.5975	1.548	968000	18	14.6368
+800.961028508514  SN.node[1000].Communication.Routing      maxLength 2346.76
+802.960918000042  SN.node[1000].Communication.Routing      Energy	39.806	800	1	797	0	16000	67.3863	18.4874	0.8928	560000	23	14.6341
+805.960752237332  SN.node[1000].Communication.Routing      maxLength 2340.94
+807.96064172886   SN.node[1000].Communication.Routing      Energy	39.552	800	0	-1	128000	16000	67.3377	18.6551	0.9952	626000	27	14.6361
+810.96047596615   SN.node[1000].Communication.Routing      maxLength 2395.87
+812.960365457678  SN.node[1000].Communication.Routing      Energy	39.5146	800	1	756	0	16000	67.2889	18.874	1.4528	912000	31	14.6409
+815.960199694968  SN.node[1000].Communication.Routing      maxLength 2399.26
+817.960089186496  SN.node[1000].Communication.Routing      Energy	39.4722	800	1	748	0	16000	67.2402	18.7887	1.6016	1002000	23	14.6407
+820.959923423786  SN.node[1000].Communication.Routing      maxLength 2379.47
+822.959812915314  SN.node[1000].Communication.Routing      Energy	39.4337	800	1	729	0	16000	67.1918	18.4354	0.984	616000	27	14.6401
+825.959647152604  SN.node[1000].Communication.Routing      maxLength 2354.42
+827.959536644132  SN.node[1000].Communication.Routing      Energy	39.386	800	1	699	0	16000	67.1422	19.6507	1.7056	1070000	19	14.6453
+830.959370881422  SN.node[1000].Communication.Routing      maxLength 2390.32
+832.95926037295   SN.node[1000].Communication.Routing      Energy	38.284	800	0	-1	658000	16000	67.0936	18.6194	1.6768	1052000	20	14.6452
+835.95909461024   SN.node[1000].Communication.Routing      maxLength 2384.92
+837.958984101768  SN.node[1000].Communication.Routing      Energy	38.2418	800	1	764	0	16000	67.0454	18.2195	1.1072	694000	26	14.6462
+840.958818339058  SN.node[1000].Communication.Routing      maxLength 2349.68
+842.958707830586  SN.node[1000].Communication.Routing      Energy	38.2054	800	1	792	0	16000	66.9969	18.6182	1.4224	890000	21	14.6421
+845.958542067876  SN.node[1000].Communication.Routing      maxLength 2357.62
+847.958431559404  SN.node[1000].Communication.Routing      Energy	38.1049	800	1	749	38000	16000	66.9477	19.2064	1.4816	928000	22	14.6386
+850.958265796694  SN.node[1000].Communication.Routing      maxLength 2395.85
+852.958155288222  SN.node[1000].Communication.Routing      Energy	38.0673	800	1	854	0	16000	66.8993	18.4345	1.4464	908000	18	14.6427
+855.957989525512  SN.node[1000].Communication.Routing      maxLength 2381.95
+857.95787901704   SN.node[1000].Communication.Routing      Energy	38.0232	800	1	722	0	16000	66.8512	18.1439	1.3584	850000	24	14.6421
+860.95771325433   SN.node[1000].Communication.Routing      maxLength 2385.51
+862.957602745858  SN.node[1000].Communication.Routing      Energy	37.9853	800	1	765	0	16000	66.8011	20.1567	1.7488	1094000	14	14.64
+865.957436983148  SN.node[1000].Communication.Routing      maxLength 2306.4
+867.957326474676  SN.node[1000].Communication.Routing      Energy	37.9457	800	1	876	0	16000	66.7526	18.6308	1.6184	1012000	20	14.637
+870.957160711966  SN.node[1000].Communication.Routing      maxLength 2393.19
+872.957050203494  SN.node[1000].Communication.Routing      Energy	37.906	800	1	876	0	16000	66.7039	18.7138	1.2112	758000	26	14.6361
+875.956884440784  SN.node[1000].Communication.Routing      maxLength 2314.91
+877.956773932312  SN.node[1000].Communication.Routing      Energy	37.8641	800	1	721	0	16000	66.6545	19.4263	1.48	926000	27	14.6343
+880.956608169602  SN.node[1000].Communication.Routing      maxLength 2385.07
+882.95649766113   SN.node[1000].Communication.Routing      Energy	37.7963	800	1	725	28000	16000	66.6049	19.6502	1.4	876000	20	14.6342
+885.95633189842   SN.node[1000].Communication.Routing      maxLength 2363.82
+887.956221389948  SN.node[1000].Communication.Routing      Energy	37.7495	800	1	762	2000	16000	66.5554	19.5691	1.8592	1164000	20	14.6369
+890.956055627238  SN.node[1000].Communication.Routing      maxLength 2395.19
+892.955945118766  SN.node[1000].Communication.Routing      Energy	37.708	800	1	713	0	16000	66.5074	18.0815	1.296	814000	24	14.6355
+895.955779356056  SN.node[1000].Communication.Routing      maxLength 2370.78
+897.955668847584  SN.node[1000].Communication.Routing      Energy	37.6662	800	1	694	0	16000	66.4577	19.7025	1.5	938000	16	14.6394
+900.955503084874  SN.node[1000].Communication.Routing      maxLength 2361.58
+902.955392576402  SN.node[1000].Communication.Routing      Energy	37.597	800	1	749	16000	16000	66.4084	19.3372	1.7408	1092000	15	14.643
+905.955226813692  SN.node[1000].Communication.Routing      maxLength 2398.77
+907.95511630522   SN.node[1000].Communication.Routing      Energy	37.553	800	1	722	0	16000	66.3604	18.027	1.3792	866000	23	14.6426
+910.95495054251   SN.node[1000].Communication.Routing      maxLength 2369.19
+912.954840034038  SN.node[1000].Communication.Routing      Energy	37.515	800	1	765	0	16000	66.3119	18.5678	1.408	884000	22	14.6461
+915.954674271328  SN.node[1000].Communication.Routing      maxLength 2348.02
+917.954563762856  SN.node[1000].Communication.Routing      Energy	37.4775	800	1	951	0	16000	66.2618	20.1832	1.2768	802000	21	14.6466
+920.954398000146  SN.node[1000].Communication.Routing      maxLength 2392.4
+922.954287491674  SN.node[1000].Communication.Routing      Energy	37.435	800	1	748	0	16000	66.2123	19.5719	1.356	848000	16	14.6421
+925.954121728964  SN.node[1000].Communication.Routing      maxLength 2370.54
+927.954011220492  SN.node[1000].Communication.Routing      Energy	37.3873	800	1	670	0	16000	66.1628	19.5177	2.0512	1284000	19	14.6403
+930.953845457782  SN.node[1000].Communication.Routing      maxLength 2368.94
+932.95373494931   SN.node[1000].Communication.Routing      Energy	37.3501	800	1	844	0	16000	66.1141	18.7544	1.1264	706000	19	14.6397
+935.9535691866    SN.node[1000].Communication.Routing      maxLength 2394.53
+937.953458678128  SN.node[1000].Communication.Routing      Energy	37.3017	800	1	942	0	16000	66.0645	19.6612	1.504	942000	16	14.6472
+940.953292915418  SN.node[1000].Communication.Routing      maxLength 2380.91
+942.953182406946  SN.node[1000].Communication.Routing      Energy	37.2553	800	1	861	0	16000	66.0151	19.4421	1.2384	778000	26	14.6514
+945.953016644236  SN.node[1000].Communication.Routing      maxLength 2374
+947.952906135764  SN.node[1000].Communication.Routing      Energy	37.2179	800	1	772	0	16000	65.9663	18.8526	1.2752	798000	24	14.6508
+950.952740373054  SN.node[1000].Communication.Routing      maxLength 2373.79
+952.952629864582  SN.node[1000].Communication.Routing      Energy	37.1795	800	1	729	0	16000	65.9173	19.0827	1.6848	1054000	19	14.6515
+955.952464101872  SN.node[1000].Communication.Routing      maxLength 2380.84
+957.9523535934    SN.node[1000].Communication.Routing      Energy	37.1351	800	1	822	0	16000	65.8684	18.8887	1.456	914000	18	14.6479
+960.95218783069   SN.node[1000].Communication.Routing      maxLength 2367.63
+962.952077322218  SN.node[1000].Communication.Routing      Energy	37.0875	800	1	846	0	16000	65.8187	19.7594	1.4512	908000	14	14.6494
+965.951911559508  SN.node[1000].Communication.Routing      maxLength 2384.08
+967.951801051036  SN.node[1000].Communication.Routing      Energy	37.0478	800	1	927	0	16000	65.771	17.7332	1.4272	896000	30	14.6493
+970.951635288326  SN.node[1000].Communication.Routing      maxLength 2371.68
+972.951524779854  SN.node[1000].Communication.Routing      Energy	37.0079	800	1	807	0	16000	65.7231	18.0167	0.9856	620000	29	14.6487
+975.951359017144  SN.node[1000].Communication.Routing      maxLength 2384.93
+977.951248508672  SN.node[1000].Communication.Routing      Energy	36.9708	800	1	763	0	16000	65.6735	19.6422	1.7656	1104000	30	14.6488
+980.951082745962  SN.node[1000].Communication.Routing      maxLength 2322.42
+982.95097223749   SN.node[1000].Communication.Routing      Energy	36.9343	800	1	797	0	16000	65.6253	18.2686	1.112	696000	27	14.6517
+985.95080647478   SN.node[1000].Communication.Routing      maxLength 2384.86
+987.950695966308  SN.node[1000].Communication.Routing      Energy	36.8971	800	1	844	0	16000	65.5764	18.8926	1.5488	970000	23	14.6559
+990.950530203598  SN.node[1000].Communication.Routing      maxLength 2340.21
+992.950419695126  SN.node[1000].Communication.Routing      Energy	36.8574	800	1	876	0	16000	65.5279	18.6243	0.9272	580000	22	14.6538
+995.950253932416  SN.node[1000].Communication.Routing      maxLength 2397.6
+997.950143423944  SN.node[1000].Communication.Routing      Energy	36.8091	800	1	942	0	16000	65.4797	18.2439	1.1168	700000	20	14.6559
+1000.949977661234 SN.node[1000].Communication.Routing      maxLength 2379.86
+1002.949867152762 SN.node[1000].Communication.Routing      Energy	36.7714	800	1	916	0	16000	65.4312	18.4757	1.1824	740000	25	14.6523
+1005.949701390052 SN.node[1000].Communication.Routing      maxLength 2398.94
+1007.94959088158  SN.node[1000].Communication.Routing      Energy	36.7348	800	1	638	0	16000	65.3825	18.748	1.2056	754000	27	14.6512
+1010.94942511887  SN.node[1000].Communication.Routing      maxLength 2366.57
+1012.949314610398 SN.node[1000].Communication.Routing      Energy	36.6871	800	1	840	0	16000	65.3335	19.0582	1.344	844000	17	14.6499
+1015.949148847688 SN.node[1000].Communication.Routing      maxLength 2352.86
+1017.949038339216 SN.node[1000].Communication.Routing      Energy	36.6094	800	1	689	24000	16000	65.2853	18.3247	1.0688	672000	20	14.6471
+1020.948872576506 SN.node[1000].Communication.Routing      maxLength 2322.82
+1022.948762068034 SN.node[1000].Communication.Routing      Energy	36.5722	800	1	844	0	16000	65.2361	19.1983	1.4424	902000	16	14.649
+1025.948596305324 SN.node[1000].Communication.Routing      maxLength 2377.9
+1027.948485796852 SN.node[1000].Communication.Routing      Energy	36.5304	800	1	875	0	16000	65.1872	18.9419	1.4336	898000	21	14.6461
+1030.948320034142 SN.node[1000].Communication.Routing      maxLength 2325.76
+1032.94820952567  SN.node[1000].Communication.Routing      Energy	36.4937	800	1	798	0	16000	65.1387	18.5614	1.216	764000	23	14.6518
+1035.94804376296  SN.node[1000].Communication.Routing      maxLength 2399.73
+1037.947933254488 SN.node[1000].Communication.Routing      Energy	36.4505	800	1	849	0	16000	65.0901	18.6835	1.5832	990000	23	14.6517
+1040.947767491778 SN.node[1000].Communication.Routing      maxLength 2261.59
+1042.947656983306 SN.node[1000].Communication.Routing      Energy	36.3748	800	1	727	34000	16000	65.0405	19.64	1.9808	1240000	20	14.6472
+1045.947491220596 SN.node[1000].Communication.Routing      maxLength 2362.44
+1047.947380712124 SN.node[1000].Communication.Routing      Energy	36.3295	800	1	689	0	16000	64.9923	18.2463	0.9688	606000	26	14.6493
+1050.947214949414 SN.node[1000].Communication.Routing      maxLength 2392.41
+1052.947104440942 SN.node[1000].Communication.Routing      Energy	36.2922	800	1	772	0	16000	64.9443	18.0426	1.3088	822000	20	14.6457
+1055.946938678232 SN.node[1000].Communication.Routing      maxLength 2369.82
+1057.94682816976  SN.node[1000].Communication.Routing      Energy	36.2204	800	1	876	32000	16000	64.8958	18.5771	1.308	818000	23	14.6482
+1060.94666240705  SN.node[1000].Communication.Routing      maxLength 2386.88
+1062.946551898578 SN.node[1000].Communication.Routing      Energy	36.1803	800	1	830	0	16000	64.8475	18.2856	1.3072	818000	21	14.6511
+1065.946386135868 SN.node[1000].Communication.Routing      maxLength 2355.98
+1067.946275627396 SN.node[1000].Communication.Routing      Energy	35.9775	800	0	-1	96000	16000	64.7992	18.4186	1.208	756000	24	14.651
+1070.946109864686 SN.node[1000].Communication.Routing      maxLength 2382.01
+1072.945999356214 SN.node[1000].Communication.Routing      Energy	35.9403	800	1	844	0	16000	64.7505	18.714	1.1352	710000	20	14.6558
+1075.945833593504 SN.node[1000].Communication.Routing      maxLength 2392.37
+1077.945723085032 SN.node[1000].Communication.Routing      Energy	35.8965	800	1	828	0	16000	64.7002	20.3598	2.3392	1466000	21	14.6619
+1080.945557322322 SN.node[1000].Communication.Routing      maxLength 2263.45
+1082.94544681385  SN.node[1000].Communication.Routing      Energy	35.8586	800	1	808	0	16000	64.6505	19.7189	1.6624	1040000	18	14.66
+1085.94528105114  SN.node[1000].Communication.Routing      maxLength 2317.21
+1087.945170542668 SN.node[1000].Communication.Routing      Energy	35.8211	800	1	853	0	16000	64.6012	19.3738	1.4672	918000	22	14.6621
+1090.945004779958 SN.node[1000].Communication.Routing      maxLength 2399.71
+1092.944894271486 SN.node[1000].Communication.Routing      Energy	35.7744	800	1	883	0	16000	64.5525	18.7888	1.2056	754000	18	14.6625
+1095.944728508776 SN.node[1000].Communication.Routing      maxLength 2384.97
+1097.944618000304 SN.node[1000].Communication.Routing      Energy	35.7325	800	1	760	0	16000	64.5042	18.3516	0.8736	548000	21	14.6607
+1100.944452237594 SN.node[1000].Communication.Routing      maxLength 2254.15
+1102.944341729122 SN.node[1000].Communication.Routing      Energy	35.6958	800	1	798	0	16000	64.4552	18.9574	1.1096	694000	21	14.6607
+1105.944175966412 SN.node[1000].Communication.Routing      maxLength 2376.07
+1107.94406545794  SN.node[1000].Communication.Routing      Energy	35.6562	800	1	725	0	16000	64.4065	18.7905	1.6704	1048000	24	14.6572
+1110.94389969523  SN.node[1000].Communication.Routing      maxLength 2398.1
+1112.943789186758 SN.node[1000].Communication.Routing      Energy	35.6099	800	1	687	0	16000	64.3568	19.7509	2.1528	1346000	23	14.6579
+1115.943623424048 SN.node[1000].Communication.Routing      maxLength 2380.8
+1117.943512915576 SN.node[1000].Communication.Routing      Energy	35.5637	800	1	687	0	16000	64.3076	19.2895	1.344	842000	16	14.6578
+1120.943347152866 SN.node[1000].Communication.Routing      maxLength 2359.91
+1122.943236644394 SN.node[1000].Communication.Routing      Energy	35.5265	800	1	844	0	16000	64.2591	18.5534	1.1424	716000	20	14.6573
+1125.943070881684 SN.node[1000].Communication.Routing      maxLength 2393.9
+1127.942960373212 SN.node[1000].Communication.Routing      Energy	35.4899	800	1	781	0	16000	64.2104	18.7232	1.6064	1008000	20	14.6586
+1130.942794610502 SN.node[1000].Communication.Routing      maxLength 2381.41
+1132.94268410203  SN.node[1000].Communication.Routing      Energy	35.4523	800	1	940	0	16000	64.1617	18.7143	1.1512	720000	21	14.6551
+1135.94251833932  SN.node[1000].Communication.Routing      maxLength 2346.14
+1137.942407830848 SN.node[1000].Communication.Routing      Energy	35.4158	800	1	797	0	16000	64.1124	19.4002	1.5408	964000	22	14.6574
+1140.942242068138 SN.node[1000].Communication.Routing      maxLength 2376.94
+1142.942131559666 SN.node[1000].Communication.Routing      Energy	35.3672	800	1	646	0	16000	64.0637	18.7348	1.2832	804000	21	14.6525
+1145.941965796956 SN.node[1000].Communication.Routing      maxLength 2377.55
+1147.941855288484 SN.node[1000].Communication.Routing      Energy	35.3251	800	1	764	0	16000	64.0153	18.4676	1.4176	888000	21	14.6551
+1150.941689525774 SN.node[1000].Communication.Routing      maxLength 2343.29
+1152.941579017302 SN.node[1000].Communication.Routing      Energy	35.2871	800	1	765	0	16000	63.9662	19.1072	1.4304	896000	20	14.6558
+1155.941413254592 SN.node[1000].Communication.Routing      maxLength 2385.01
+1157.94130274612  SN.node[1000].Communication.Routing      Energy	35.2453	800	1	694	0	16000	63.9172	19.048	1.1472	718000	23	14.6602
+1160.94113698341  SN.node[1000].Communication.Routing      maxLength 2385.83
+1162.941026474938 SN.node[1000].Communication.Routing      Energy	35.2	800	1	702	0	16000	63.8683	18.9736	1.9936	1250000	18	14.6572
+1165.940860712228 SN.node[1000].Communication.Routing      maxLength 2385.83
+1167.940750203756 SN.node[1000].Communication.Routing      Energy	35.1621	800	1	765	0	16000	63.8204	17.9844	1.292	808000	23	14.6614
+1170.940584441046 SN.node[1000].Communication.Routing      maxLength 2379.74
+1172.940473932574 SN.node[1000].Communication.Routing      Energy	35.1221	800	1	801	0	16000	63.7721	18.3021	1.0624	668000	22	14.6621
+1175.940308169864 SN.node[1000].Communication.Routing      maxLength 2371.91
+1177.940197661392 SN.node[1000].Communication.Routing      Energy	35.0783	800	1	829	0	16000	63.7222	19.931	1.2928	812000	25	14.6643
+1180.940031898682 SN.node[1000].Communication.Routing      maxLength 2364.06
+1182.93992139021  SN.node[1000].Communication.Routing      Energy	35.0417	800	1	781	0	16000	63.6724	19.8385	2.0888	1306000	15	14.6658
+1185.9397556275   SN.node[1000].Communication.Routing      maxLength 2382.8
+1187.939645119028 SN.node[1000].Communication.Routing      Energy	34.9993	800	1	709	0	16000	63.623	19.4695	1.7016	1064000	17	14.6701
+1190.939479356318 SN.node[1000].Communication.Routing      maxLength 2394.9
+1192.939368847846 SN.node[1000].Communication.Routing      Energy	34.9596	800	1	876	0	16000	63.5749	18.1669	0.9312	584000	23	14.6685
+1195.939203085136 SN.node[1000].Communication.Routing      maxLength 2359.38
+1197.939092576664 SN.node[1000].Communication.Routing      Energy	34.922	800	1	951	0	16000	63.5259	19.0227	1.468	918000	17	14.6656
+1200.938926813954 SN.node[1000].Communication.Routing      maxLength 2376.85
+1202.938816305482 SN.node[1000].Communication.Routing      Energy	34.8808	800	1	784	0	16000	63.4779	18.1095	1.2184	762000	26	14.6694
+1205.938650542772 SN.node[1000].Communication.Routing      maxLength 2399.8
+1207.9385400343   SN.node[1000].Communication.Routing      Energy	34.8409	800	1	801	0	16000	63.4296	18.3737	0.9504	598000	23	14.6694
+1210.93837427159  SN.node[1000].Communication.Routing      maxLength 2321.94
+1212.938263763118 SN.node[1000].Communication.Routing      Energy	34.7984	800	1	748	0	16000	63.3815	18.1143	1.1568	724000	25	14.6664
+1215.938098000408 SN.node[1000].Communication.Routing      maxLength 2395.93
+1217.937987491936 SN.node[1000].Communication.Routing      Energy	34.7498	800	1	686	0	16000	63.3328	18.7197	1.1648	732000	21	14.6653
+1220.937821729226 SN.node[1000].Communication.Routing      maxLength 2367.2
+1222.937711220754 SN.node[1000].Communication.Routing      Energy	34.7125	800	1	844	0	16000	63.2841	18.7306	1.7952	1124000	21	14.663
+1225.937545458044 SN.node[1000].Communication.Routing      maxLength 2329.1
+1227.937434949572 SN.node[1000].Communication.Routing      Energy	34.6652	800	1	855	0	16000	63.2358	18.4382	1.4144	888000	22	14.6629
+1230.937269186862 SN.node[1000].Communication.Routing      maxLength 2389.32
+1232.93715867839  SN.node[1000].Communication.Routing      Energy	34.6285	800	1	798	0	16000	63.187	18.7857	1.1712	736000	20	14.6595
+1235.93699291568  SN.node[1000].Communication.Routing      maxLength 2354.76
+1237.936882407208 SN.node[1000].Communication.Routing      Energy	34.587	800	1	713	0	16000	63.139	18.1125	1.184	742000	24	14.6634
+1240.936716644498 SN.node[1000].Communication.Routing      maxLength 2276.59
+1242.936606136026 SN.node[1000].Communication.Routing      Energy	34.5318	800	1	866	16000	16000	63.0904	18.6187	1.296	812000	16	14.6716
+1245.936440373316 SN.node[1000].Communication.Routing      maxLength 2395.6
+1247.936329864844 SN.node[1000].Communication.Routing      Energy	34.0597	221	0	-1	774000	16000	63.0411	19.3362	1.2576	790000	22	14.6747
+1250.936164102134 SN.node[1000].Communication.Routing      maxLength 2399.15
+1252.936053593662 SN.node[1000].Communication.Routing      Energy	34.0143	221	1	128	0	16000	62.9931	18.095	1.1552	726000	28	14.679
+1255.935887830952 SN.node[1000].Communication.Routing      maxLength 2362.62
+1257.93577732248  SN.node[1000].Communication.Routing      Energy	33.9605	221	1	271	18000	16000	62.9445	18.6125	1.1808	742000	25	14.6817
+1260.93561155977  SN.node[1000].Communication.Routing      maxLength 2397.54
+1262.935501051298 SN.node[1000].Communication.Routing      Energy	33.9238	221	1	199	0	16000	62.8967	17.8503	1.1776	738000	29	14.6836
+1265.935335288588 SN.node[1000].Communication.Routing      maxLength 2396.59
+1267.935224780116 SN.node[1000].Communication.Routing      Energy	33.8824	221	1	200	0	16000	62.848	18.7872	1.2688	794000	20	14.6875
+1270.935059017406 SN.node[1000].Communication.Routing      maxLength 2393.73
+1272.934948508934 SN.node[1000].Communication.Routing      Energy	33.8399	221	1	203	0	16000	62.7992	18.7819	1.4688	922000	25	14.6898
+1275.934782746224 SN.node[1000].Communication.Routing      maxLength 2390.77
+1277.934672237752 SN.node[1000].Communication.Routing      Energy	33.8028	221	1	232	0	16000	62.7513	17.9811	1.0752	676000	23	14.6877
+1280.934506475042 SN.node[1000].Communication.Routing      maxLength 2385.69
+1282.93439596657  SN.node[1000].Communication.Routing      Energy	33.7657	221	1	232	0	16000	62.7024	18.9688	1.4872	930000	22	14.6857
+1285.93423020386  SN.node[1000].Communication.Routing      maxLength 2379.88
+1287.934119695388 SN.node[1000].Communication.Routing      Energy	33.7277	221	1	263	0	16000	62.6529	19.5773	1.6592	1038000	19	14.6842
+1290.933953932678 SN.node[1000].Communication.Routing      maxLength 2370.86
+1292.933843424206 SN.node[1000].Communication.Routing      Energy	33.6781	221	1	123	4000	16000	62.6031	19.7685	1.6224	1018000	17	14.6871
+1295.933677661496 SN.node[1000].Communication.Routing      maxLength 2386
+1297.933567153024 SN.node[1000].Communication.Routing      Energy	33.6409	221	1	60	0	16000	62.5551	18.1157	1.3024	818000	21	14.6836
+1300.933401390314 SN.node[1000].Communication.Routing      maxLength 2372.68
+1302.933290881842 SN.node[1000].Communication.Routing      Energy	33.5983	221	1	100	0	16000	62.5069	18.2272	1.376	862000	23	14.6875
+1305.933125119132 SN.node[1000].Communication.Routing      maxLength 2331.92
+1307.93301461066  SN.node[1000].Communication.Routing      Energy	33.557	221	1	327	0	16000	62.4584	18.5038	1.2376	774000	19	14.6908
+1310.93284884795  SN.node[1000].Communication.Routing      maxLength 2375.29
+1312.932738339478 SN.node[1000].Communication.Routing      Energy	33.5105	221	1	229	0	16000	62.4102	18.3156	1.3368	836000	22	14.6888
+1315.932572576768 SN.node[1000].Communication.Routing      maxLength 2327.47
+1317.932462068296 SN.node[1000].Communication.Routing      Energy	33.464	221	1	229	0	16000	62.3615	18.6989	1.0976	690000	22	14.6902
+1320.932296305586 SN.node[1000].Communication.Routing      maxLength 2352.39
+1322.932185797114 SN.node[1000].Communication.Routing      Energy	33.426	221	1	263	0	16000	62.3131	18.4474	0.9328	584000	23	14.6875
+1325.932020034404 SN.node[1000].Communication.Routing      maxLength 2330.42
+1327.931909525932 SN.node[1000].Communication.Routing      Energy	33.3891	221	1	207	0	16000	62.2647	18.5015	1.6184	1012000	21	14.6866
+1330.931743763222 SN.node[1000].Communication.Routing      maxLength 2385.95
+1332.93163325475  SN.node[1000].Communication.Routing      Energy	33.3466	221	1	129	0	16000	62.2167	17.9787	1.1136	698000	29	14.693
+1335.93146749204  SN.node[1000].Communication.Routing      maxLength 2359.51
+1337.931356983568 SN.node[1000].Communication.Routing      Energy	33.3039	221	1	100	0	16000	62.1682	18.5714	1.4752	926000	25	14.6989
+1340.931191220858 SN.node[1000].Communication.Routing      maxLength 2373.57
+1342.931080712386 SN.node[1000].Communication.Routing      Energy	33.2674	221	1	210	0	16000	62.1195	18.7264	1.3776	862000	17	14.6992
+1345.930914949676 SN.node[1000].Communication.Routing      maxLength 2289.22
+1347.930804441204 SN.node[1000].Communication.Routing      Energy	32.5321	899	0	-1	476000	16000	62.0712	18.4283	1.4968	936000	25	14.7022
+1350.930638678494 SN.node[1000].Communication.Routing      maxLength 2384.34
+1352.930528170022 SN.node[1000].Communication.Routing      Energy	32.495	899	1	928	0	16000	62.022	19.2088	1.4688	920000	18	14.707
+1355.930362407312 SN.node[1000].Communication.Routing      maxLength 2367.19
+1357.93025189884  SN.node[1000].Communication.Routing      Energy	32.4473	899	1	843	0	16000	61.9736	18.4118	1.1712	734000	24	14.7122
+1360.93008613613  SN.node[1000].Communication.Routing      maxLength 2379.04
+1362.929975627658 SN.node[1000].Communication.Routing      Energy	32.4041	899	1	887	0	16000	61.925	18.6639	1.1072	696000	16	14.7148
+1365.929809864948 SN.node[1000].Communication.Routing      maxLength 2312.12
+1367.929699356476 SN.node[1000].Communication.Routing      Energy	31.5709	899	0	-1	490000	16000	61.8767	18.3439	1.176	736000	20	14.7173
+1370.929533593766 SN.node[1000].Communication.Routing      maxLength 2363.09
+1372.929423085294 SN.node[1000].Communication.Routing      Energy	31.5293	899	1	726	0	16000	61.8277	19.0654	1.3696	860000	17	14.7191
+1375.929257322584 SN.node[1000].Communication.Routing      maxLength 2390.55
+1377.929146814112 SN.node[1000].Communication.Routing      Energy	31.4861	899	1	887	0	16000	61.7795	18.3017	1.1584	728000	24	14.7224
+1380.928981051402 SN.node[1000].Communication.Routing      maxLength 2363.31
+1382.92887054293  SN.node[1000].Communication.Routing      Energy	31.4494	899	1	902	0	16000	61.7309	18.6306	1.2544	786000	19	14.7298
+1385.92870478022  SN.node[1000].Communication.Routing      maxLength 2259.81
+1387.928594271748 SN.node[1000].Communication.Routing      Energy	31.4069	899	1	865	4000	16000	61.6824	18.5522	1.0944	686000	27	14.7346
+1390.928428509038 SN.node[1000].Communication.Routing      maxLength 2384.36
+1392.928318000566 SN.node[1000].Communication.Routing      Energy	31.3618	899	1	810	4000	16000	61.6334	19.0291	1.1776	738000	27	14.734
+1395.928152237856 SN.node[1000].Communication.Routing      maxLength 2399.13
+1397.928041729384 SN.node[1000].Communication.Routing      Energy	31.3143	899	1	816	6000	16000	61.5856	17.852	1.1096	694000	23	14.7402
+1400.927875966674 SN.node[1000].Communication.Routing      maxLength 2399.6
+1402.927765458202 SN.node[1000].Communication.Routing      Energy	31.2683	899	1	731	0	16000	61.5373	18.3633	1.0992	688000	30	14.7426
+1405.927599695492 SN.node[1000].Communication.Routing      maxLength 2302.06
+1407.92748918702  SN.node[1000].Communication.Routing      Energy	31.1978	899	1	776	18000	16000	61.4886	18.7676	1.4392	900000	25	14.7462
+1410.92732342431  SN.node[1000].Communication.Routing      maxLength 2379.11
+1412.927212915838 SN.node[1000].Communication.Routing      Energy	31.1589	899	1	837	0	16000	61.4397	18.9167	1.4352	898000	21	14.7545
+1415.927047153128 SN.node[1000].Communication.Routing      maxLength 2355.13
+1417.926936644656 SN.node[1000].Communication.Routing      Energy	31.0876	899	1	771	18000	16000	61.3916	18.2054	1.216	762000	20	14.7519
+1420.926770881946 SN.node[1000].Communication.Routing      maxLength 2384.72
+1422.926660373474 SN.node[1000].Communication.Routing      Energy	31.0499	899	1	923	0	16000	61.3425	19.1321	1.44	902000	14	14.7556
+1425.926494610764 SN.node[1000].Communication.Routing      maxLength 2314.25
+1427.926384102292 SN.node[1000].Communication.Routing      Energy	31.0108	899	1	965	0	16000	61.2932	19.3203	1.2688	794000	21	14.758
+1430.926218339582 SN.node[1000].Communication.Routing      maxLength 2386.18
+1432.92610783111  SN.node[1000].Communication.Routing      Energy	30.97	899	1	834	0	16000	61.2448	18.4634	1.1008	692000	28	14.7598
+1435.9259420684   SN.node[1000].Communication.Routing      maxLength 2398.88
+1437.925831559928 SN.node[1000].Communication.Routing      Energy	30.9289	899	1	839	2000	16000	61.1959	18.9504	1.0224	640000	21	14.7595
+1440.925665797218 SN.node[1000].Communication.Routing      maxLength 2322.46
+1442.925555288746 SN.node[1000].Communication.Routing      Energy	30.8912	899	1	977	0	16000	61.1468	19.1694	1.3792	866000	19	14.7633
+1445.925389526036 SN.node[1000].Communication.Routing      maxLength 2367.95
+1447.925279017564 SN.node[1000].Communication.Routing      Energy	30.8479	899	1	815	0	16000	61.0985	18.3623	1.0936	684000	18	14.7598
+1450.925113254854 SN.node[1000].Communication.Routing      maxLength 2372.47
+1452.925002746382 SN.node[1000].Communication.Routing      Energy	30.8102	899	1	858	0	16000	61.0497	18.82	1.7088	1072000	18	14.7596
+1455.924836983672 SN.node[1000].Communication.Routing      maxLength 2339.96
+1457.9247264752   SN.node[1000].Communication.Routing      Energy	30.7727	899	1	938	0	16000	61.0012	18.5074	1.1632	728000	18	14.7593
+1460.92456071249  SN.node[1000].Communication.Routing      maxLength 2391.85
+1462.924450204018 SN.node[1000].Communication.Routing      Energy	30.7297	899	1	987	0	16000	60.9532	18.0913	1.4064	880000	22	14.7622
+1465.924284441308 SN.node[1000].Communication.Routing      maxLength 2389.79
+1467.924173932836 SN.node[1000].Communication.Routing      Energy	30.6813	899	1	761	0	16000	60.9044	18.8967	1.5488	972000	20	14.7649
+1470.924008170126 SN.node[1000].Communication.Routing      maxLength 2386.6
+1472.923897661654 SN.node[1000].Communication.Routing      Energy	30.6402	899	1	839	2000	16000	60.8557	18.6542	1.2608	792000	25	14.7639
+1475.923731898944 SN.node[1000].Communication.Routing      maxLength 2372.95
+1477.923621390472 SN.node[1000].Communication.Routing      Energy	30.5996	899	1	896	0	16000	60.8063	19.4834	1.7184	1078000	27	14.7686
+1480.923455627762 SN.node[1000].Communication.Routing      maxLength 2365.55
+1482.92334511929  SN.node[1000].Communication.Routing      Energy	30.561	899	1	936	0	16000	60.7585	17.825	1.1024	690000	23	14.7704
+1485.92317935658  SN.node[1000].Communication.Routing      maxLength 2385.46
+1487.923068848108 SN.node[1000].Communication.Routing      Energy	30.5159	899	1	811	4000	16000	60.7096	18.9644	1.5872	996000	20	14.7755
+1490.922903085398 SN.node[1000].Communication.Routing      maxLength 2375.57
+1492.922792576926 SN.node[1000].Communication.Routing      Energy	30.4734	899	1	865	4000	16000	60.6608	18.833	1.4704	920000	22	14.7783
+1495.922626814216 SN.node[1000].Communication.Routing      maxLength 2369.52
+1497.922516305744 SN.node[1000].Communication.Routing      Energy	30.4353	899	1	948	0	16000	60.6131	17.8092	1.0528	660000	22	14.7797
+1500.922350543034 SN.node[1000].Communication.Routing      maxLength 2372.29
+1502.922240034562 SN.node[1000].Communication.Routing      Energy	30.3978	899	1	938	0	16000	60.5647	18.3844	1.1096	694000	26	14.784
+1505.922074271852 SN.node[1000].Communication.Routing      maxLength 2388.65
+1507.92196376338  SN.node[1000].Communication.Routing      Energy	30.3597	899	1	948	0	16000	60.5165	18.2584	1.1296	710000	19	14.7824
+1510.92179800067  SN.node[1000].Communication.Routing      maxLength 2375.21
+1512.921687492198 SN.node[1000].Communication.Routing      Energy	30.3146	899	1	811	4000	16000	60.4675	19.0811	1.5872	996000	19	14.7844
+1515.921521729488 SN.node[1000].Communication.Routing      maxLength 2342.17
+1517.921411221016 SN.node[1000].Communication.Routing      Energy	30.276	899	1	947	0	16000	60.4189	18.653	1.872	1172000	20	14.7872
+1520.921245458306 SN.node[1000].Communication.Routing      maxLength 2379.15
+1522.921134949834 SN.node[1000].Communication.Routing      Energy	30.2337	899	1	796	0	16000	60.3704	18.5721	0.8944	560000	24	14.7839
+1525.920969187124 SN.node[1000].Communication.Routing      maxLength 2392.24
+1527.920858678652 SN.node[1000].Communication.Routing      Energy	30.1876	899	1	947	8000	16000	60.322	18.4542	1.1408	714000	20	14.7839
+1530.920692915942 SN.node[1000].Communication.Routing      maxLength 2390.7
+1532.92058240747  SN.node[1000].Communication.Routing      Energy	30.1279	899	1	805	16000	16000	60.2741	17.9198	1.2544	786000	22	14.7834
+1535.92041664476  SN.node[1000].Communication.Routing      maxLength 2354.91
+1537.920306136288 SN.node[1000].Communication.Routing      Energy	30.089	899	1	837	0	16000	60.2256	18.5218	1.2736	798000	27	14.7839
+1540.920140373578 SN.node[1000].Communication.Routing      maxLength 2351.35
+1542.920029865106 SN.node[1000].Communication.Routing      Energy	30.0467	899	1	788	0	16000	60.1766	19.0952	1.9032	1190000	24	14.7831
+1545.919864102396 SN.node[1000].Communication.Routing      maxLength 2351.58
+1547.919753593924 SN.node[1000].Communication.Routing      Energy	30.0094	899	1	749	0	16000	60.1272	19.4589	1.28	802000	27	14.7812
+1550.919587831214 SN.node[1000].Communication.Routing      maxLength 2391.78
+1552.919477322742 SN.node[1000].Communication.Routing      Energy	29.9497	899	1	805	16000	16000	60.0792	18.066	1.0208	640000	22	14.7826
+1555.919311560032 SN.node[1000].Communication.Routing      maxLength 2378.81
+1557.91920105156  SN.node[1000].Communication.Routing      Energy	29.908	899	1	863	0	16000	60.0314	17.8471	1.0624	666000	25	14.7855
+1560.91903528885  SN.node[1000].Communication.Routing      maxLength 2394
+1562.918924780378 SN.node[1000].Communication.Routing      Energy	29.8655	899	1	865	4000	16000	59.9834	18.0669	1.1952	748000	26	14.7863
+1565.918759017668 SN.node[1000].Communication.Routing      maxLength 2280.26
+1567.918648509196 SN.node[1000].Communication.Routing      Energy	29.8213	899	1	910	0	16000	59.9336	19.7832	1.584	994000	13	14.7812
+1570.918482746486 SN.node[1000].Communication.Routing      maxLength 2378.1
+1572.918372238014 SN.node[1000].Communication.Routing      Energy	29.7845	899	1	902	0	16000	59.885	18.6538	1.2352	774000	20	14.7841
+1575.918206475304 SN.node[1000].Communication.Routing      maxLength 2323.24
+1577.918095966832 SN.node[1000].Communication.Routing      Energy	29.7437	899	1	862	0	16000	59.8368	18.2658	1.2504	782000	29	14.7781
+1580.917930204122 SN.node[1000].Communication.Routing      maxLength 2381.15
+1582.91781969565  SN.node[1000].Communication.Routing      Energy	29.6987	899	1	810	4000	16000	59.7885	18.3211	1.2224	766000	23	14.7774
+1585.91765393294  SN.node[1000].Communication.Routing      maxLength 2385.72
+1587.917543424468 SN.node[1000].Communication.Routing      Energy	29.647	899	1	697	8000	16000	59.74	18.5857	1.2272	768000	22	14.7795
+1590.917377661758 SN.node[1000].Communication.Routing      maxLength 2323.98
+1592.917267153286 SN.node[1000].Communication.Routing      Energy	29.6098	899	1	833	0	16000	59.6913	18.7718	1.1072	696000	22	14.7796
+1595.917101390576 SN.node[1000].Communication.Routing      maxLength 2312.15
+1597.916990882104 SN.node[1000].Communication.Routing      Energy	29.5607	899	1	986	8000	16000	59.6422	19.1161	1.2672	796000	15	14.7868
+1600.916825119394 SN.node[1000].Communication.Routing      maxLength 2392.31
+1602.916714610922 SN.node[1000].Communication.Routing      Energy	29.5216	899	1	965	0	16000	59.5927	19.602	1.7944	1122000	18	14.7856
+1605.916548848212 SN.node[1000].Communication.Routing      maxLength 2323.72
+1607.91643833974  SN.node[1000].Communication.Routing      Energy	29.4755	899	1	731	0	16000	59.5434	19.3263	1.9032	1190000	15	14.7908
+1610.91627257703  SN.node[1000].Communication.Routing      maxLength 2391.94
+1612.916162068558 SN.node[1000].Communication.Routing      Energy	29.4178	899	1	885	24000	16000	59.4955	17.9816	1.4784	928000	18	14.7903
+1615.915996305848 SN.node[1000].Communication.Routing      maxLength 2394.45
+1617.915885797376 SN.node[1000].Communication.Routing      Energy	29.3791	899	1	879	0	16000	59.4477	17.7515	0.8816	552000	24	14.7908
+1620.915720034666 SN.node[1000].Communication.Routing      maxLength 2391.95
+1622.915609526194 SN.node[1000].Communication.Routing      Energy	29.3365	899	1	999	0	16000	59.3985	19.299	1.3536	850000	24	14.7898
+1625.915443763484 SN.node[1000].Communication.Routing      maxLength 2375.32
+1627.915333255012 SN.node[1000].Communication.Routing      Energy	29.2491	899	1	778	32000	16000	59.3494	19.1246	1.1256	704000	21	14.7899
+1630.915167492302 SN.node[1000].Communication.Routing      maxLength 2383.62
+1632.91505698383  SN.node[1000].Communication.Routing      Energy	29.2075	899	1	706	0	16000	59.3013	18.1539	1.016	636000	30	14.7891
+1635.91489122112  SN.node[1000].Communication.Routing      maxLength 2387.9
+1637.914780712648 SN.node[1000].Communication.Routing      Energy	29.1571	899	1	680	2000	16000	59.2522	19.2135	1.5904	996000	23	14.7911
+1640.914614949938 SN.node[1000].Communication.Routing      maxLength 2398.9
+1642.914504441466 SN.node[1000].Communication.Routing      Energy	29.1131	899	1	871	0	16000	59.203	19.2276	1.48	926000	29	14.7928
+1645.914338678756 SN.node[1000].Communication.Routing      maxLength 2339.29
+1647.914228170284 SN.node[1000].Communication.Routing      Energy	29.068	899	1	810	4000	16000	59.153	20.0665	1.676	1048000	18	14.7962
+1650.914062407574 SN.node[1000].Communication.Routing      maxLength 2347.69
+1652.913951899102 SN.node[1000].Communication.Routing      Energy	29.0272	899	1	880	0	16000	59.105	17.9716	1.1648	730000	31	14.7963
+1655.913786136392 SN.node[1000].Communication.Routing      maxLength 2371.32
+1657.91367562792  SN.node[1000].Communication.Routing      Energy	28.9871	899	1	851	0	16000	59.0561	18.9826	1.596	998000	16	14.7977
+1660.91350986521  SN.node[1000].Communication.Routing      maxLength 2354.84
+1662.913399356738 SN.node[1000].Communication.Routing      Energy	28.9504	899	1	902	0	16000	59.0076	18.5244	1.4624	916000	25	14.7984
+1665.913233594028 SN.node[1000].Communication.Routing      maxLength 2346.37
+1667.913123085556 SN.node[1000].Communication.Routing      Energy	28.9102	899	1	733	0	16000	58.9595	18.2208	1.4128	884000	21	14.7938
+1670.912957322846 SN.node[1000].Communication.Routing      maxLength 2309.21
+1672.912846814374 SN.node[1000].Communication.Routing      Energy	28.836	899	1	767	18000	16000	58.9111	18.4117	1.3632	856000	21	14.7963
+1675.912681051664 SN.node[1000].Communication.Routing      maxLength 2364.78
+1677.912570543192 SN.node[1000].Communication.Routing      Energy	28.7898	899	1	892	0	16000	58.8628	18.371	1.2384	778000	23	14.7989
+1680.912404780482 SN.node[1000].Communication.Routing      maxLength 2398.14
+1682.91229427201  SN.node[1000].Communication.Routing      Energy	28.7506	899	1	831	0	16000	58.8142	18.6386	1.0432	654000	26	14.7997
+1685.9121285093   SN.node[1000].Communication.Routing      maxLength 2360.76
+1687.912018000828 SN.node[1000].Communication.Routing      Energy	28.7098	899	1	827	0	16000	58.7658	18.4934	1.0656	670000	20	14.8032
+1690.911852238118 SN.node[1000].Communication.Routing      maxLength 2307.67
+1692.911741729646 SN.node[1000].Communication.Routing      Energy	28.6674	899	1	793	0	16000	58.7174	18.42	1.0272	644000	21	14.804
+1695.911575966936 SN.node[1000].Communication.Routing      maxLength 2346.39
+1697.911465458464 SN.node[1000].Communication.Routing      Energy	28.6127	899	1	996	12000	16000	58.6679	19.5295	1.6192	1016000	18	14.809
+1700.911299695754 SN.node[1000].Communication.Routing      maxLength 2393.61
+1702.911189187282 SN.node[1000].Communication.Routing      Energy	28.5241	899	1	761	26000	16000	58.6198	18.1507	1.1704	732000	24	14.8115
+1705.911023424572 SN.node[1000].Communication.Routing      maxLength 2374.11
+1707.9109129161   SN.node[1000].Communication.Routing      Energy	28.4864	899	1	923	0	16000	58.5713	18.5948	1.2888	806000	19	14.8152
+1710.91074715339  SN.node[1000].Communication.Routing      maxLength 2365.16
+1712.910636644918 SN.node[1000].Communication.Routing      Energy	28.4367	899	1	919	16000	16000	58.5231	18.1822	1.3792	864000	22	14.8148
+1715.910470882208 SN.node[1000].Communication.Routing      maxLength 2383.87
+1717.910360373736 SN.node[1000].Communication.Routing      Energy	28.3654	899	1	771	18000	16000	58.4743	18.9197	1.36	854000	17	14.8183
+1720.910194611026 SN.node[1000].Communication.Routing      maxLength 2343.27
+1722.910084102554 SN.node[1000].Communication.Routing      Energy	28.317	899	1	761	0	16000	58.4255	18.8361	1.6896	1058000	23	14.8207
+1725.909918339844 SN.node[1000].Communication.Routing      maxLength 2255.72
+1727.909807831372 SN.node[1000].Communication.Routing      Energy	28.2747	899	1	788	0	16000	58.377	18.498	1.4648	916000	23	14.8247
+1730.909642068662 SN.node[1000].Communication.Routing      maxLength 2387.88
+1732.90953156019  SN.node[1000].Communication.Routing      Energy	28.2355	899	1	965	0	16000	58.3283	18.7299	1.3856	868000	24	14.8226
+1735.90936579748  SN.node[1000].Communication.Routing      maxLength 2358.16
+1737.909255289008 SN.node[1000].Communication.Routing      Energy	28.1761	899	1	758	8000	16000	58.2801	18.3424	1.0832	678000	22	14.8228
+1740.909089526298 SN.node[1000].Communication.Routing      maxLength 2363.23
+1742.908979017826 SN.node[1000].Communication.Routing      Energy	28.139	899	1	926	0	16000	58.2321	18.0206	1.2928	812000	19	14.8217
+1745.908813255116 SN.node[1000].Communication.Routing      maxLength 2389.4
+1747.908702746644 SN.node[1000].Communication.Routing      Energy	28.1004	899	1	947	0	16000	58.1832	18.9437	1.3264	830000	24	14.8235
+1750.908536983934 SN.node[1000].Communication.Routing      maxLength 2372.9
+1752.908426475462 SN.node[1000].Communication.Routing      Energy	28.0629	899	1	938	0	16000	58.1349	18.3756	1.4072	880000	27	14.8247
+1755.908260712752 SN.node[1000].Communication.Routing      maxLength 2320.25
+1757.90815020428  SN.node[1000].Communication.Routing      Energy	28.0252	899	1	923	0	16000	58.0862	18.7646	1.6496	1032000	19	14.8236
+1760.90798444157  SN.node[1000].Communication.Routing      maxLength 2342.35
+1762.907873933098 SN.node[1000].Communication.Routing      Energy	27.981	899	1	913	0	16000	58.0381	18.1151	1.1448	716000	26	14.8253
+1765.907708170388 SN.node[1000].Communication.Routing      maxLength 2388.88
+1767.907597661916 SN.node[1000].Communication.Routing      Energy	27.9425	899	1	936	0	16000	57.9893	18.8627	1.7696	1108000	24	14.8255
+1770.907431899206 SN.node[1000].Communication.Routing      maxLength 2258.34
+1772.907321390734 SN.node[1000].Communication.Routing      Energy	27.9056	899	1	904	0	16000	57.941	18.346	1.2512	786000	19	14.8231
+1775.907155628024 SN.node[1000].Communication.Routing      maxLength 2385.41
+1777.907045119552 SN.node[1000].Communication.Routing      Energy	27.865	899	1	897	0	16000	57.8918	19.2572	1.1408	714000	23	14.822
+1780.906879356842 SN.node[1000].Communication.Routing      maxLength 2397.4
+1782.90676884837  SN.node[1000].Communication.Routing      Energy	27.8259	899	1	831	0	16000	57.8433	18.5524	1.2512	786000	21	14.8242
+1785.90660308566  SN.node[1000].Communication.Routing      maxLength 2326.6
+1787.906492577188 SN.node[1000].Communication.Routing      Energy	27.7803	899	1	943	0	16000	57.795	18.3126	1.4016	878000	22	14.8308
+1790.906326814478 SN.node[1000].Communication.Routing      maxLength 2383.17
+1792.906216306006 SN.node[1000].Communication.Routing      Energy	27.743	899	1	885	0	16000	57.7456	19.5017	1.6208	1014000	19	14.8281
+1795.906050543296 SN.node[1000].Communication.Routing      maxLength 2393.51
+1797.905940034824 SN.node[1000].Communication.Routing      Energy	27.666	899	1	838	20000	16000	57.6975	18.0933	0.86	538000	26	14.8308
+1800.905774272114 SN.node[1000].Communication.Routing      maxLength 2346.85
+1802.905663763642 SN.node[1000].Communication.Routing      Energy	27.6271	899	1	696	0	16000	57.6485	19.0368	1.392	874000	19	14.8255
+1805.905498000932 SN.node[1000].Communication.Routing      maxLength 2386.02
+1807.90538749246  SN.node[1000].Communication.Routing      Energy	27.5894	899	1	858	0	16000	57.5999	18.7107	0.9528	596000	22	14.8265
+1810.90522172975  SN.node[1000].Communication.Routing      maxLength 2349.48
+1812.905111221278 SN.node[1000].Communication.Routing      Energy	27.5071	899	1	887	32000	16000	57.5505	19.4434	1.5584	976000	18	14.8289
+1815.904945458568 SN.node[1000].Communication.Routing      maxLength 2385.6
+1817.904834950096 SN.node[1000].Communication.Routing      Energy	27.461	899	1	947	8000	16000	57.5011	19.4355	1.7264	1080000	19	14.8263
+1820.904669187386 SN.node[1000].Communication.Routing      maxLength 2368.7
+1822.904558678914 SN.node[1000].Communication.Routing      Energy	27.4133	899	1	864	0	16000	57.4525	18.6618	1.1248	704000	21	14.8274
+1825.904392916204 SN.node[1000].Communication.Routing      maxLength 2366.72
+1827.904282407732 SN.node[1000].Communication.Routing      Energy	27.3756	899	1	858	0	16000	57.4041	18.4541	1.2536	784000	21	14.8302
+1830.904116645022 SN.node[1000].Communication.Routing      maxLength 2399.88
+1832.90400613655  SN.node[1000].Communication.Routing      Energy	26.6788	780	0	-1	660000	8000	57.3555	18.6247	1.208	756000	25	14.829
+1835.90384037384  SN.node[1000].Communication.Routing      maxLength 2356.17
+1837.903729865368 SN.node[1000].Communication.Routing      Energy	26.6418	780	1	962	0	8000	57.3073	18.2855	1.248	782000	23	14.8339
+1840.903564102658 SN.node[1000].Communication.Routing      maxLength 2299.32
+1842.903453594186 SN.node[1000].Communication.Routing      Energy	26.6066	780	1	724	0	8000	57.2581	19.1648	1.4768	924000	21	14.8332
+1845.903287831476 SN.node[1000].Communication.Routing      maxLength 2386.82
+1847.903177323004 SN.node[1000].Communication.Routing      Energy	26.5704	780	1	867	0	8000	57.2093	18.9079	1.0232	640000	19	14.8348
+1850.903011560294 SN.node[1000].Communication.Routing      maxLength 2375.28
+1852.902901051822 SN.node[1000].Communication.Routing      Energy	26.534	780	1	764	0	8000	57.1605	18.8754	1.6096	1008000	17	14.8339
+1855.902735289112 SN.node[1000].Communication.Routing      maxLength 2379.81
+1857.90262478064  SN.node[1000].Communication.Routing      Energy	26.4999	780	1	717	0	8000	57.1125	18.0301	1.0464	658000	25	14.8383
+1860.90245901793  SN.node[1000].Communication.Routing      maxLength 2377.95
+1862.902348509458 SN.node[1000].Communication.Routing      Energy	26.4607	780	1	699	2000	8000	57.0634	19.1057	1.2352	774000	28	14.8368
+1865.902182746748 SN.node[1000].Communication.Routing      maxLength 2320.31
+1867.902072238276 SN.node[1000].Communication.Routing      Energy	26.3982	780	1	840	26000	8000	57.0149	18.5749	1.052	658000	22	14.8426
+1870.901906475566 SN.node[1000].Communication.Routing      maxLength 2351.78
+1872.901795967094 SN.node[1000].Communication.Routing      Energy	25.6514	780	0	-1	442000	8000	56.9662	18.7817	1.144	716000	31	14.8429
+1875.901630204384 SN.node[1000].Communication.Routing      maxLength 2387.43
+1877.901519695912 SN.node[1000].Communication.Routing      Energy	25.6148	780	1	760	0	8000	56.9174	18.7864	1.3472	844000	27	14.8447
+1880.901353933202 SN.node[1000].Communication.Routing      maxLength 2336.07
+1882.90124342473  SN.node[1000].Communication.Routing      Energy	25.577	780	1	588	0	8000	56.8688	18.7097	0.8816	552000	28	14.848
+1885.90107766202  SN.node[1000].Communication.Routing      maxLength 2355.62
+1887.900967153548 SN.node[1000].Communication.Routing      Energy	25.5413	780	1	925	0	8000	56.82	18.7932	1.3616	852000	16	14.8495
+1890.900801390838 SN.node[1000].Communication.Routing      maxLength 2339.9
+1892.900690882366 SN.node[1000].Communication.Routing      Energy	25.5061	780	1	840	0	8000	56.7721	17.9974	0.8976	562000	22	14.85
+1895.900525119656 SN.node[1000].Communication.Routing      maxLength 2389.99
+1897.900414611184 SN.node[1000].Communication.Routing      Energy	25.4695	780	1	760	0	8000	56.724	18.136	1.0384	650000	24	14.8516
+1900.900248848474 SN.node[1000].Communication.Routing      maxLength 2390.09
+1902.900138340002 SN.node[1000].Communication.Routing      Energy	25.4333	780	1	808	0	8000	56.6747	19.354	1.596	998000	29	14.8558
+1905.899972577292 SN.node[1000].Communication.Routing      maxLength 2389.69
+1907.89986206882  SN.node[1000].Communication.Routing      Energy	25.399	780	1	846	0	8000	56.6261	18.6841	1.152	722000	22	14.8552
+1910.89969630611  SN.node[1000].Communication.Routing      maxLength 2338.21
+1912.899585797638 SN.node[1000].Communication.Routing      Energy	25.361	780	1	632	0	8000	56.5774	18.7532	1.2056	754000	18	14.8592
+1915.899420034928 SN.node[1000].Communication.Routing      maxLength 2385.8
+1917.899309526456 SN.node[1000].Communication.Routing      Energy	25.3268	780	1	618	0	8000	56.5284	19.0493	1.4232	890000	22	14.8612
+1920.899143763746 SN.node[1000].Communication.Routing      maxLength 2385.18
+1922.899033255274 SN.node[1000].Communication.Routing      Energy	25.2913	780	1	809	0	8000	56.4799	18.4693	0.956	598000	27	14.8684
+1925.898867492564 SN.node[1000].Communication.Routing      maxLength 2392.1
+1927.898756984092 SN.node[1000].Communication.Routing      Energy	25.258	780	1	779	0	8000	56.4306	19.3728	1.2224	768000	22	14.8748
+1930.898591221382 SN.node[1000].Communication.Routing      maxLength 2331.63
+1932.89848071291  SN.node[1000].Communication.Routing      Energy	25.2204	780	1	647	0	8000	56.3821	18.5369	1.3024	818000	16	14.8751
+1935.8983149502   SN.node[1000].Communication.Routing      maxLength 2374.25
+1937.898204441728 SN.node[1000].Communication.Routing      Energy	25.1581	780	1	742	34000	8000	56.3323	19.8492	1.7728	1112000	20	14.8747
+1940.898038679018 SN.node[1000].Communication.Routing      maxLength 2375
+1942.897928170546 SN.node[1000].Communication.Routing      Energy	25.1215	780	1	760	0	8000	56.2833	19.0614	1.1136	700000	21	14.8797
+1945.897762407836 SN.node[1000].Communication.Routing      maxLength 2196.1
+1947.897651899364 SN.node[1000].Communication.Routing      Energy	24.0707	780	0	-1	632000	8000	56.2344	19.0038	1.1424	716000	17	14.8755
+1950.897486136654 SN.node[1000].Communication.Routing      maxLength 2365.07
+1952.897375628182 SN.node[1000].Communication.Routing      Energy	24.034	780	1	646	0	8000	56.1855	18.9486	1.0712	670000	26	14.874
+1955.897209865472 SN.node[1000].Communication.Routing      maxLength 2387.89
+1957.897099357    SN.node[1000].Communication.Routing      Energy	23.9988	780	1	724	0	8000	56.1373	18.2402	1.056	662000	24	14.8768
+1960.89693359429  SN.node[1000].Communication.Routing      maxLength 2389.22
+1962.896823085818 SN.node[1000].Communication.Routing      Energy	23.9635	780	1	874	0	8000	56.0892	18.1228	0.9368	586000	33	14.8803
+1965.896657323108 SN.node[1000].Communication.Routing      maxLength 2380.74
+1967.896546814636 SN.node[1000].Communication.Routing      Energy	23.9196	780	1	574	4000	8000	56.04	19.2404	1.0992	688000	26	14.8818
+1970.896381051926 SN.node[1000].Communication.Routing      maxLength 2397.38
+1972.896270543454 SN.node[1000].Communication.Routing      Energy	23.8864	780	1	773	0	8000	55.9917	18.4116	1.4168	886000	25	14.8791
+1975.896104780744 SN.node[1000].Communication.Routing      maxLength 2376.95
+1977.895994272272 SN.node[1000].Communication.Routing      Energy	23.7728	780	1	709	76000	8000	55.9434	18.3445	1.0552	660000	26	14.8871
+1980.895828509562 SN.node[1000].Communication.Routing      maxLength 2365.88
+1982.89571800109  SN.node[1000].Communication.Routing      Energy	23.6592	780	1	709	76000	8000	55.8937	19.7044	1.6696	1044000	18	14.8917
+1985.89555223838  SN.node[1000].Communication.Routing      maxLength 2364.03
+1987.895441729908 SN.node[1000].Communication.Routing      Energy	23.625	780	1	717	0	8000	55.8449	18.9054	1.76	1102000	22	14.8904
+1990.895275967198 SN.node[1000].Communication.Routing      maxLength 2325.14
+1992.895165458726 SN.node[1000].Communication.Routing      Energy	23.5114	780	1	709	76000	8000	55.7973	17.5852	1.0424	652000	29	14.8952
+1995.894999696016 SN.node[1000].Communication.Routing      maxLength 2389.34
+1997.894889187544 SN.node[1000].Communication.Routing      Energy	23.4779	780	1	782	0	8000	55.7494	18.0104	1.248	784000	26	14.9002
+2000.894723424834 SN.node[1000].Communication.Routing      maxLength 2393.31
+2002.894612916362 SN.node[1000].Communication.Routing      Energy	23.4133	780	1	840	28000	8000	55.7006	18.86	1.4752	924000	22	14.9007
+2005.894447153652 SN.node[1000].Communication.Routing      maxLength 2388.98
+2007.89433664518  SN.node[1000].Communication.Routing      Energy	23.3797	780	1	742	0	8000	55.6523	18.2904	1.0464	656000	27	14.9034
+2010.89417088247  SN.node[1000].Communication.Routing      maxLength 2393.61
+2012.894060373998 SN.node[1000].Communication.Routing      Energy	23.3436	780	1	884	0	8000	55.603	19.3878	1.3472	846000	23	14.9054
+2015.893894611288 SN.node[1000].Communication.Routing      maxLength 2318.85
+2017.893784102816 SN.node[1000].Communication.Routing      Energy	23.3076	780	1	781	0	8000	55.5539	19.1233	1.2928	812000	24	14.9048
+2020.893618340106 SN.node[1000].Communication.Routing      maxLength 2390.12
+2022.893507831634 SN.node[1000].Communication.Routing      Energy	23.2742	780	1	804	0	8000	55.5049	19.0565	1.2368	774000	19	14.9094
+2025.893342068924 SN.node[1000].Communication.Routing      maxLength 2354.52
+2027.893231560452 SN.node[1000].Communication.Routing      Energy	23.1606	780	1	709	76000	8000	55.4567	18.227	1.0112	634000	27	14.9102
+2030.893065797742 SN.node[1000].Communication.Routing      maxLength 2394.31
+2032.89295528927  SN.node[1000].Communication.Routing      Energy	23.1262	780	1	721	0	8000	55.4086	18.1914	1.1408	714000	23	14.9065
+2035.89278952656  SN.node[1000].Communication.Routing      maxLength 2399.97
+2037.892679018088 SN.node[1000].Communication.Routing      Energy	23.0919	780	1	846	0	8000	55.3604	18.2241	1.2512	784000	27	14.9086
+2040.892513255378 SN.node[1000].Communication.Routing      maxLength 2354.31
+2042.892402746906 SN.node[1000].Communication.Routing      Energy	23.0498	780	1	732	10000	8000	55.3121	18.3895	1.36	854000	22	14.9144
+2045.892236984196 SN.node[1000].Communication.Routing      maxLength 2392.73
+2047.892126475724 SN.node[1000].Communication.Routing      Energy	23.0151	780	1	845	0	8000	55.2632	18.9299	1.2792	800000	21	14.9169
+2050.891960713014 SN.node[1000].Communication.Routing      maxLength 2345.37
+2052.891850204542 SN.node[1000].Communication.Routing      Energy	22.9793	780	1	881	0	8000	55.2141	19.1277	1.052	658000	19	14.9194
+2055.891684441832 SN.node[1000].Communication.Routing      maxLength 2374.05
+2057.89157393336  SN.node[1000].Communication.Routing      Energy	22.9437	780	1	855	0	8000	55.1653	18.848	1.8496	1158000	22	14.924
+2060.89140817065  SN.node[1000].Communication.Routing      maxLength 2370.8
+2062.891297662178 SN.node[1000].Communication.Routing      Energy	22.9077	780	1	716	0	8000	55.1165	18.842	1.1056	692000	21	14.9287
+2065.891131899468 SN.node[1000].Communication.Routing      maxLength 2341.38
+2067.891021390996 SN.node[1000].Communication.Routing      Energy	22.8725	780	1	922	0	8000	55.067	19.5424	1.2272	768000	21	14.9297
+2070.890855628286 SN.node[1000].Communication.Routing      maxLength 2382.64
+2072.890745119814 SN.node[1000].Communication.Routing      Energy	22.8362	780	1	799	0	8000	55.0191	17.9633	1.0872	680000	29	14.9275
+2075.890579357104 SN.node[1000].Communication.Routing      maxLength 2396.76
+2077.890468848632 SN.node[1000].Communication.Routing      Energy	22.7994	780	1	748	0	8000	54.9717	17.4864	0.7136	448000	29	14.9284
+2080.890303085922 SN.node[1000].Communication.Routing      maxLength 2386.48
+2082.89019257745  SN.node[1000].Communication.Routing      Energy	22.7632	780	1	799	0	8000	54.9232	18.5765	1.6608	1040000	20	14.9328
+2085.89002681474  SN.node[1000].Communication.Routing      maxLength 2399.52
+2087.889916306268 SN.node[1000].Communication.Routing      Energy	22.6992	780	1	644	16000	8000	54.874	19.1798	1.4128	884000	17	14.9309
+2090.889750543558 SN.node[1000].Communication.Routing      maxLength 2311.72
+2092.889640035086 SN.node[1000].Communication.Routing      Energy	22.6624	780	1	699	0	8000	54.8257	18.3338	1.2504	782000	22	14.9331
+2095.889474272376 SN.node[1000].Communication.Routing      maxLength 2312.84
+2097.889363763904 SN.node[1000].Communication.Routing      Energy	22.6288	780	1	736	0	8000	54.7773	18.5236	1.2864	808000	28	14.9328
+2100.889198001194 SN.node[1000].Communication.Routing      maxLength 2340.04
+2102.889087492722 SN.node[1000].Communication.Routing      Energy	22.5947	780	1	717	0	8000	54.7289	18.4279	1.1224	702000	26	14.9326
+2105.888921730012 SN.node[1000].Communication.Routing      maxLength 2303.95
+2107.88881122154  SN.node[1000].Communication.Routing      Energy	22.5583	780	1	763	0	8000	54.6801	18.7958	2.256	1412000	28	14.9386
+2110.88864545883  SN.node[1000].Communication.Routing      maxLength 2342.93
+2112.888534950358 SN.node[1000].Communication.Routing      Energy	22.5251	780	1	774	0	8000	54.6319	18.2849	1.196	748000	20	14.9357
+2115.888369187648 SN.node[1000].Communication.Routing      maxLength 2281.22
+2117.888258679176 SN.node[1000].Communication.Routing      Energy	22.4891	780	1	783	0	8000	54.5826	19.3115	1.2656	792000	21	14.9399
+2120.888092916466 SN.node[1000].Communication.Routing      maxLength 2391.39
+2122.887982407994 SN.node[1000].Communication.Routing      Energy	22.4533	780	1	916	0	8000	54.5344	18.3142	1.0336	650000	23	14.9463
+2125.887816645284 SN.node[1000].Communication.Routing      maxLength 2371.45
+2127.887706136812 SN.node[1000].Communication.Routing      Energy	22.3891	780	1	855	26000	8000	54.4863	18.1788	0.968	606000	23	14.9479
+2130.887540374102 SN.node[1000].Communication.Routing      maxLength 2302.99
+2132.88742986563  SN.node[1000].Communication.Routing      Energy	22.3557	780	1	779	0	8000	54.4383	18.0207	1.0336	648000	29	14.9492
+2135.88726410292  SN.node[1000].Communication.Routing      maxLength 2386.75
+2137.887153594448 SN.node[1000].Communication.Routing      Energy	22.3192	780	1	760	0	8000	54.3899	18.4679	1.3632	856000	22	14.9492
+2140.886987831738 SN.node[1000].Communication.Routing      maxLength 2354.73
+2142.886877323266 SN.node[1000].Communication.Routing      Energy	22.2785	780	1	845	6000	8000	54.341	18.8663	1.0936	684000	23	14.9457
+2145.886711560556 SN.node[1000].Communication.Routing      maxLength 2341.51
+2147.886601052084 SN.node[1000].Communication.Routing      Energy	22.2393	780	1	699	2000	8000	54.2929	18.232	1.1456	718000	26	14.9488
+2150.886435289374 SN.node[1000].Communication.Routing      maxLength 2393.09
+2152.886324780902 SN.node[1000].Communication.Routing      Energy	22.2051	780	1	618	0	8000	54.2441	18.8355	0.9696	610000	23	14.9514
+2155.886159018192 SN.node[1000].Communication.Routing      maxLength 2317.65
+2157.88604850972  SN.node[1000].Communication.Routing      Energy	22.1718	780	1	779	0	8000	54.1957	18.3908	1.16	726000	23	14.9549
+2160.88588274701  SN.node[1000].Communication.Routing      maxLength 2388.89
+2162.885772238538 SN.node[1000].Communication.Routing      Energy	22.1356	780	1	799	0	8000	54.147	18.8038	1.4048	880000	20	14.956
+2165.885606475828 SN.node[1000].Communication.Routing      maxLength 2305.07
+2167.885495967356 SN.node[1000].Communication.Routing      Energy	22.0995	780	1	701	0	8000	54.0985	18.5319	1.2528	784000	18	14.9586
+2170.885330204646 SN.node[1000].Communication.Routing      maxLength 2320.72
+2172.885219696174 SN.node[1000].Communication.Routing      Energy	21.4007	780	0	-1	412000	8000	54.0499	18.6422	1.1136	700000	23	14.9634
+2175.885053933464 SN.node[1000].Communication.Routing      maxLength 2384.05
+2177.884943424992 SN.node[1000].Communication.Routing      Energy	21.3635	780	1	655	0	8000	54.0019	18.0436	1.0704	670000	21	14.9634
+2180.884777662282 SN.node[1000].Communication.Routing      maxLength 2310.1
+2182.88466715381  SN.node[1000].Communication.Routing      Energy	21.3249	780	1	909	0	8000	53.9529	19.0831	1.1968	752000	23	14.9622
+2185.8845013911   SN.node[1000].Communication.Routing      maxLength 2375.3
+2187.884390882628 SN.node[1000].Communication.Routing      Energy	21.2679	780	1	689	12000	8000	53.9036	19.3017	1.424	892000	21	14.9635
+2190.884225119918 SN.node[1000].Communication.Routing      maxLength 2379.09
+2192.884114611446 SN.node[1000].Communication.Routing      Energy	21.2331	780	1	927	0	8000	53.8548	18.84	1.2448	782000	22	14.9642
+2195.883948848736 SN.node[1000].Communication.Routing      maxLength 2356.89
+2197.883838340264 SN.node[1000].Communication.Routing      Energy	21.1782	780	1	867	16000	8000	53.8055	19.3507	1.5128	946000	17	14.9647
+2200.883672577554 SN.node[1000].Communication.Routing      maxLength 2390.73
+2202.883562069082 SN.node[1000].Communication.Routing      Energy	21.0867	780	1	721	60000	8000	53.7567	18.8594	1.0384	650000	28	14.9612
+2205.883396306372 SN.node[1000].Communication.Routing      maxLength 2358.64
+2207.8832857979   SN.node[1000].Communication.Routing      Energy	21.0475	780	1	699	2000	8000	53.7085	18.2644	1.2448	780000	24	14.9571
+2210.88312003519  SN.node[1000].Communication.Routing      maxLength 2371.18
+2212.883009526718 SN.node[1000].Communication.Routing      Energy	20.9829	780	1	840	28000	8000	53.6601	18.5001	1.0224	640000	24	14.9599
+2215.882843764008 SN.node[1000].Communication.Routing      maxLength 2391.68
+2217.882733255536 SN.node[1000].Communication.Routing      Energy	20.9462	780	1	667	0	8000	53.6117	18.4013	1.104	692000	33	14.9659
+2220.882567492826 SN.node[1000].Communication.Routing      maxLength 2390.18
+2222.882456984354 SN.node[1000].Communication.Routing      Energy	20.9086	780	1	645	0	8000	53.5626	19.1531	1.1808	740000	25	14.9641
+2225.882291221644 SN.node[1000].Communication.Routing      maxLength 2387.58
+2227.882180713172 SN.node[1000].Communication.Routing      Energy	20.8725	780	1	867	0	8000	53.5144	18.2747	1.148	718000	19	14.9722
+2230.882014950462 SN.node[1000].Communication.Routing      maxLength 2398.83
+2232.88190444199  SN.node[1000].Communication.Routing      Energy	20.8338	780	1	915	0	8000	53.4652	19.2186	1.0832	678000	22	14.9744
+2235.88173867928  SN.node[1000].Communication.Routing      maxLength 2373.31
+2237.881628170808 SN.node[1000].Communication.Routing      Energy	20.7838	780	1	724	14000	8000	53.4167	18.5353	1.5224	952000	26	14.9777
+2240.881462408098 SN.node[1000].Communication.Routing      maxLength 2391.71
+2242.881351899626 SN.node[1000].Communication.Routing      Energy	20.7232	780	1	614	34000	8000	53.3673	19.4639	1.9448	1216000	22	14.981
+2245.881186136916 SN.node[1000].Communication.Routing      maxLength 2392.55
+2247.881075628444 SN.node[1000].Communication.Routing      Energy	20.6881	780	1	832	0	8000	53.3188	18.555	1.3056	820000	21	14.985
+2250.880909865734 SN.node[1000].Communication.Routing      maxLength 2362.48
+2252.880799357262 SN.node[1000].Communication.Routing      Energy	20.6521	780	1	716	0	8000	53.2698	19.0919	1.1416	714000	20	14.9891
+2255.880633594552 SN.node[1000].Communication.Routing      maxLength 2393.55
+2257.88052308608  SN.node[1000].Communication.Routing      Energy	20.6169	780	1	840	0	8000	53.2212	18.5898	1.0656	668000	23	14.9875
+2260.88035732337  SN.node[1000].Communication.Routing      maxLength 2352.3
+2262.880246814898 SN.node[1000].Communication.Routing      Energy	20.5801	780	1	667	0	8000	53.1723	18.9862	1.6896	1060000	19	14.9919
+2265.880081052188 SN.node[1000].Communication.Routing      maxLength 2358.29
+2267.879970543716 SN.node[1000].Communication.Routing      Energy	20.5415	780	1	915	0	8000	53.1234	18.9291	1.1744	736000	20	14.996
+2270.879804781006 SN.node[1000].Communication.Routing      maxLength 2319.28
+2272.879694272534 SN.node[1000].Communication.Routing      Energy	20.4811	780	1	840	24000	8000	53.0743	19.1945	1.2272	768000	27	14.9972
+2275.879528509824 SN.node[1000].Communication.Routing      maxLength 2384.28
+2277.879418001352 SN.node[1000].Communication.Routing      Energy	20.4451	780	1	684	0	8000	53.0257	18.6799	1.0368	650000	20	14.9967
+2280.879252238642 SN.node[1000].Communication.Routing      maxLength 2388.2
+2282.87914173017  SN.node[1000].Communication.Routing      Energy	20.4073	780	1	750	0	8000	52.9775	18.19	0.8832	554000	27	15.0027
+2285.87897596746  SN.node[1000].Communication.Routing      maxLength 2345.55
+2287.878865458988 SN.node[1000].Communication.Routing      Energy	20.3719	780	1	762	0	8000	52.9287	18.9156	1.0816	678000	24	15.0042
+2290.878699696278 SN.node[1000].Communication.Routing      maxLength 2340.19
+2292.878589187806 SN.node[1000].Communication.Routing      Energy	20.3383	780	1	732	0	8000	52.8788	19.944	2.2112	1386000	25	15.0001
+2295.878423425096 SN.node[1000].Communication.Routing      maxLength 2362.74
+2297.878312916624 SN.node[1000].Communication.Routing      Energy	19.6075	780	0	-1	432000	8000	52.8306	18.2404	1.3984	876000	22	15.0057
+2300.878147153914 SN.node[1000].Communication.Routing      maxLength 2288.06
+2302.878036645442 SN.node[1000].Communication.Routing      Energy	19.5697	780	1	656	0	8000	52.7805	20.0794	1.8304	1148000	18	15.0111
+2305.877870882732 SN.node[1000].Communication.Routing      maxLength 2365.67
+2307.87776037426  SN.node[1000].Communication.Routing      Energy	18.5765	780	0	-1	596000	8000	52.7308	19.7933	1.6	1002000	17	15.0139
+2310.87759461155  SN.node[1000].Communication.Routing      maxLength 2395.74
+2312.877484103078 SN.node[1000].Communication.Routing      Energy	18.485	780	1	721	60000	8000	52.6828	18.0754	1.368	856000	36	15.0137
+2315.877318340368 SN.node[1000].Communication.Routing      maxLength 2363.37
+2317.877207831896 SN.node[1000].Communication.Routing      Energy	18.4484	780	1	760	0	8000	52.6348	17.9857	1.1704	732000	32	15.0151
+2320.877042069186 SN.node[1000].Communication.Routing      maxLength 2398.93
+2322.876931560714 SN.node[1000].Communication.Routing      Energy	18.4124	780	1	684	0	8000	52.5856	19.3289	1.528	956000	17	15.0138
+2325.876765798004 SN.node[1000].Communication.Routing      maxLength 2390.54
+2327.876655289532 SN.node[1000].Communication.Routing      Energy	18.377	780	1	729	0	8000	52.5369	18.7091	0.9728	612000	28	15.0148
+2330.876489526822 SN.node[1000].Communication.Routing      maxLength 2326.82
+2332.87637901835  SN.node[1000].Communication.Routing      Energy	18.3374	780	1	727	0	8000	52.4865	20.4264	1.8272	1144000	17	15.017
+2335.87621325564  SN.node[1000].Communication.Routing      maxLength 2386.23
+2337.876102747168 SN.node[1000].Communication.Routing      Energy	18.2729	780	1	799	24000	8000	52.4373	19.2995	1.696	1062000	19	15.0218
+2340.875936984458 SN.node[1000].Communication.Routing      maxLength 2381.4
+2342.875826475986 SN.node[1000].Communication.Routing      Energy	18.2213	780	1	853	16000	8000	52.388	19.3711	1.2032	756000	25	15.0206
+2345.875660713276 SN.node[1000].Communication.Routing      maxLength 2287.93
+2347.875550204804 SN.node[1000].Communication.Routing      Energy	18.1878	780	1	930	0	8000	52.3391	18.9469	1.432	896000	22	15.0252
+2350.875384442094 SN.node[1000].Communication.Routing      maxLength 2395.67
+2352.875273933622 SN.node[1000].Communication.Routing      Energy	18.1545	780	1	779	0	8000	52.2904	18.752	1.1824	740000	23	15.027
+2355.875108170912 SN.node[1000].Communication.Routing      maxLength 2374.1
+2357.87499766244  SN.node[1000].Communication.Routing      Energy	18.1212	780	1	779	0	8000	52.2425	17.9479	1.1352	710000	23	15.0307
+2360.87483189973  SN.node[1000].Communication.Routing      maxLength 2391.62
+2362.874721391258 SN.node[1000].Communication.Routing      Energy	18.0868	780	1	637	0	8000	52.1932	19.3299	0.9912	620000	28	15.0305
+2365.874555628548 SN.node[1000].Communication.Routing      maxLength 2296.8
+2367.874445120076 SN.node[1000].Communication.Routing      Energy	18.0534	780	1	954	0	8000	52.1438	19.4027	1.9768	1236000	20	15.0328
+2370.874279357366 SN.node[1000].Communication.Routing      maxLength 2273.61
+2372.874168848894 SN.node[1000].Communication.Routing      Energy	18.0156	780	1	656	0	8000	52.0951	18.8205	1.4424	902000	19	15.0378
+2375.874003086184 SN.node[1000].Communication.Routing      maxLength 2394.14
+2377.873892577712 SN.node[1000].Communication.Routing      Energy	17.9412	780	1	721	42000	8000	52.0471	18.036	1.0528	662000	23	15.038
+2380.873726815002 SN.node[1000].Communication.Routing      maxLength 2315.38
+2382.87361630653  SN.node[1000].Communication.Routing      Energy	17.9064	780	1	845	0	8000	51.9985	18.609	1.712	1074000	19	15.0408
+2385.87345054382  SN.node[1000].Communication.Routing      maxLength 2292.76
+2387.873340035348 SN.node[1000].Communication.Routing      Energy	17.8661	780	1	732	8000	8000	51.9505	18.0997	0.8024	502000	25	15.0414
+2390.873174272638 SN.node[1000].Communication.Routing      maxLength 2336.49
+2392.873063764166 SN.node[1000].Communication.Routing      Energy	17.831	780	1	709	0	8000	51.9018	18.7306	1.0328	646000	22	15.0457
+2395.872898001456 SN.node[1000].Communication.Routing      maxLength 2384.83
+2397.872787492984 SN.node[1000].Communication.Routing      Energy	17.7942	780	1	725	0	8000	51.8531	18.7803	1.072	672000	20	15.0483
+2400.872621730274 SN.node[1000].Communication.Routing      maxLength 2357.97
+2402.872511221802 SN.node[1000].Communication.Routing      Energy	17.7598	780	1	721	0	8000	51.8037	19.3786	1.6952	1060000	22	15.0537
+2405.872345459092 SN.node[1000].Communication.Routing      maxLength 2396.14
+2407.87223495062  SN.node[1000].Communication.Routing      Energy	17.725	780	1	845	0	8000	51.7554	18.3846	1.1088	694000	26	15.0566
+2410.87206918791  SN.node[1000].Communication.Routing      maxLength 2378.28
+2412.871958679438 SN.node[1000].Communication.Routing      Energy	17.6644	780	1	614	34000	8000	51.7069	18.5117	1.1832	740000	23	15.0575
+2415.871792916728 SN.node[1000].Communication.Routing      maxLength 2386.03
+2417.871682408256 SN.node[1000].Communication.Routing      Energy	17.6195	780	1	751	10000	8000	51.6577	19.3169	1.3024	818000	13	15.0601
+2420.871516645546 SN.node[1000].Communication.Routing      maxLength 2362.56
+2422.871406137074 SN.node[1000].Communication.Routing      Energy	17.584	780	1	809	0	8000	51.6097	18.0588	1.004	628000	28	15.0589
+2425.871240374364 SN.node[1000].Communication.Routing      maxLength 2370.28
+2427.871129865892 SN.node[1000].Communication.Routing      Energy	17.5508	780	1	774	0	8000	51.5609	18.8056	1.336	836000	20	15.0558
+2430.870964103182 SN.node[1000].Communication.Routing      maxLength 2383.72
+2432.87085359471  SN.node[1000].Communication.Routing      Energy	17.5131	780	1	688	0	8000	51.5121	18.844	1.432	896000	20	15.0593
+2435.870687832    SN.node[1000].Communication.Routing      maxLength 2239.76
+2437.870577323528 SN.node[1000].Communication.Routing      Energy	17.4762	780	1	757	0	8000	51.463	19.1208	1.6248	1016000	19	15.0624
+2440.870411560818 SN.node[1000].Communication.Routing      maxLength 2395.48
+2442.870301052346 SN.node[1000].Communication.Routing      Energy	17.441	780	1	724	0	8000	51.4149	18.1541	1.0304	646000	26	15.063
+2445.870135289636 SN.node[1000].Communication.Routing      maxLength 2381.37
+2447.870024781164 SN.node[1000].Communication.Routing      Energy	17.4046	780	1	847	0	8000	51.3655	19.5087	1.152	724000	23	15.0585
+2450.869859018454 SN.node[1000].Communication.Routing      maxLength 2377.86
+2452.869748509982 SN.node[1000].Communication.Routing      Energy	17.3684	780	1	799	0	8000	51.317	18.5185	1.1456	718000	26	15.0589
+2455.869582747272 SN.node[1000].Communication.Routing      maxLength 2397.22
+2457.8694722388   SN.node[1000].Communication.Routing      Energy	17.3329	780	1	809	0	8000	51.2682	18.8594	1.7312	1084000	22	15.0627
+2460.86930647609  SN.node[1000].Communication.Routing      maxLength 2374.94
+2462.869195967618 SN.node[1000].Communication.Routing      Energy	17.2997	780	1	773	0	8000	51.2203	17.989	1.5392	966000	27	15.0647
+2465.869030204908 SN.node[1000].Communication.Routing      maxLength 2380.08
+2467.868919696436 SN.node[1000].Communication.Routing      Energy	17.2602	780	1	727	0	8000	51.1714	18.8972	0.7736	484000	24	15.0648
+2470.868753933726 SN.node[1000].Communication.Routing      maxLength 2367.3
+2472.868643425254 SN.node[1000].Communication.Routing      Energy	17.1937	780	1	855	28000	8000	51.1234	18.0867	0.9344	588000	22	15.0664
+2475.868477662544 SN.node[1000].Communication.Routing      maxLength 2367.13
+2477.868367154072 SN.node[1000].Communication.Routing      Energy	17.1582	780	1	809	0	8000	51.0744	19.0476	1.552	972000	20	15.0717
+2480.868201391362 SN.node[1000].Communication.Routing      maxLength 2337.73
+2482.86809088289  SN.node[1000].Communication.Routing      Energy	17.1239	780	1	846	0	8000	51.0263	18.1467	1.2152	760000	20	15.0724
+2485.86792512018  SN.node[1000].Communication.Routing      maxLength 2344.32
+2487.867814611708 SN.node[1000].Communication.Routing      Energy	17.0904	780	1	606	0	8000	50.9778	18.5162	1.1168	702000	23	15.0737
+2490.867648848998 SN.node[1000].Communication.Routing      maxLength 2368.7
+2492.867538340526 SN.node[1000].Communication.Routing      Energy	17.0542	780	1	867	0	8000	50.9299	17.9986	0.9792	614000	21	15.0757
+2495.867372577816 SN.node[1000].Communication.Routing      maxLength 2399.39
+2497.867262069344 SN.node[1000].Communication.Routing      Energy	17.0175	780	1	646	0	8000	50.8809	19.0118	1.2736	800000	22	15.0773
+2500.867096306634 SN.node[1000].Communication.Routing      maxLength 2361.61
+2502.866985798162 SN.node[1000].Communication.Routing      Energy	16.9798	780	1	647	0	8000	50.8313	19.6134	1.4704	920000	18	15.0817
+2505.866820035452 SN.node[1000].Communication.Routing      maxLength 2382.9
+2507.86670952698  SN.node[1000].Communication.Routing      Energy	16.9228	780	1	689	12000	8000	50.7822	19.1923	1.4968	936000	23	15.0855
+2510.86654376427  SN.node[1000].Communication.Routing      maxLength 2383.96
+2512.866433255798 SN.node[1000].Communication.Routing      Energy	16.8833	780	1	727	0	8000	50.7336	18.6093	2.1696	1358000	23	15.0889
+2515.866267493088 SN.node[1000].Communication.Routing      maxLength 2351.73
+2517.866156984616 SN.node[1000].Communication.Routing      Energy	16.8481	780	1	840	0	8000	50.6849	18.7807	1.0224	640000	23	15.0894
+2520.865991221906 SN.node[1000].Communication.Routing      maxLength 2378.81
+2522.865880713434 SN.node[1000].Communication.Routing      Energy	16.8094	780	1	909	0	8000	50.6364	18.565	1.0336	648000	19	15.0899
+2525.865714950724 SN.node[1000].Communication.Routing      maxLength 2392.23
+2527.865604442252 SN.node[1000].Communication.Routing      Energy	16.7727	780	1	667	0	8000	50.5877	18.728	1.408	884000	23	15.0933
+2530.865438679542 SN.node[1000].Communication.Routing      maxLength 2399.77
+2532.86532817107  SN.node[1000].Communication.Routing      Energy	16.7374	780	1	724	0	8000	50.5399	17.8371	1.0304	648000	28	15.0969
+2535.86516240836  SN.node[1000].Communication.Routing      maxLength 2375.02
+2537.865051899888 SN.node[1000].Communication.Routing      Energy	16.702	780	1	762	0	8000	50.4913	18.7063	1.4096	882000	26	15.0987
+2540.864886137178 SN.node[1000].Communication.Routing      maxLength 2390.81
+2542.864775628706 SN.node[1000].Communication.Routing      Energy	16.665	780	1	719	0	8000	50.4424	18.9067	1.5024	940000	20	15.0957
+2545.864609865996 SN.node[1000].Communication.Routing      maxLength 2334.95
+2547.864499357524 SN.node[1000].Communication.Routing      Energy	16.6098	780	1	639	12000	8000	50.394	18.4656	1.2856	804000	27	15.0954
+2550.864333594814 SN.node[1000].Communication.Routing      maxLength 2386.58
+2552.864223086342 SN.node[1000].Communication.Routing      Energy	16.5719	780	1	588	0	8000	50.3444	19.6728	1.5616	980000	23	15.1011
+2555.864057323632 SN.node[1000].Communication.Routing      maxLength 2390.28
+2557.86394681516  SN.node[1000].Communication.Routing      Energy	16.535	780	1	888	0	8000	50.2959	18.4848	1.2	752000	17	15.1045
+2560.86378105245  SN.node[1000].Communication.Routing      maxLength 2398.88
+2562.863670543978 SN.node[1000].Communication.Routing      Energy	16.4541	780	1	639	30000	8000	50.2473	18.662	1.2088	756000	24	15.1039
+2565.863504781268 SN.node[1000].Communication.Routing      maxLength 2318.29
+2567.863394272796 SN.node[1000].Communication.Routing      Energy	16.4172	780	1	817	0	8000	50.1978	19.5917	1.5056	942000	22	15.1065
+2570.863228510086 SN.node[1000].Communication.Routing      maxLength 2396.54
+2572.863118001614 SN.node[1000].Communication.Routing      Energy	16.3547	780	1	840	26000	8000	50.1491	18.7135	1.4304	898000	28	15.1131
+2575.862952238904 SN.node[1000].Communication.Routing      maxLength 2378.9
+2577.862841730432 SN.node[1000].Communication.Routing      Energy	16.3155	780	1	699	2000	8000	50.1003	18.8781	1.5136	948000	28	15.1132
+2580.862675967722 SN.node[1000].Communication.Routing      maxLength 2358.49
+2582.86256545925  SN.node[1000].Communication.Routing      Energy	16.2771	780	1	651	0	8000	50.0516	18.7624	1.1392	716000	20	15.1147
+2585.86239969654  SN.node[1000].Communication.Routing      maxLength 2242.25
+2587.862289188068 SN.node[1000].Communication.Routing      Energy	16.2418	780	1	874	0	8000	50.0029	18.77	1.4912	936000	23	15.1161
+2590.862123425358 SN.node[1000].Communication.Routing      maxLength 2389.39
+2592.862012916886 SN.node[1000].Communication.Routing      Energy	16.2023	780	1	727	0	8000	49.9548	18.1302	1.2704	798000	23	15.121
+2595.861847154176 SN.node[1000].Communication.Routing      maxLength 2229.29
+2597.861736645704 SN.node[1000].Communication.Routing      Energy	16.1666	780	1	872	0	8000	49.9062	18.621	1.4288	894000	18	15.1228
+2600.861570882994 SN.node[1000].Communication.Routing      maxLength 2357.44
+2602.861460374522 SN.node[1000].Communication.Routing      Energy	16.1298	780	1	667	0	8000	49.8583	17.974	1.3632	856000	29	15.1254
+2605.861294611812 SN.node[1000].Communication.Routing      maxLength 2377.32
+2607.86118410334  SN.node[1000].Communication.Routing      Energy	16.0699	780	1	794	24000	8000	49.809	19.3539	1.288	806000	22	15.1309
+2610.86101834063  SN.node[1000].Communication.Routing      maxLength 2395.02
+2612.860907832158 SN.node[1000].Communication.Routing      Energy	16.0366	780	1	769	0	8000	49.7608	18.2127	1.0296	644000	23	15.1334
+2615.860742069448 SN.node[1000].Communication.Routing      maxLength 2313.75
+2617.860631560976 SN.node[1000].Communication.Routing      Energy	15.4082	780	0	-1	368000	8000	49.7129	17.9528	1.0784	678000	30	15.1396
+2620.860465798266 SN.node[1000].Communication.Routing      maxLength 2386.71
+2622.860355289794 SN.node[1000].Communication.Routing      Energy	15.3722	780	1	797	0	8000	49.6646	18.3818	1.1224	702000	26	15.146
+2625.860189527084 SN.node[1000].Communication.Routing      maxLength 2369.47
+2627.860079018612 SN.node[1000].Communication.Routing      Energy	15.337	780	1	742	2000	8000	49.616	18.6655	1.5864	992000	19	15.1533
+2630.859913255902 SN.node[1000].Communication.Routing      maxLength 2365.37
+2632.85980274743  SN.node[1000].Communication.Routing      Energy	15.301	780	1	716	0	8000	49.5682	17.8742	1.1968	750000	23	15.1541
+2635.85963698472  SN.node[1000].Communication.Routing      maxLength 2369.44
+2637.859526476248 SN.node[1000].Communication.Routing      Energy	14.2502	780	0	-1	632000	8000	49.5195	18.6973	1.8912	1184000	26	15.1524
+2640.859360713538 SN.node[1000].Communication.Routing      maxLength 2377.18
+2642.859250205066 SN.node[1000].Communication.Routing      Energy	14.2166	780	1	742	0	8000	49.4714	18.1546	0.8928	562000	30	15.1541
+2645.859084442356 SN.node[1000].Communication.Routing      maxLength 2357.51
+2647.858973933884 SN.node[1000].Communication.Routing      Energy	14.1812	780	1	762	0	8000	49.4228	18.6263	1.664	1042000	26	15.1568
+2650.858808171174 SN.node[1000].Communication.Routing      maxLength 2394.63
+2652.858697662702 SN.node[1000].Communication.Routing      Energy	14.1212	780	1	794	24000	8000	49.3742	18.7006	1.1232	704000	19	15.1589
+2655.858531899992 SN.node[1000].Communication.Routing      maxLength 2276.72
+2657.85842139152  SN.node[1000].Communication.Routing      Energy	14.0851	780	1	884	0	8000	49.3251	19.1088	1.52	952000	19	15.1579
+2660.85825562881  SN.node[1000].Communication.Routing      maxLength 2298.51
+2662.858145120338 SN.node[1000].Communication.Routing      Energy	14.0516	780	1	782	0	8000	49.2768	18.36	0.9528	596000	27	15.159
+2665.857979357628 SN.node[1000].Communication.Routing      maxLength 2396.86
+2667.857868849156 SN.node[1000].Communication.Routing      Energy	14.0146	780	1	757	0	8000	49.2284	18.4796	0.9824	616000	24	15.1618
+2670.857703086446 SN.node[1000].Communication.Routing      maxLength 2352.77
+2672.857592577974 SN.node[1000].Communication.Routing      Energy	13.9501	780	1	840	28000	8000	49.1801	18.28	1.368	856000	22	15.1637
+2675.857426815264 SN.node[1000].Communication.Routing      maxLength 2392.12
+2677.857316306792 SN.node[1000].Communication.Routing      Energy	13.9141	780	1	783	0	8000	49.1311	19.1036	1.2344	772000	25	15.1724
+2680.857150544082 SN.node[1000].Communication.Routing      maxLength 2397.47
+2682.85704003561  SN.node[1000].Communication.Routing      Energy	13.8789	780	1	840	0	8000	49.083	18.1064	0.9248	582000	24	15.1795
+2685.8568742729   SN.node[1000].Communication.Routing      maxLength 2399.65
+2687.856763764428 SN.node[1000].Communication.Routing      Energy	13.8438	780	1	709	0	8000	49.0345	18.5654	1.0688	670000	18	15.1804
+2690.856598001718 SN.node[1000].Communication.Routing      maxLength 2374.06
+2692.856487493246 SN.node[1000].Communication.Routing      Energy	13.8051	780	1	847	2000	8000	48.9854	19.1874	1.384	866000	25	15.1772
+2695.856321730536 SN.node[1000].Communication.Routing      maxLength 2358.63
+2697.856211222064 SN.node[1000].Communication.Routing      Energy	13.77	780	1	709	0	8000	48.937	18.3912	1.6704	1046000	22	15.1788
+2700.856045459354 SN.node[1000].Communication.Routing      maxLength 2378.96
+2702.855934950882 SN.node[1000].Communication.Routing      Energy	13.7356	780	1	721	0	8000	48.8893	17.7893	1.3792	864000	24	15.184
+2705.855769188172 SN.node[1000].Communication.Routing      maxLength 2375.59
+2707.8556586797   SN.node[1000].Communication.Routing      Energy	13.7023	780	1	769	0	8000	48.8416	17.7989	0.8672	544000	22	15.1853
+2710.85549291699  SN.node[1000].Communication.Routing      maxLength 2376.13
+2712.855382408518 SN.node[1000].Communication.Routing      Energy	13.6659	780	1	842	0	8000	48.793	18.5945	1.1928	746000	21	15.1859
+2715.855216645808 SN.node[1000].Communication.Routing      maxLength 2370.31
+2717.855106137336 SN.node[1000].Communication.Routing      Energy	13.6187	780	1	736	16000	8000	48.7448	18.2384	1.0496	660000	25	15.1878
+2720.854940374626 SN.node[1000].Communication.Routing      maxLength 2387.41
+2722.854829866154 SN.node[1000].Communication.Routing      Energy	13.5851	780	1	601	0	8000	48.6962	18.6567	1.1584	726000	29	15.1884
+2725.854664103444 SN.node[1000].Communication.Routing      maxLength 2395.96
+2727.854553594972 SN.node[1000].Communication.Routing      Energy	13.547	780	1	870	0	8000	48.6473	18.94	1.4688	922000	20	15.185
+2730.854387832262 SN.node[1000].Communication.Routing      maxLength 2398.16
+2732.85427732379  SN.node[1000].Communication.Routing      Energy	13.5134	780	1	736	0	8000	48.5976	19.8025	2.1728	1360000	19	15.1868
+2735.85411156108  SN.node[1000].Communication.Routing      maxLength 2390.41
+2737.854001052608 SN.node[1000].Communication.Routing      Energy	13.4774	780	1	800	0	8000	48.5485	19.0854	1.2128	760000	24	15.1901
+2740.853835289898 SN.node[1000].Communication.Routing      maxLength 2384.42
+2742.853724781426 SN.node[1000].Communication.Routing      Energy	13.4414	780	1	716	0	8000	48.4994	19.2137	1.8176	1140000	24	15.1948
+2745.853559018716 SN.node[1000].Communication.Routing      maxLength 2376.96
+2747.853448510244 SN.node[1000].Communication.Routing      Energy	13.4082	780	1	775	0	8000	48.4514	18.0031	1.1008	692000	24	15.1993
+2750.853282747534 SN.node[1000].Communication.Routing      maxLength 2386.32
+2752.853172239062 SN.node[1000].Communication.Routing      Energy	13.3539	780	1	684	16000	8000	48.4026	18.9064	1.596	998000	17	15.2002
+2755.853006476352 SN.node[1000].Communication.Routing      maxLength 2316.74
+2757.85289596788  SN.node[1000].Communication.Routing      Energy	13.3178	780	1	884	0	8000	48.3544	18.2319	1.4624	918000	26	15.2021
+2760.85273020517  SN.node[1000].Communication.Routing      maxLength 2395.72
+2762.852619696698 SN.node[1000].Communication.Routing      Energy	13.2609	780	1	891	16000	8000	48.3061	18.2981	1.1832	740000	23	15.1995
+2765.852453933988 SN.node[1000].Communication.Routing      maxLength 2371.77
+2767.852343425516 SN.node[1000].Communication.Routing      Energy	13.2239	780	1	666	0	8000	48.258	18.1642	0.976	612000	26	15.2014
+2770.852177662806 SN.node[1000].Communication.Routing      maxLength 2373.54
+2772.852067154334 SN.node[1000].Communication.Routing      Energy	13.1879	780	1	781	0	8000	48.2092	18.9126	1.6952	1060000	22	15.207
+2775.851901391624 SN.node[1000].Communication.Routing      maxLength 2335.04
+2777.851790883152 SN.node[1000].Communication.Routing      Energy	13.086	780	1	655	50000	8000	48.1608	18.4181	1.624	1016000	27	15.2102
+2780.851625120442 SN.node[1000].Communication.Routing      maxLength 2352.23
+2782.85151461197  SN.node[1000].Communication.Routing      Energy	13.049	780	1	665	0	8000	48.1131	17.7131	0.8656	542000	34	15.2147
+2785.85134884926  SN.node[1000].Communication.Routing      maxLength 2377.99
+2787.851238340788 SN.node[1000].Communication.Routing      Energy	13.0137	780	1	724	0	8000	48.0647	18.5006	1.0736	672000	21	15.215
+2790.851072578078 SN.node[1000].Communication.Routing      maxLength 2398.04
+2792.850962069606 SN.node[1000].Communication.Routing      Energy	12.9764	780	1	920	0	8000	48.0162	18.5753	1.4592	914000	19	15.2143
+2795.850796306896 SN.node[1000].Communication.Routing      maxLength 2385.84
+2797.850685798424 SN.node[1000].Communication.Routing      Energy	12.9195	780	1	891	16000	8000	47.9672	19.0011	1.3632	856000	23	15.2151
+2800.850520035714 SN.node[1000].Communication.Routing      maxLength 2391.62
+2802.850409527242 SN.node[1000].Communication.Routing      Energy	12.8834	780	1	846	2000	8000	47.9181	19.1994	1.6432	1028000	19	15.2224
+2805.850243764532 SN.node[1000].Communication.Routing      maxLength 2382.28
+2807.85013325606  SN.node[1000].Communication.Routing      Energy	12.8466	780	1	667	0	8000	47.8695	18.6499	1.3504	848000	27	15.2302
+2810.84996749335  SN.node[1000].Communication.Routing      maxLength 2369.7
+2812.849856984878 SN.node[1000].Communication.Routing      Energy	12.8106	780	1	701	0	8000	47.8207	18.7781	1.1232	704000	19	15.2331
+2815.849691222168 SN.node[1000].Communication.Routing      maxLength 2287.65
+2817.849580713696 SN.node[1000].Communication.Routing      Energy	12.7738	780	1	699	0	8000	47.7712	19.584	1.3912	870000	20	15.2379
+2820.849414950986 SN.node[1000].Communication.Routing      maxLength 2351.4
+2822.849304442514 SN.node[1000].Communication.Routing      Energy	12.7396	780	1	846	0	8000	47.723	18.2816	1.3712	858000	24	15.2413
+2825.849138679804 SN.node[1000].Communication.Routing      maxLength 2339.32
+2827.849028171332 SN.node[1000].Communication.Routing      Energy	12.7026	780	1	719	0	8000	47.6744	18.6451	1.244	778000	28	15.237
+2830.848862408622 SN.node[1000].Communication.Routing      maxLength 2370.96
+2832.84875190015  SN.node[1000].Communication.Routing      Energy	12.6672	780	1	762	0	8000	47.6262	18.2371	0.9816	614000	27	15.2366
+2835.84858613744  SN.node[1000].Communication.Routing      maxLength 2309.79
+2837.848475628968 SN.node[1000].Communication.Routing      Energy	12.2751	800	0	-1	876000	16000	47.5776	18.6732	1.4208	892000	23	15.2422
+2840.848309866258 SN.node[1000].Communication.Routing      maxLength 2323.59
+2842.848199357786 SN.node[1000].Communication.Routing      Energy	12.2376	800	1	854	0	16000	47.5293	18.2614	1.6928	1060000	17	15.2437
+2845.848033595076 SN.node[1000].Communication.Routing      maxLength 2396.76
+2847.847923086604 SN.node[1000].Communication.Routing      Energy	12.1943	800	1	849	0	16000	47.4808	18.5492	1.6352	1026000	20	15.2491
+2850.847757323894 SN.node[1000].Communication.Routing      maxLength 2370.3
+2852.847646815422 SN.node[1000].Communication.Routing      Energy	12.1571	800	1	973	0	16000	47.4327	18.2036	1.1096	694000	21	15.2484
+2855.847481052712 SN.node[1000].Communication.Routing      maxLength 2360.89
+2857.84737054424  SN.node[1000].Communication.Routing      Energy	12.1093	800	1	699	0	16000	47.3834	19.3914	1.7472	1096000	21	15.2534
+2860.84720478153  SN.node[1000].Communication.Routing      maxLength 2338.2
+2862.847094273058 SN.node[1000].Communication.Routing      Energy	12.066	800	1	834	0	16000	47.3345	18.925	0.944	594000	27	15.2575
+2865.846928510348 SN.node[1000].Communication.Routing      maxLength 2391.86
+2867.846818001876 SN.node[1000].Communication.Routing      Energy	12.0284	800	1	832	0	16000	47.2862	18.3409	1.8496	1158000	30	15.2573
+2870.846652239166 SN.node[1000].Communication.Routing      maxLength 2355.87
+2872.846541730694 SN.node[1000].Communication.Routing      Energy	11.9903	800	1	868	0	16000	47.2384	17.8198	1.104	694000	27	15.2584
+2875.846375967984 SN.node[1000].Communication.Routing      maxLength 2335.72
+2877.846265459512 SN.node[1000].Communication.Routing      Energy	11.9461	800	1	688	0	16000	47.1892	19.3135	1.5712	986000	21	15.2644
+2880.846099696802 SN.node[1000].Communication.Routing      maxLength 2397.29
+2882.84598918833  SN.node[1000].Communication.Routing      Energy	11.9008	800	1	689	0	16000	47.141	18.2015	1.6992	1064000	24	15.2652
+2885.84582342562  SN.node[1000].Communication.Routing      maxLength 2376.52
+2887.845712917148 SN.node[1000].Communication.Routing      Energy	11.8566	800	1	688	0	16000	47.0919	19.1972	1.74	1088000	19	15.2666
+2890.845547154438 SN.node[1000].Communication.Routing      maxLength 2395.46
+2892.845436645966 SN.node[1000].Communication.Routing      Energy	11.8193	800	1	756	0	16000	47.0441	17.7765	0.8696	544000	28	15.265
+2895.845270883256 SN.node[1000].Communication.Routing      maxLength 2345.82
+2897.845160374784 SN.node[1000].Communication.Routing      Energy	11.7817	800	1	854	0	16000	46.9955	18.7099	1.3008	814000	22	15.2667
+2900.844994612074 SN.node[1000].Communication.Routing      maxLength 2343.68
+2902.844884103602 SN.node[1000].Communication.Routing      Energy	11.7384	800	1	690	0	16000	46.9461	19.4626	1.6256	1018000	21	15.2669
+2905.844718340892 SN.node[1000].Communication.Routing      maxLength 2352.01
+2907.84460783242  SN.node[1000].Communication.Routing      Energy	11.698	800	1	836	0	16000	46.8976	18.5313	1.3368	836000	21	15.273
+2910.84444206971  SN.node[1000].Communication.Routing      maxLength 2321.62
+2912.844331561238 SN.node[1000].Communication.Routing      Energy	11.6537	800	1	762	0	16000	46.8486	19.0553	1.3824	866000	21	15.2742
+2915.844165798528 SN.node[1000].Communication.Routing      maxLength 2348.1
+2917.844055290056 SN.node[1000].Communication.Routing      Energy	11.6119	800	1	694	0	16000	46.7991	19.5289	1.8624	1168000	18	15.2756
+2920.843889527346 SN.node[1000].Communication.Routing      maxLength 2291.54
+2922.843779018874 SN.node[1000].Communication.Routing      Energy	11.5725	800	1	866	0	16000	46.7504	18.7177	1.1384	712000	19	15.2729
+2925.843613256164 SN.node[1000].Communication.Routing      maxLength 2323.8
+2927.843502747692 SN.node[1000].Communication.Routing      Energy	11.535	800	1	853	0	16000	46.7016	18.8998	1.504	942000	26	15.2744
+2930.843336984982 SN.node[1000].Communication.Routing      maxLength 2349.18
+2932.84322647651  SN.node[1000].Communication.Routing      Energy	11.4965	800	1	729	0	16000	46.6526	19.0777	1.1992	750000	24	15.2748
+2935.8430607138   SN.node[1000].Communication.Routing      maxLength 2382.4
+2937.842950205328 SN.node[1000].Communication.Routing      Energy	11.4541	800	1	748	0	16000	46.6046	18.0468	1.5424	966000	26	15.2772
+2940.842784442618 SN.node[1000].Communication.Routing      maxLength 2338.14
+2942.842673934146 SN.node[1000].Communication.Routing      Energy	11.4166	800	1	853	0	16000	46.5556	19.0464	1.8624	1166000	18	15.2771
+2945.842508171436 SN.node[1000].Communication.Routing      maxLength 2248.61
+2947.842397662964 SN.node[1000].Communication.Routing      Energy	11.3744	800	1	783	0	16000	46.5069	18.7586	1.6064	1008000	23	15.2804
+2950.842231900254 SN.node[1000].Communication.Routing      maxLength 2392.25
+2952.842121391782 SN.node[1000].Communication.Routing      Energy	11.337	800	1	756	0	16000	46.4579	19.037	1.6032	1006000	21	15.2833
+2955.841955629072 SN.node[1000].Communication.Routing      maxLength 2386.01
+2957.8418451206   SN.node[1000].Communication.Routing      Energy	11.2925	800	1	794	0	16000	46.409	18.89	1.3232	828000	24	15.2875
+2960.84167935789  SN.node[1000].Communication.Routing      maxLength 2354.01
+2962.841568849418 SN.node[1000].Communication.Routing      Energy	11.2507	800	1	694	0	16000	46.3609	18.1945	1.1712	736000	23	15.2879
+2965.841403086708 SN.node[1000].Communication.Routing      maxLength 2380.5
+2967.841292578236 SN.node[1000].Communication.Routing      Energy	11.2092	800	1	713	0	16000	46.3128	18.1756	1.0936	684000	21	15.2884
+2970.841126815526 SN.node[1000].Communication.Routing      maxLength 2395.21
+2972.841016307054 SN.node[1000].Communication.Routing      Energy	11.1695	800	1	876	0	16000	46.2644	18.426	1.228	768000	28	15.2884
+2975.840850544344 SN.node[1000].Communication.Routing      maxLength 2397.43
+2977.840740035872 SN.node[1000].Communication.Routing      Energy	11.1212	800	1	942	0	16000	46.2156	18.7915	1.1936	750000	29	15.2885
+2980.840574273162 SN.node[1000].Communication.Routing      maxLength 2370.76
+2982.84046376469  SN.node[1000].Communication.Routing      Energy	11.073	800	1	724	0	16000	46.1663	19.4118	2.1912	1370000	17	15.2908
+2985.84029800198  SN.node[1000].Communication.Routing      maxLength 2373.67
+2987.840187493508 SN.node[1000].Communication.Routing      Energy	11.0365	800	1	797	0	16000	46.1179	18.3808	1.104	694000	24	15.293
+2990.840021730798 SN.node[1000].Communication.Routing      maxLength 2395.76
+2992.839911222326 SN.node[1000].Communication.Routing      Energy	10.9963	800	1	727	0	16000	46.0696	18.4079	1.1152	698000	26	15.2948
+2995.839745459616 SN.node[1000].Communication.Routing      maxLength 2335.51
+2997.839634951144 SN.node[1000].Communication.Routing      Energy	10.2719	800	0	-1	422000	16000	46.0208	18.8452	1.4176	888000	19	15.3004
+3000.839469188434 SN.node[1000].Communication.Routing      maxLength 2391.43
+3002.839358679962 SN.node[1000].Communication.Routing      Energy	10.2296	800	1	704	0	16000	45.9725	18.3227	1.4208	892000	22	15.3008
+3005.839192917252 SN.node[1000].Communication.Routing      maxLength 2335.09
+3007.83908240878  SN.node[1000].Communication.Routing      Energy	10.185	800	1	704	2000	16000	45.9239	18.6898	1.2928	810000	16	15.3081
+3010.83891664607  SN.node[1000].Communication.Routing      maxLength 2363.57
+3012.838806137598 SN.node[1000].Communication.Routing      Energy	10.1426	800	1	709	0	16000	45.8752	18.7486	1.2208	764000	19	15.3094
+3015.838640374888 SN.node[1000].Communication.Routing      maxLength 2374.68
+3017.838529866416 SN.node[1000].Communication.Routing      Energy	10.1014	800	1	784	0	16000	45.8281	17.119	0.8464	530000	31	15.3129
+3020.838364103706 SN.node[1000].Communication.Routing      maxLength 2397.93
+3022.838253595234 SN.node[1000].Communication.Routing      Energy	10.0649	800	1	797	0	16000	45.7796	18.5642	1.424	892000	22	15.3181
+3025.838087832524 SN.node[1000].Communication.Routing      maxLength 2330.05
+3027.837977324052 SN.node[1000].Communication.Routing      Energy	10.0276	800	1	844	0	16000	45.7306	19.0249	1.5232	954000	25	15.3245
+3030.837811561342 SN.node[1000].Communication.Routing      maxLength 2348.99
+3032.83770105287  SN.node[1000].Communication.Routing      Energy	9.98547	800	1	764	0	16000	45.6821	18.5771	1.2032	754000	27	15.3275
+3035.83753529016  SN.node[1000].Communication.Routing      maxLength 2345.77
+3037.837424781688 SN.node[1000].Communication.Routing      Energy	9.94701	800	1	729	0	16000	45.6341	18.0616	1.2752	798000	22	15.3292
+3040.837259018978 SN.node[1000].Communication.Routing      maxLength 2369.45
+3042.837148510506 SN.node[1000].Communication.Routing      Energy	9.9024	800	1	704	2000	16000	45.5861	18.0847	1.2384	778000	24	15.3311
+3045.836982747796 SN.node[1000].Communication.Routing      maxLength 2379.55
+3047.836872239324 SN.node[1000].Communication.Routing      Energy	9.8659	800	1	797	0	16000	45.5374	18.6546	1.168	732000	30	15.33
+3050.836706476614 SN.node[1000].Communication.Routing      maxLength 2394.9
+3052.836595968142 SN.node[1000].Communication.Routing      Energy	9.81954	800	1	861	0	16000	45.4888	18.7072	1.3056	818000	21	15.3322
+3055.836430205432 SN.node[1000].Communication.Routing      maxLength 2371.4
+3057.83631969696  SN.node[1000].Communication.Routing      Energy	9.78108	800	1	729	0	16000	45.4405	18.3275	1.0704	670000	28	15.3325
+3060.83615393425  SN.node[1000].Communication.Routing      maxLength 2399.1
+3062.836043425778 SN.node[1000].Communication.Routing      Energy	9.74092	800	1	830	0	16000	45.3916	18.9237	1.2048	754000	21	15.3334
+3065.835877663068 SN.node[1000].Communication.Routing      maxLength 2325.79
+3067.835767154596 SN.node[1000].Communication.Routing      Energy	9.68524	800	1	876	16000	16000	45.3426	19.077	1.3728	862000	21	15.3382
+3070.835601391886 SN.node[1000].Communication.Routing      maxLength 2356.59
+3072.835490883414 SN.node[1000].Communication.Routing      Energy	9.64731	800	1	808	0	16000	45.2935	19.161	1.1832	740000	27	15.337
+3075.835325120704 SN.node[1000].Communication.Routing      maxLength 2293.4
+3077.835214612232 SN.node[1000].Communication.Routing      Energy	9.60404	800	1	849	0	16000	45.2439	19.6986	1.6928	1060000	15	15.3392
+3080.835048849522 SN.node[1000].Communication.Routing      maxLength 2372.09
+3082.83493834105  SN.node[1000].Communication.Routing      Energy	9.56185	800	1	783	0	16000	45.1953	18.5641	1.2176	762000	23	15.3406
+3085.83477257834  SN.node[1000].Communication.Routing      maxLength 2376.07
+3087.834662069868 SN.node[1000].Communication.Routing      Energy	9.42945	800	0	-1	52000	16000	45.1468	18.5674	0.976	614000	35	15.3426
+3090.834496307158 SN.node[1000].Communication.Routing      maxLength 2389.05
+3092.834385798686 SN.node[1000].Communication.Routing      Energy	9.39206	800	1	756	0	16000	45.0994	17.4497	0.7896	494000	27	15.3442
+3095.834220035976 SN.node[1000].Communication.Routing      maxLength 2396.5
+3097.834109527504 SN.node[1000].Communication.Routing      Energy	9.35454	800	1	853	0	16000	45.0516	17.8781	1.2512	786000	24	15.3464
+3100.833943764794 SN.node[1000].Communication.Routing      maxLength 2398.5
+3102.833833256322 SN.node[1000].Communication.Routing      Energy	9.31371	800	1	637	0	16000	45.0019	19.7594	1.8656	1170000	19	15.3528
+3105.833667493612 SN.node[1000].Communication.Routing      maxLength 2341.44
+3107.83355698514  SN.node[1000].Communication.Routing      Energy	9.26514	800	1	646	0	16000	44.9534	18.5019	1.6304	1020000	28	15.3558
+3110.83339122243  SN.node[1000].Communication.Routing      maxLength 2346.58
+3112.833280713958 SN.node[1000].Communication.Routing      Energy	9.22525	800	1	807	0	16000	44.905	18.4815	1.1216	702000	26	15.3614
+3115.833114951248 SN.node[1000].Communication.Routing      maxLength 2377.53
+3117.833004442776 SN.node[1000].Communication.Routing      Energy	9.18508	800	1	830	0	16000	44.8568	18.2584	0.8704	548000	24	15.361
+3120.832838680066 SN.node[1000].Communication.Routing      maxLength 2399.97
+3122.832728171594 SN.node[1000].Communication.Routing      Energy	9.14468	800	1	836	0	16000	44.8069	19.9771	1.9856	1242000	25	15.3621
+3125.832562408884 SN.node[1000].Communication.Routing      maxLength 2363.41
+3127.832451900412 SN.node[1000].Communication.Routing      Energy	9.10818	800	1	797	0	16000	44.7582	18.6797	1.436	898000	27	15.3645
+3130.832286137702 SN.node[1000].Communication.Routing      maxLength 2362.04
+3132.83217562923  SN.node[1000].Communication.Routing      Energy	9.06147	800	1	857	0	16000	44.7102	18.054	1.4848	932000	21	15.369
+3135.83200986652  SN.node[1000].Communication.Routing      maxLength 2394.17
+3137.831899358048 SN.node[1000].Communication.Routing      Energy	9.0174	800	1	722	0	16000	44.6611	19.1949	1.2368	774000	21	15.3755
+3140.831733595338 SN.node[1000].Communication.Routing      maxLength 2394.3
+3142.831623086866 SN.node[1000].Communication.Routing      Energy	8.15005	780	0	-1	814000	8000	44.6124	18.7502	1.6512	1034000	20	15.3815
+3145.831457324156 SN.node[1000].Communication.Routing      maxLength 2396.61
+3147.831346815684 SN.node[1000].Communication.Routing      Energy	8.11242	780	1	688	0	8000	44.5637	18.7274	1.1456	720000	20	15.3809
+3150.831181052974 SN.node[1000].Communication.Routing      maxLength 2366.47
+3152.831070544502 SN.node[1000].Communication.Routing      Energy	8.0791	780	1	779	0	8000	44.5158	18.013	1.1096	694000	22	15.3812
+3155.830904781792 SN.node[1000].Communication.Routing      maxLength 2344.01
+3157.83079427332  SN.node[1000].Communication.Routing      Energy	8.03704	780	1	732	10000	8000	44.467	18.7881	1.5456	968000	22	15.3878
+3160.83062851061  SN.node[1000].Communication.Routing      maxLength 2394.5
+3162.830518002138 SN.node[1000].Communication.Routing      Energy	8.00382	780	1	773	0	8000	44.4186	18.4499	0.9184	578000	20	15.3879
+3165.830352239428 SN.node[1000].Communication.Routing      maxLength 2358.72
+3167.830241730956 SN.node[1000].Communication.Routing      Energy	7.96874	780	1	794	0	8000	44.3706	18.0718	1.1096	694000	24	15.3893
+3170.830075968246 SN.node[1000].Communication.Routing      maxLength 2382.85
+3172.829965459774 SN.node[1000].Communication.Routing      Energy	7.90645	780	1	742	34000	8000	44.3229	17.722	1.1616	730000	23	15.3869
+3175.829799697064 SN.node[1000].Communication.Routing      maxLength 2365.41
+3177.829689188592 SN.node[1000].Communication.Routing      Energy	7.87137	780	1	794	0	8000	44.2749	18.0844	1.312	822000	24	15.3927
+3180.829523425882 SN.node[1000].Communication.Routing      maxLength 2328.09
+3182.82941291741  SN.node[1000].Communication.Routing      Energy	7.83049	780	1	632	2000	8000	44.2271	17.8288	1.0712	670000	25	15.3917
+3185.8292471547   SN.node[1000].Communication.Routing      maxLength 2391.81
+3187.829136646228 SN.node[1000].Communication.Routing      Energy	7.79726	780	1	774	0	8000	44.1781	19.0705	1.312	824000	27	15.3913
+3190.828970883518 SN.node[1000].Communication.Routing      maxLength 2396.14
+3192.828860375046 SN.node[1000].Communication.Routing      Energy	7.76027	780	1	666	0	8000	44.1298	18.2997	1.0592	666000	24	15.3882
+3195.828694612336 SN.node[1000].Communication.Routing      maxLength 2381.34
+3197.828584103864 SN.node[1000].Communication.Routing      Energy	7.72405	780	1	799	0	8000	44.0812	18.7198	1.2376	774000	25	15.3903
+3200.828418341154 SN.node[1000].Communication.Routing      maxLength 2366.85
+3202.828307832682 SN.node[1000].Communication.Routing      Energy	7.68931	780	1	845	0	8000	44.0323	18.9209	1.264	794000	21	15.3931
+3205.828142069972 SN.node[1000].Communication.Routing      maxLength 2334.5
+3207.8280315615   SN.node[1000].Communication.Routing      Energy	7.62867	780	1	769	34000	8000	43.9838	18.547	1.1952	748000	26	15.3943
+3210.82786579879  SN.node[1000].Communication.Routing      maxLength 2322.38
+3212.827755290318 SN.node[1000].Communication.Routing      Energy	7.59381	780	1	769	2000	8000	43.9356	18.2796	1.0368	652000	24	15.3975
+3215.827589527608 SN.node[1000].Communication.Routing      maxLength 2344.54
+3217.827479019136 SN.node[1000].Communication.Routing      Energy	7.55955	780	1	846	0	8000	43.8869	18.7019	1.2536	784000	20	15.3978
+3220.827313256426 SN.node[1000].Communication.Routing      maxLength 2340.8
+3222.827202747954 SN.node[1000].Communication.Routing      Energy	7.52633	780	1	773	0	8000	43.838	18.9688	2.0768	1302000	23	15.3954
+3225.827036985244 SN.node[1000].Communication.Routing      maxLength 2382.47
+3227.826926476772 SN.node[1000].Communication.Routing      Energy	7.48855	780	1	750	0	8000	43.7898	18.2306	1.1712	736000	20	15.3983
+3230.826760714062 SN.node[1000].Communication.Routing      maxLength 2256.92
+3232.82665020559  SN.node[1000].Communication.Routing      Energy	7.455	780	1	782	0	8000	43.7414	18.4717	1.612	1008000	21	15.3948
+3235.82648444288  SN.node[1000].Communication.Routing      maxLength 2317.44
+3237.826373934408 SN.node[1000].Communication.Routing      Energy	7.41818	780	1	725	0	8000	43.6927	18.7602	1.5712	986000	22	15.3936
+3240.826208171698 SN.node[1000].Communication.Routing      maxLength 2392.38
+3242.826097663226 SN.node[1000].Communication.Routing      Energy	7.3831	780	1	794	0	8000	43.6443	18.4631	1.5328	960000	24	15.3965
+3245.825931900516 SN.node[1000].Communication.Routing      maxLength 2390.09
+3247.825821392044 SN.node[1000].Communication.Routing      Energy	7.34664	780	1	670	0	8000	43.5948	19.5682	1.6736	1048000	21	15.3981
+3250.825655629334 SN.node[1000].Communication.Routing      maxLength 2364.02
+3252.825545120862 SN.node[1000].Communication.Routing      Energy	7.31304	780	1	736	0	8000	43.5466	18.1769	1.5256	954000	25	15.3995
+3255.825379358152 SN.node[1000].Communication.Routing      maxLength 2396.77
+3257.82526884968  SN.node[1000].Communication.Routing      Energy	7.2783	780	1	845	0	8000	43.4976	19.0468	0.9936	622000	34	15.4035
+3260.82510308697  SN.node[1000].Communication.Routing      maxLength 2243.2
+3262.824992578498 SN.node[1000].Communication.Routing      Energy	7.24499	780	1	779	0	8000	43.4488	18.8884	1.1904	748000	22	15.4062
+3265.824826815788 SN.node[1000].Communication.Routing      maxLength 2335.28
+3267.824716307316 SN.node[1000].Communication.Routing      Energy	7.1804	780	1	840	28000	8000	43.4003	18.5432	1.024	642000	24	15.4044
+3270.824550544606 SN.node[1000].Communication.Routing      maxLength 2387.54
+3272.824440036134 SN.node[1000].Communication.Routing      Energy	7.13834	780	1	732	10000	8000	43.3519	18.4781	1.3792	864000	22	15.4074
+3275.824274273424 SN.node[1000].Communication.Routing      maxLength 2334.5
+3277.824163764952 SN.node[1000].Communication.Routing      Energy	7.10188	780	1	670	0	8000	43.3024	19.5077	1.4752	924000	18	15.4025
+3280.823998002242 SN.node[1000].Communication.Routing      maxLength 2316.48
+3282.82388749377  SN.node[1000].Communication.Routing      Energy	7.06845	780	1	804	0	8000	43.2537	18.7842	1.536	964000	29	15.4022
+3285.82372173106  SN.node[1000].Communication.Routing      maxLength 2386.96
+3287.823611222588 SN.node[1000].Communication.Routing      Energy	7.03246	780	1	792	0	8000	43.2041	19.6473	1.7632	1106000	18	15.4013
+3290.823445459878 SN.node[1000].Communication.Routing      maxLength 2396.02
+3292.823334951406 SN.node[1000].Communication.Routing      Energy	6.99771	780	1	845	0	8000	43.1548	19.3486	1.7376	1088000	20	15.406
+3295.823169188696 SN.node[1000].Communication.Routing      maxLength 2365.45
+3297.823058680224 SN.node[1000].Communication.Routing      Energy	6.93321	780	1	799	24000	8000	43.1057	19.1001	1.28	804000	20	15.414
+3300.822892917514 SN.node[1000].Communication.Routing      maxLength 2399.28
+3302.822782409042 SN.node[1000].Communication.Routing      Energy	5.96561	780	0	-1	580000	8000	43.0571	18.7002	1.1928	746000	17	15.4195
+3305.822616646332 SN.node[1000].Communication.Routing      maxLength 2294.15
+3307.82250613786  SN.node[1000].Communication.Routing      Energy	5.92918	780	1	842	0	8000	43.0083	18.8311	1.1648	730000	17	15.4216
+3310.82234037515  SN.node[1000].Communication.Routing      maxLength 2382.46
+3312.822229866678 SN.node[1000].Communication.Routing      Energy	5.89586	780	1	779	0	8000	42.9595	18.8401	1.7456	1092000	20	15.4214
+3315.822064103968 SN.node[1000].Communication.Routing      maxLength 2395.83
+3317.821953595496 SN.node[1000].Communication.Routing      Energy	5.86264	780	1	774	0	8000	42.9108	18.8034	1.2696	794000	18	15.418
+3320.821787832786 SN.node[1000].Communication.Routing      maxLength 2386.67
+3322.821677324314 SN.node[1000].Communication.Routing      Energy	5.82904	780	1	518	0	8000	42.8626	18.2205	1.6888	1056000	30	15.4206
+3325.821511561604 SN.node[1000].Communication.Routing      maxLength 2381.02
+3327.821401053132 SN.node[1000].Communication.Routing      Energy	5.79583	780	1	775	0	8000	42.8148	17.8109	1.2816	802000	26	15.4232
+3330.821235290422 SN.node[1000].Communication.Routing      maxLength 2391
+3332.82112478195  SN.node[1000].Communication.Routing      Energy	5.76004	780	1	881	0	8000	42.7662	18.7241	1.5216	952000	21	15.4223
+3335.82095901924  SN.node[1000].Communication.Routing      maxLength 2360.16
+3337.820848510768 SN.node[1000].Communication.Routing      Energy	5.72367	780	1	764	0	8000	42.7185	17.6917	1.0208	642000	30	15.4278
+3340.820682748058 SN.node[1000].Communication.Routing      maxLength 2360.58
+3342.820572239586 SN.node[1000].Communication.Routing      Energy	5.6882	780	1	739	0	8000	42.6696	19.0035	1.2864	806000	16	15.4273
+3345.820406476876 SN.node[1000].Communication.Routing      maxLength 2394.78
+3347.820295968404 SN.node[1000].Communication.Routing      Energy	5.65497	780	1	774	0	8000	42.6201	19.5662	1.5216	952000	20	15.4308
+3350.820130205694 SN.node[1000].Communication.Routing      maxLength 2373.65
+3352.820019697222 SN.node[1000].Communication.Routing      Energy	5.62056	780	1	561	0	8000	42.5714	18.6739	1.1256	704000	35	15.4311
+3355.819853934512 SN.node[1000].Communication.Routing      maxLength 2398.34
+3357.81974342604  SN.node[1000].Communication.Routing      Energy	5.58548	780	1	794	0	8000	42.5235	18.0091	0.8432	528000	28	15.4333
+3360.81957766333  SN.node[1000].Communication.Routing      maxLength 2390.98
+3362.819467154858 SN.node[1000].Communication.Routing      Energy	5.54683	780	1	909	0	8000	42.4741	19.4012	1.2032	756000	19	15.431
+3365.819301392148 SN.node[1000].Communication.Routing      maxLength 2366.28
+3367.819190883676 SN.node[1000].Communication.Routing      Energy	5.50191	780	1	712	10000	8000	42.4261	18.0766	1.148	718000	23	15.4349
+3370.819025120966 SN.node[1000].Communication.Routing      maxLength 2344.94
+3372.818914612494 SN.node[1000].Communication.Routing      Energy	5.46645	780	1	809	0	8000	42.3773	18.839	1.4304	896000	22	15.4443
+3375.818748849784 SN.node[1000].Communication.Routing      maxLength 2337.93
+3377.818638341312 SN.node[1000].Communication.Routing      Energy	5.43099	780	1	809	0	8000	42.3283	19.0326	1.208	756000	24	15.4472
+3380.818472578602 SN.node[1000].Communication.Routing      maxLength 2307.14
+3382.81836207013  SN.node[1000].Communication.Routing      Energy	5.39488	780	1	884	0	8000	42.2798	18.586	1.048	656000	25	15.4503
+3385.81819630742  SN.node[1000].Communication.Routing      maxLength 2376.1
+3387.818085798948 SN.node[1000].Communication.Routing      Energy	5.34997	780	1	751	10000	8000	42.2319	17.8888	1.5648	982000	26	15.4538
+3390.817920036238 SN.node[1000].Communication.Routing      maxLength 2292.47
+3392.817809527766 SN.node[1000].Communication.Routing      Energy	5.31675	780	1	773	0	8000	42.1839	18.0785	1.1064	692000	29	15.4502
+3395.817643765056 SN.node[1000].Communication.Routing      maxLength 2303.19
+3397.817533256584 SN.node[1000].Communication.Routing      Energy	5.28075	780	1	797	0	8000	42.1354	18.5485	1.3048	816000	31	15.4524
+3400.817367493874 SN.node[1000].Communication.Routing      maxLength 2329.32
+3402.817256985402 SN.node[1000].Communication.Routing      Energy	5.2443	780	1	670	0	8000	42.0869	18.5962	1.952	1222000	24	15.4497
+3405.817091222692 SN.node[1000].Communication.Routing      maxLength 2362.21
+3407.81698071422  SN.node[1000].Communication.Routing      Energy	5.20792	780	1	756	0	8000	42.0383	18.6276	1.0272	644000	25	15.4516
+3410.81681495151  SN.node[1000].Communication.Routing      maxLength 2395.96
+3412.816704443038 SN.node[1000].Communication.Routing      Energy	5.17185	780	1	701	0	8000	41.9892	19.1394	1.3152	824000	23	15.4591
+3415.816538680328 SN.node[1000].Communication.Routing      maxLength 2330.63
+3417.816428171856 SN.node[1000].Communication.Routing      Energy	5.13529	780	1	760	0	8000	41.9406	18.6704	1.0456	654000	20	15.4577
+3420.816262409146 SN.node[1000].Communication.Routing      maxLength 2397.58
+3422.816151900674 SN.node[1000].Communication.Routing      Energy	5.04376	780	1	721	60000	8000	41.8919	18.7672	1.4784	928000	24	15.4599
+3425.815986137964 SN.node[1000].Communication.Routing      maxLength 2348.38
+3427.815875629492 SN.node[1000].Communication.Routing      Energy	5.00902	780	1	845	0	8000	41.8433	18.6248	1.6448	1030000	23	15.4641
+3430.815709866782 SN.node[1000].Communication.Routing      maxLength 2355.79
+3432.81559935831  SN.node[1000].Communication.Routing      Energy	4.97266	780	1	847	0	8000	41.7945	18.848	1.3568	852000	18	15.4604
+3435.8154335956   SN.node[1000].Communication.Routing      maxLength 2382.44
+3437.815323087128 SN.node[1000].Communication.Routing      Energy	4.93339	780	1	654	0	8000	41.7466	17.9371	1.0016	628000	29	15.4598
+3440.815157324418 SN.node[1000].Communication.Routing      maxLength 2373.6
+3442.815046815946 SN.node[1000].Communication.Routing      Energy	4.89657	780	1	748	0	8000	41.698	18.646	1.1232	706000	23	15.4595
+3445.814881053236 SN.node[1000].Communication.Routing      maxLength 2385.25
+3447.814770544764 SN.node[1000].Communication.Routing      Energy	4.85891	780	1	647	0	8000	41.6495	18.5263	1.4336	900000	27	15.4616
+3450.814604782054 SN.node[1000].Communication.Routing      maxLength 2370.63
+3452.814494273582 SN.node[1000].Communication.Routing      Energy	4.82127	780	1	903	0	8000	41.6014	18.1704	1.02	638000	24	15.462
+3455.814328510872 SN.node[1000].Communication.Routing      maxLength 2385.65
+3457.8142180024   SN.node[1000].Communication.Routing      Energy	4.78772	780	1	782	0	8000	41.5523	19.2087	1.2824	802000	20	15.467
+3460.81405223969  SN.node[1000].Communication.Routing      maxLength 2358.78
+3462.813941731218 SN.node[1000].Communication.Routing      Energy	4.75429	780	1	804	0	8000	41.5042	18.0647	1.2224	768000	22	15.469
+3465.813775968508 SN.node[1000].Communication.Routing      maxLength 2390.86
+3467.813665460036 SN.node[1000].Communication.Routing      Energy	4.71818	780	1	884	0	8000	41.4564	17.9009	1.7248	1082000	25	15.4739
+3470.813499697326 SN.node[1000].Communication.Routing      maxLength 2348.19
+3472.813389188854 SN.node[1000].Communication.Routing      Energy	4.68272	780	1	809	0	8000	41.4068	19.6837	1.1552	724000	21	15.471
+3475.813223426144 SN.node[1000].Communication.Routing      maxLength 2382.66
+3477.813112917672 SN.node[1000].Communication.Routing      Energy	4.64916	780	1	616	0	8000	41.358	18.7693	1.1856	742000	20	15.4749
+3480.812947154962 SN.node[1000].Communication.Routing      maxLength 2311.33
+3482.81283664649  SN.node[1000].Communication.Routing      Energy	4.58688	780	1	742	34000	8000	41.3098	18.3391	1.0016	630000	26	15.4765
+3485.81267088378  SN.node[1000].Communication.Routing      maxLength 2372.59
+3487.812560375308 SN.node[1000].Communication.Routing      Energy	4.5533	780	1	732	0	8000	41.2603	19.5552	1.6504	1032000	16	15.4796
+3490.812394612598 SN.node[1000].Communication.Routing      maxLength 2394.19
+3492.812284104126 SN.node[1000].Communication.Routing      Energy	4.51512	780	1	639	0	8000	41.2118	18.4578	1.4016	878000	21	15.48
+3495.812118341416 SN.node[1000].Communication.Routing      maxLength 2387.73
+3497.812007832944 SN.node[1000].Communication.Routing      Energy	4.4795	780	1	855	0	8000	41.1628	19.1133	1.436	898000	20	15.4808
+3500.811842070234 SN.node[1000].Communication.Routing      maxLength 2379.91
+3502.811731561762 SN.node[1000].Communication.Routing      Energy	4.44312	780	1	764	0	8000	41.1144	18.4529	1.2792	800000	25	15.4851
+3505.811565799052 SN.node[1000].Communication.Routing      maxLength 2389.33
+3507.81145529058  SN.node[1000].Communication.Routing      Energy	4.39821	780	1	751	10000	8000	41.0655	18.9574	1.568	984000	21	15.4864
+3510.81128952787  SN.node[1000].Communication.Routing      maxLength 2350.66
+3512.811179019398 SN.node[1000].Communication.Routing      Energy	4.36112	780	1	665	0	8000	41.017	18.5172	1.2928	812000	30	15.488
+3515.811013256688 SN.node[1000].Communication.Routing      maxLength 2381.57
+3517.810902748216 SN.node[1000].Communication.Routing      Energy	4.30048	780	1	769	34000	8000	40.9683	18.7918	1.9264	1208000	21	15.4896
+3520.810736985506 SN.node[1000].Communication.Routing      maxLength 2336.98
+3522.810626477034 SN.node[1000].Communication.Routing      Energy	4.26496	780	1	715	0	8000	40.9204	17.946	1.1744	736000	25	15.4916
+3525.810460714324 SN.node[1000].Communication.Routing      maxLength 2361.58
+3527.810350205852 SN.node[1000].Communication.Routing      Energy	4.22934	780	1	855	0	8000	40.8716	18.8129	1.6192	1016000	19	15.4887
+3530.810184443142 SN.node[1000].Communication.Routing      maxLength 2308.09
+3532.81007393467  SN.node[1000].Communication.Routing      Energy	4.19298	780	1	847	0	8000	40.8234	18.2243	1.8016	1130000	19	15.4885
+3535.80990817196  SN.node[1000].Communication.Routing      maxLength 2347.17
+3537.809797663488 SN.node[1000].Communication.Routing      Energy	4.09112	780	1	655	50000	8000	40.7736	19.9275	1.592	996000	19	15.4887
+3540.809631900778 SN.node[1000].Communication.Routing      maxLength 2361.91
+3542.809521392306 SN.node[1000].Communication.Routing      Energy	4.05781	780	1	779	0	8000	40.7257	17.8551	1.1088	694000	22	15.4942
+3545.809355629596 SN.node[1000].Communication.Routing      maxLength 2381.65
+3547.809245121124 SN.node[1000].Communication.Routing      Energy	4.02257	780	1	724	0	8000	40.6777	18.0651	1.1864	742000	27	15.493
+3550.809079358414 SN.node[1000].Communication.Routing      maxLength 2336.37
+3552.808968849942 SN.node[1000].Communication.Routing      Energy	3.98678	780	1	881	0	8000	40.6289	18.8733	1.3056	818000	24	15.4955
+3555.808803087232 SN.node[1000].Communication.Routing      maxLength 2364.63
+3557.80869257876  SN.node[1000].Communication.Routing      Energy	3.92449	780	1	742	34000	8000	40.5814	17.6042	1.232	774000	28	15.4981
+3560.80852681605  SN.node[1000].Communication.Routing      maxLength 2397.84
+3562.808416307578 SN.node[1000].Communication.Routing      Energy	3.88839	780	1	884	0	8000	40.5327	18.6762	1.408	884000	26	15.5007
+3565.808250544868 SN.node[1000].Communication.Routing      maxLength 2380.71
+3567.808140036396 SN.node[1000].Communication.Routing      Energy	3.85517	780	1	773	0	8000	40.4843	18.5144	1.0744	672000	21	15.504
+3570.807974273686 SN.node[1000].Communication.Routing      maxLength 2395.25
+3572.807863765214 SN.node[1000].Communication.Routing      Energy	3.81997	780	1	876	0	8000	40.4352	19.0998	1.5128	946000	20	15.503
+3575.807698002504 SN.node[1000].Communication.Routing      maxLength 2379.39
+3577.807587494032 SN.node[1000].Communication.Routing      Energy	3.76995	780	1	724	14000	8000	40.3864	18.8344	1.5328	962000	19	15.5042
+3580.807421731322 SN.node[1000].Communication.Routing      maxLength 2356.64
+3582.80731122285  SN.node[1000].Communication.Routing      Energy	3.73448	780	1	739	0	8000	40.3378	18.6819	1.548	968000	28	15.5039
+3585.80714546014  SN.node[1000].Communication.Routing      maxLength 2370.45
+3587.807034951668 SN.node[1000].Communication.Routing      Energy	3.69924	780	1	690	0	8000	40.2895	18.3855	1.1584	728000	20	15.5017
+3590.806869188958 SN.node[1000].Communication.Routing      maxLength 2342.52
+3592.806758680486 SN.node[1000].Communication.Routing      Energy	3.66418	780	1	709	0	8000	40.241	18.5347	1.2312	770000	26	15.5057
+3595.806592917776 SN.node[1000].Communication.Routing      maxLength 2329.85
+3597.806482409304 SN.node[1000].Communication.Routing      Energy	3.62746	780	1	699	0	8000	40.1927	18.3395	1.0688	672000	23	15.5073
+3600.806316646594 SN.node[1000].Communication.Routing      maxLength 2362.74
+3602.806206138122 SN.node[1000].Communication.Routing      Energy	3.59414	780	1	779	0	8000	40.143	19.7054	1.4648	916000	25	15.5081
+3605.806040375412 SN.node[1000].Communication.Routing      maxLength 2183.05
+3607.80592986694  SN.node[1000].Communication.Routing      Energy	3.55908	780	1	709	0	8000	40.0947	18.4247	1.3656	854000	23	15.5109
+3610.80576410423  SN.node[1000].Communication.Routing      maxLength 2398.4
+3612.805653595758 SN.node[1000].Communication.Routing      Energy	3.46755	780	1	721	60000	8000	40.0446	20.1399	1.7784	1112000	19	15.5069
+3615.805487833048 SN.node[1000].Communication.Routing      maxLength 2330.27
+3617.805377324576 SN.node[1000].Communication.Routing      Energy	3.43396	780	1	606	0	8000	39.9954	19.2158	1.6944	1060000	19	15.5112
+3620.805211561866 SN.node[1000].Communication.Routing      maxLength 2370.17
+3622.805101053394 SN.node[1000].Communication.Routing      Energy	3.3985	780	1	809	0	8000	39.9473	18.1402	1.0456	654000	25	15.5162
+3625.804935290684 SN.node[1000].Communication.Routing      maxLength 2359.64
+3627.804824782212 SN.node[1000].Communication.Routing      Energy	3.36492	780	1	732	0	8000	39.8993	18.0396	1.0688	670000	27	15.5183
+3630.804659019502 SN.node[1000].Communication.Routing      maxLength 2398.37
+3632.80454851103  SN.node[1000].Communication.Routing      Energy	3.32869	780	1	799	0	8000	39.8505	18.9219	1.1064	692000	23	15.5245
+3635.80438274832  SN.node[1000].Communication.Routing      maxLength 2379.15
+3637.804272239848 SN.node[1000].Communication.Routing      Energy	3.29022	780	1	671	0	8000	39.8016	18.8998	1.344	844000	21	15.5229
+3640.804106477138 SN.node[1000].Communication.Routing      maxLength 2389.18
+3642.803995968666 SN.node[1000].Communication.Routing      Energy	3.25701	780	1	775	0	8000	39.7523	19.3155	1.5616	978000	25	15.5241
+3645.803830205956 SN.node[1000].Communication.Routing      maxLength 2392.42
+3647.803719697484 SN.node[1000].Communication.Routing      Energy	3.2226	780	1	721	0	8000	39.7041	18.3119	1.196	748000	19	15.5276
+3650.803553934774 SN.node[1000].Communication.Routing      maxLength 2344.91
+3652.803443426302 SN.node[1000].Communication.Routing      Energy	3.18938	780	1	773	0	8000	39.6558	18.3642	1.3592	850000	24	15.5254
+3655.803277663592 SN.node[1000].Communication.Routing      maxLength 2391.04
+3657.80316715512  SN.node[1000].Communication.Routing      Energy	3.15521	780	1	717	0	8000	39.6066	19.244	1.3648	854000	16	15.5271
+3660.80300139241  SN.node[1000].Communication.Routing      maxLength 2361.56
+3662.802890883938 SN.node[1000].Communication.Routing      Energy	3.11918	780	1	716	0	8000	39.5578	18.8698	1.0808	676000	29	15.5277
+3665.802725121228 SN.node[1000].Communication.Routing      maxLength 2355.99
+3667.802614612756 SN.node[1000].Communication.Routing      Energy	3.07712	780	1	732	10000	8000	39.5081	19.7146	1.44	904000	21	15.5267
+3670.802448850046 SN.node[1000].Communication.Routing      maxLength 2354.83
+3672.802338341574 SN.node[1000].Communication.Routing      Energy	2.68552	780	0	-1	220000	8000	39.4596	18.514	1.2736	800000	22	15.5352
+3675.802172578864 SN.node[1000].Communication.Routing      maxLength 2323.82
+3677.802062070392 SN.node[1000].Communication.Routing      Energy	2.65194	780	1	732	0	8000	39.4108	18.924	1.5136	948000	22	15.5374
+3680.801896307682 SN.node[1000].Communication.Routing      maxLength 2382.55
+3682.80178579921  SN.node[1000].Communication.Routing      Energy	2.5913	780	1	769	34000	8000	39.3623	18.5504	1.2256	768000	27	15.5389
+3685.8016200365   SN.node[1000].Communication.Routing      maxLength 2388.6
+3687.801509528028 SN.node[1000].Communication.Routing      Energy	2.55602	780	1	874	0	8000	39.3138	18.5079	1.5136	950000	19	15.5457
+3690.801343765318 SN.node[1000].Communication.Routing      maxLength 2358.86
+3692.801233256846 SN.node[1000].Communication.Routing      Energy	2.52006	780	1	684	0	8000	39.2646	19.2902	1.7208	1076000	21	15.5512
+3695.801067494136 SN.node[1000].Communication.Routing      maxLength 2320.09
+3697.800956985664 SN.node[1000].Communication.Routing      Energy	2.48532	780	1	918	0	8000	39.2156	18.9785	1.484	928000	23	15.555
+3700.800791222954 SN.node[1000].Communication.Routing      maxLength 2384.05
+3702.800680714482 SN.node[1000].Communication.Routing      Energy	2.44909	780	1	808	0	8000	39.1665	19.2197	1.2368	774000	23	15.5594
+3705.800514951772 SN.node[1000].Communication.Routing      maxLength 2391.25
+3707.8004044433   SN.node[1000].Communication.Routing      Energy	2.41587	780	1	773	0	8000	39.1178	18.7011	1.292	808000	23	15.5596
+3710.80023868059  SN.node[1000].Communication.Routing      maxLength 2390.55
+3712.800128172118 SN.node[1000].Communication.Routing      Energy	2.38231	780	1	742	0	8000	39.0688	19.1079	1.568	982000	16	15.5624
+3715.799962409408 SN.node[1000].Communication.Routing      maxLength 2395.34
+3717.799851900936 SN.node[1000].Communication.Routing      Energy	2.31781	780	1	799	24000	8000	39.02	18.8503	1.2248	766000	20	15.5665
+3720.799686138226 SN.node[1000].Communication.Routing      maxLength 2378.05
+3722.799575629754 SN.node[1000].Communication.Routing      Energy	2.21595	780	1	655	50000	8000	38.9716	18.3576	1.3904	870000	26	15.5705
+3725.799409867044 SN.node[1000].Communication.Routing      maxLength 2359.85
+3727.799299358572 SN.node[1000].Communication.Routing      Energy	2.17999	780	1	684	0	8000	38.9232	18.4767	0.9728	612000	23	15.5705
+3730.799133595862 SN.node[1000].Communication.Routing      maxLength 2373.25
+3732.79902308739  SN.node[1000].Communication.Routing      Energy	2.14392	780	1	701	0	8000	38.8745	18.7176	1.3688	856000	22	15.5674
+3735.79885732468  SN.node[1000].Communication.Routing      maxLength 2351.98
+3737.798746816208 SN.node[1000].Communication.Routing      Energy	2.0111	780	1	654	60000	8000	38.8258	18.7739	1.424	894000	25	15.5715
+3740.798581053498 SN.node[1000].Communication.Routing      maxLength 2379.37
+3742.798470545026 SN.node[1000].Communication.Routing      Energy	1.97247	780	1	786	0	8000	38.777	18.9084	1.18	738000	18	15.5789
+3745.798304782316 SN.node[1000].Communication.Routing      maxLength 2364.9
+3747.798194273844 SN.node[1000].Communication.Routing      Energy	1.93483	780	1	688	0	8000	38.7281	18.9416	1.36	852000	23	15.5835
+3750.798028511134 SN.node[1000].Communication.Routing      maxLength 2387.13
+3752.797918002662 SN.node[1000].Communication.Routing      Energy	1.90161	780	1	773	0	8000	38.6807	17.4173	1.0968	686000	25	15.5876
+3755.797752239952 SN.node[1000].Communication.Routing      maxLength 2391.6
+3757.79764173148  SN.node[1000].Communication.Routing      Energy	1.86839	780	1	773	0	8000	38.6318	18.9962	1.3232	828000	22	15.5917
+3760.79747596877  SN.node[1000].Communication.Routing      maxLength 2390.19
+3762.797365460298 SN.node[1000].Communication.Routing      Energy	1.83294	780	1	762	0	8000	38.5824	19.3648	1.1192	700000	27	15.5961
+3765.797199697588 SN.node[1000].Communication.Routing      maxLength 2394.95
+3767.797089189116 SN.node[1000].Communication.Routing      Energy	1.79602	780	1	817	0	8000	38.5331	19.401	1.7296	1082000	16	15.5979
+3770.796923426406 SN.node[1000].Communication.Routing      maxLength 2370.86
+3772.796812917934 SN.node[1000].Communication.Routing      Energy	1.75991	780	1	884	0	8000	38.4847	18.4003	0.968	606000	22	15.5985
+3775.796647155224 SN.node[1000].Communication.Routing      maxLength 2365.62
+3777.796536646752 SN.node[1000].Communication.Routing      Energy	1.72636	780	1	782	0	8000	38.4365	18.2654	0.9376	588000	25	15.5992
+3780.796370884042 SN.node[1000].Communication.Routing      maxLength 2361.33
+3782.79626037557  SN.node[1000].Communication.Routing      Energy	1.69277	780	1	736	0	8000	38.3882	18.3652	1.2984	812000	28	15.5977
+3785.79609461286  SN.node[1000].Communication.Routing      maxLength 2356.89
+3787.795984104388 SN.node[1000].Communication.Routing      Energy	1.59091	780	1	655	50000	8000	38.3388	19.5088	1.448	906000	21	15.6
+3790.795818341678 SN.node[1000].Communication.Routing      maxLength 2396.71
+3792.795707833206 SN.node[1000].Communication.Routing      Energy	1.55417	780	1	667	0	8000	38.2905	18.2751	1.1936	748000	24	15.6074
+3795.795542070496 SN.node[1000].Communication.Routing      maxLength 2380.69
+3797.795431562024 SN.node[1000].Communication.Routing      Energy	1.51821	780	1	684	0	8000	38.2425	18.1144	1.1088	694000	25	15.6074
+3800.795265799314 SN.node[1000].Communication.Routing      maxLength 2361.62
+3802.795155290842 SN.node[1000].Communication.Routing      Energy	1.48177	780	1	842	0	8000	38.1941	18.4443	1.3216	828000	21	15.6093
+3805.794989528132 SN.node[1000].Communication.Routing      maxLength 2397.46
+3807.79487901966  SN.node[1000].Communication.Routing      Energy	1.42113	780	1	769	34000	8000	38.1455	18.6615	1.164	728000	26	15.6114
+3810.79471325695  SN.node[1000].Communication.Routing      maxLength 2326.15
+3812.794602748478 SN.node[1000].Communication.Routing      Energy	1.34027	780	1	639	30000	8000	38.0966	18.941	1.3208	826000	24	15.6111
+3815.794436985768 SN.node[1000].Communication.Routing      maxLength 2338.56
+3817.794326477296 SN.node[1000].Communication.Routing      Energy	1.30475	780	1	715	0	8000	38.0478	18.7986	1.248	782000	19	15.6144
+3820.794160714586 SN.node[1000].Communication.Routing      maxLength 2347.13
+3822.794050206114 SN.node[1000].Communication.Routing      Energy	1.2712	780	1	782	0	8000	37.9993	18.5289	1.5648	982000	21	15.6095
+3825.793884443404 SN.node[1000].Communication.Routing      maxLength 2361.28
+3827.793773934932 SN.node[1000].Communication.Routing      Energy	1.23799	780	1	775	0	8000	37.9514	18.0391	1.04	654000	25	15.6077
+3830.793608172222 SN.node[1000].Communication.Routing      maxLength 2345.97
+3832.79349766375  SN.node[1000].Communication.Routing      Energy	1.15713	780	1	639	30000	8000	37.9022	19.214	1.34	838000	24	15.6098
+3835.79333190104  SN.node[1000].Communication.Routing      maxLength 2397.31
+3837.793221392568 SN.node[1000].Communication.Routing      Energy	1.11982	780	1	924	0	8000	37.8525	19.7426	1.1312	708000	21	15.6109
+3840.793055629858 SN.node[1000].Communication.Routing      maxLength 2386.29
+3842.792945121386 SN.node[1000].Communication.Routing      Energy	1.08383	780	1	781	0	8000	37.8038	18.782	1.2608	792000	21	15.6131
+3845.792779358676 SN.node[1000].Communication.Routing      maxLength 2333.54
+3847.792668850204 SN.node[1000].Communication.Routing      Energy	1.05025	780	1	601	0	8000	37.7548	19.061	1.1776	738000	20	15.6139
+3850.792503087494 SN.node[1000].Communication.Routing      maxLength 2370.87
+3852.792392579022 SN.node[1000].Communication.Routing      Energy	0.989605	780	1	769	34000	8000	37.7051	19.7556	1.5264	956000	15	15.6204
+3855.792226816312 SN.node[1000].Communication.Routing      maxLength 2389.14
+3857.79211630784  SN.node[1000].Communication.Routing      Energy	0.95629	780	1	779	0	8000	37.6572	17.8613	1.1072	696000	26	15.6274
+3860.79195054513  SN.node[1000].Communication.Routing      maxLength 2390.64
+3862.791840036658 SN.node[1000].Communication.Routing      Energy	0.920065	780	1	799	0	8000	37.6089	18.3704	1.4064	880000	23	15.6275
+3865.791674273948 SN.node[1000].Communication.Routing      maxLength 2349.7
+3867.791563765476 SN.node[1000].Communication.Routing      Energy	0.878001	780	1	732	10000	8000	37.5594	19.5763	1.712	1074000	19	15.6303
+3870.791398002766 SN.node[1000].Communication.Routing      maxLength 2212.81
+3872.791287494294 SN.node[1000].Communication.Routing      Energy	0.840899	780	1	785	0	8000	37.5103	19.1103	1.4848	930000	17	15.6364
+3875.791121731584 SN.node[1000].Communication.Routing      maxLength 2303.2
+3877.791011223112 SN.node[1000].Communication.Routing      Energy	0.804081	780	1	748	0	8000	37.4619	18.5288	1.3696	858000	24	15.6355
+3880.790845460402 SN.node[1000].Communication.Routing      maxLength 2364.78
+3882.79073495193  SN.node[1000].Communication.Routing      Energy	0.473283	780	0	-1	182000	8000	37.413	18.9017	1.2128	760000	24	15.6346
+3885.79056918922  SN.node[1000].Communication.Routing      maxLength 2388.91
+3887.790458680748 SN.node[1000].Communication.Routing      Energy	0.438431	780	1	751	0	8000	37.3652	17.8174	0.9856	620000	20	15.6382
+3890.790292918038 SN.node[1000].Communication.Routing      maxLength 2342.42
+3892.790182409566 SN.node[1000].Communication.Routing      Energy	0.397548	780	1	564	2000	8000	37.3164	18.8705	1.2	752000	28	15.6419
+3895.790016646856 SN.node[1000].Communication.Routing      maxLength 2397.91
+3897.789906138384 SN.node[1000].Communication.Routing      Energy	0.363383	780	1	717	0	8000	37.2674	19.0636	1.1872	746000	19	15.643
+3900.789740375674 SN.node[1000].Communication.Routing      maxLength 2382.13
+3902.789629867202 SN.node[1000].Communication.Routing      Energy	0.30274	780	1	769	34000	8000	37.2187	18.7186	1.7656	1104000	24	15.6485
+3905.789464104492 SN.node[1000].Communication.Routing      maxLength 2314.46
+3907.78935359602  SN.node[1000].Communication.Routing      Energy	0.267005	780	1	872	0	8000	37.1712	17.5899	1.0128	634000	27	15.6495
+3910.78918783331  SN.node[1000].Communication.Routing      maxLength 2397.95
+3912.789077324838 SN.node[1000].Communication.Routing      Energy	0.231922	780	1	794	0	8000	37.1235	17.7201	1.052	658000	26	15.6578
+3915.788911562128 SN.node[1000].Communication.Routing      maxLength 2339.26
+3917.788801053656 SN.node[1000].Communication.Routing      Energy	0.195183	780	1	667	0	8000	37.0747	18.8671	1.8808	1176000	17	15.6582
+3920.788635290946 SN.node[1000].Communication.Routing      maxLength 2351.08
+3922.788524782474 SN.node[1000].Communication.Routing      Energy	0.158194	780	1	571	0	8000	37.026	18.7334	1.0936	684000	23	15.6606
+3925.788359019764 SN.node[1000].Communication.Routing      maxLength 2375.51
+3927.788248511292 SN.node[1000].Communication.Routing      Energy	0.124644	780	1	782	0	8000	36.9773	18.7922	1.1152	698000	22	15.6614
+3930.788082748582 SN.node[1000].Communication.Routing      maxLength 2386.39
+3932.78797224011  SN.node[1000].Communication.Routing      Energy	0.091049	780	1	736	0	8000	36.9289	18.4867	1.2024	752000	24	15.6603
+3935.7878064774   SN.node[1000].Communication.Routing      maxLength 2396.82
+3937.787695968928 SN.node[1000].Communication.Routing      Energy	0.0574992	780	1	782	0	8000	36.8793	19.5681	1.44	902000	26	15.668
+3940.787530206218 SN.node[1000].Communication.Routing      maxLength 2338.95
+3942.787419697746 SN.node[1000].Communication.Routing      Energy	0.0242886	780	1	775	0	8000	36.8301	19.3233	1.3024	816000	19	15.6693
+3945.787253935036 SN.node[1000].Communication.Routing      maxLength 2304.92
+3947.015473846122 SN.node[780].ResourceManager             LIFETIME

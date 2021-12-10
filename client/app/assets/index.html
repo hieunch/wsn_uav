@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/app.css">
+    <title>Rolling Ball</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"-->
+    <!--integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"-->
+    <!--crossorigin="anonymous"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+            integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+            integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+            crossorigin="anonymous"></script>
+    <script src="/vendor.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<div class="container-fluid" style="padding: 10px">
+    <div id="option-panel" class="container">
+        <p>Simulation is done, toggle to switch between network and results
+        <p>
+        <div class="custom-switch">
+            <input class="custom-switch-input" id="show-result" type="checkbox">
+            <label class="custom-switch-btn" for="show-result"></label>
+        </div>
+    </div>
+
+</div>
+<div class="row" id="content">
+    <div id="panel" class="col-sm-3">
+        <label>Node ID:</label>
+        <input type="text" id="node-id" class="form-control" value="40" disabled>
+        <div class="row">
+            <div class="col-sm-6">
+                <label>Height:</label>
+                <input type="text" id="height-input" class="form-control" value="100">
+            </div>
+            <div class="col-sm-6">
+                <label>Width:</label>
+                <input type="text" id="width-input" class="form-control" value="100">
+            </div>
+        </div>
+        <label>Radio range:</label>
+        <input type="text" id="range-input" class="form-control" value="40">
+        <label>Number of sensors:</label>
+        <input type="text" id="v-input" class="form-control" value="100">
+        <div class="row">
+            <div class="col">
+                <button
+                        id="generate-btn"
+                        type="button" class="btn btn-primary btn-block"
+                        data-toggle="tooltip">Generate
+                </button>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col">
+
+                <input type="file" class="" id="file-input" style="display: none"/></span>
+                <button
+                        id="generate-file-btn"
+                        type="button" class="btn btn-primary btn-block"
+                        data-toggle="tooltip">Load from file
+                </button>
+            </div>
+
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col">
+
+                <input type="file" class="" id="file-input2" style="display: none"/></span>
+                <button
+                        id="load-hole-btn"
+                        type="button" class="btn btn-primary btn-block"
+                        data-toggle="tooltip">Load hole
+                </button>
+            </div>
+
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col">
+                <button
+                        id="display-btn"
+                        type="button" class="btn btn-primary btn-block"
+                        data-toggle="tooltip">Display result
+                </button>
+            </div>
+
+        </div>
+         <div class="row" style="margin-top: 10px">
+            <div class="col">
+                <button
+                        id="statistic-btn"
+                        type="button" class="btn btn-primary btn-block"
+                        data-toggle="tooltip">Handle statistics
+                </button>
+            </div>
+
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col">
+                <button
+                        id="save-btn"
+                        type="button" class="btn btn-primary btn-block"
+                        data-toggle="tooltip">Save
+                </button>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col">
+                <button
+                        id="export-btn"
+                        type="button" class="btn btn-primary btn-block"
+                        data-toggle="tooltip">Export SVG
+                </button>
+            </div>
+
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col">
+                <button
+                        id="addpair-btn"
+                        type="button" class="btn btn-primary btn-block"
+                        data-toggle="tooltip">Add Pair
+                </button>
+            </div>
+
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col">
+                <button
+                        id="addregionpair-btn"
+                        type="button" class="btn btn-primary btn-block"
+                        data-toggle="tooltip">Add Regions
+                </button>
+            </div>
+
+        </div>
+        <label>Traffic (#region:#pairs)</label>
+        <textarea rows="5" id="traffic-input" class="form-control"></textarea>
+        <!--<label>Traffic:</label>-->
+        <!--<textarea rows="5" id="traffic-input" class="form-control"></textarea>-->
+        <!--<div class="row">-->
+        <!--<div class="col-sm-6">-->
+        <!--<button-->
+        <!--id="traffic-generate-btn"-->
+        <!--type="button" class="btn btn-primary btn-block"-->
+        <!--data-toggle="tooltip">Gen traffic-->
+        <!--</button>-->
+        <!--</div>-->
+        <!--<div class="col-sm-6">-->
+        <!--<input type="number" id="num-traffic-input" class="form-control" value="5">-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="form-group">
+            <label for="mode-input">Mode</label>
+            <select class="form-control" id="mode-input">
+                <option>debug</option>
+                <option>real</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="ra-input">Routing algorithm</label>
+            <select class="form-control" id="ra-input">
+            	<option>rainbow</option>
+                <option>MLPv2</option>
+                <option>ICH</option>
+                <option>ICH2</option>
+                <option>VHR</option>
+                <option>greedy</option>
+                <option>mlp</option>
+                <option>gpsr</option>
+                <option>rollingBall</option>
+                <option>stable</option>
+                <option>shortestPath</option>
+            </select>
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col">
+                <button
+                        id="submit-btn"
+                        type="button" class="btn btn-primary btn-block"
+                        data-toggle="tooltip">Submit
+                </button>
+            </div>
+
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col">
+                <button
+                        id="reset-btn"
+                        type="button" class="btn btn-primary btn-block"
+                        data-toggle="tooltip">Reset
+                </button>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label>nCellHeight:</label>
+                <input type="text" id="nCellHeight" class="form-control" value="0" disabled>
+            </div>
+            <div class="col-sm-6">
+                <label>nCellWidth:</label>
+                <input type="text" id="nCellWidth" class="form-control" value="0" disabled>
+            </div>
+        </div>
+
+    </div>
+    <!--<div id="canvas" class="col-sm-9"/>-->
+    <div id="result" class="col-sm-9">
+    </div>
+    <div id="graph-container" class="col-sm-9">
+    </div>
+</div>
+</div>
+<script>require('index');</script>
+</body>

@@ -1,0 +1,17 @@
+node_modules
+Castalia/Castalia/out/**
+.idea
+Castalia/Castalia/CastaliaBin
+Castalia/Castalia/Simulations/*/*.txt
+Castalia/Castalia/Simulations/server/archive/*
+Castalia/Castalia/Simulations/server/dist/
+Castalia/Castalia/Simulations/server/*.txt
+*.iml
+Castalia/Castalia/Makefile
+Castalia/Castalia/Simulations/server/package-lock.json
+client/package-lock.json
+client/public/
+client/node_modules
+client/public_cache/
+Castalia/Castalia/Simulations/server/logs
+Castalia/Castalia/Simulations/server/public
