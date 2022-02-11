@@ -25,24 +25,17 @@ parameters:
 	int maxNetFrameSize = default (0);
 	int netDataFrameOverhead = default (14);
 	int netBufferSize = default (32);		
-	bool isSink = default (false);
 	
-	double percentage = default (0.05);	
+	bool isSink = default (false);
 	double roundLength @unit(s);	
-	double helloLength @unit(s) = default (0.01s);	
-	double discoverLength @unit(s) = default (0.04s);	
-	double slotLength;
 
-	//routing layer packet sizes
-	int controlPacketSize = default (9); // Type + Source + Destination + CHid + nextCH + isCH = 16 bytes
+	//data packet size
 	int dataPacketSize = default (9);
 
-	int k0 = default (250);
-	double epsilon = default (0.5);
-	double d0 = 100;
-	int numNodesPerCluster = 10;
-	double maxUAVLength = default (9600);
-	double gamma = default (0.9999999);
+	// Max length of UAV trajectory
+	double maxUAVFlyingDistance = default (1000);
+
+	double neighborRadius = 100;
 
 	//Parameters used to power control.
 	xml powersConfig;

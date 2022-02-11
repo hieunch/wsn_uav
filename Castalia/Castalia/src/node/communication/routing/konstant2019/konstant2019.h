@@ -47,8 +47,8 @@ using namespace std;
 
 enum konstant2019Timers {
 	START_ROUND = 1,	
-	START_CLUSTERING = 2,
-	START_SLOT = 3,
+	START_MAINALG = 2,
+	SEND_DATA = 3,
 	END_ROUND = 4,
 	JOIN_CH = 5,
 	SEND_ADV = 6,
@@ -91,7 +91,7 @@ private:
 
 	vector<vector<int>> basicTours0;
 	
-    vector<double> dLandmark;
+    vector<double> d2CH;
     map<int, double> ballWeight;
     double maxThres;
     double epsilon;
@@ -101,7 +101,7 @@ private:
     double minBallWeight;
     unordered_set<int> rmSet;
 	vector<list<int>> centList;
-    vector<bool> isLandmark;
+    vector<bool> isCH;
 	vector<int> fringeSet;
 	vector<int> innerSet;
 	vector<int> A2;

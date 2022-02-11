@@ -31,7 +31,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <sstream>
-#include "VirtualRouting.h"
+#include "uavCollectionRouting.h"
 #include "VirtualApplication.h"	
 #include "globecomPacket_m.h"
 #include "ApplicationPacket_m.h"
@@ -47,8 +47,8 @@ using namespace std;
 
 enum globecomTimers {
 	START_ROUND = 1,	
-	START_CLUSTERING = 2,
-	START_SLOT = 3,
+	START_MAINALG = 2,
+	SEND_DATA = 3,
 	END_ROUND = 4,
 	JOIN_CH = 5,
 	SEND_ADV = 6,
@@ -67,14 +67,14 @@ struct NeighborInfo
 	double energy;
 };
 
-class globecom : public VirtualRouting {
+class globecom : public uavCollectionRouting {
 
 private:
 	
 	string applicationID;	
 
 	queue <cPacket *> tempTXBuffer;
-	vector <globecomPacket> bufferAggregate;
+	vector <uavCollectionRoutingPacket> bufferAggregate;
 	vector <int> clusterMembers;
 	list <NeighborInfo> neighborTable;
 
@@ -85,33 +85,23 @@ private:
     int k0;
 	double d0;
 
-    int nloop;
-
-	int k_opt;
+	int dataPacketSize;
 	
-    vector<double> dLandmark;
+    vector<double> d2CH;
     map<int, double> ballWeight;
     double maxThres;
     double epsilon;
-    double Eavg = 0;
 	vector<list<int>> representSet;
     double maxBallWeight;
     double minBallWeight;
-    unordered_set<int> rmSet;
-	vector<list<int>> centList;
-    vector<bool> isLandmark;
+    vector<bool> isCH;
 
 	double Wt;
 	double Wt_max;
 	double Wt_min;
 	vector<double> w_max;
-	double E_opt;
-	double E_max;
-	double E_min;
 	double w_min;
 	double w_total;
-
-	double gamma;
 
 //////////////////////////////////////////////////
 
@@ -133,4 +123,4 @@ protected:
 	void buildTrajectories();
 };
 
-#endif			
+#endif		

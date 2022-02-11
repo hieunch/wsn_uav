@@ -24,9 +24,9 @@ void globecom::startup()
 	/*--- The .ned file's parameters ---*/
 	applicationID = par("applicationID").stringValue(); 	
 
-	d0 = par("d0");
-	gamma = par("gamma");
-	k_opt = -1;
+	d0 = par("neighborRadius");
+	dataPacketSize = par("dataPacketSize");
+
 	if (isSink) init();
 		
 	setTimer(START_ROUND, 50);
@@ -74,37 +74,39 @@ void globecom::timerFiredCallback(int index)
 	switch (index) {
 		
 		case START_ROUND:{
-			// for (int i=0; i<5; i++) trace() << "START_ROUND";
-			
+			trace() << "START_ROUND " << roundNumber;
 			if (isSink) {
-				trace() << "START_ROUND";
-				setTimer(START_CLUSTERING, 1);
+				setTimer(START_MAINALG, 1);
 				setTimer(END_ROUND, 3);
 			} else {
-				setTimer(START_SLOT, 2);
+				setTimer(SEND_DATA, 2);
 			}
 			roundNumber++;
 			setTimer(START_ROUND, roundLength);
-			// for (int i=0; i<5; i++) trace() << "setTimer " << (roundLength + simTime());
 			break;
 		}
-		case START_CLUSTERING:{	
-			// for (int i=0; i<5; i++) trace() << "START_CLUSTERING";
+		case START_MAINALG:{	
+			trace() << "START_MAINALG";
 			totalConsumed = 0;
 			maxConsumed = 0;
 			mainAlg();
 			break;
 		}
 		
-		case START_SLOT:{
-			// for (int i=0; i<5; i++) trace() << "START_SLOT";
-			sendAggregate();
-			// trace() << "Send aggregated packet to " << -1;
+		case SEND_DATA:{
+			trace() << "SEND_DATA";
+			RoutingPacket *dataPacket = check_and_cast <RoutingPacket*>(pkt);
+			dataPacket->setByteLength(dataPacketSize);
+			dataPacket->setKind(NETWORK_LAYER_PACKET);
+			dataPacket->setSource(self);
+			dataPacket->setDestination(config.clus_id[self]);
+  			dataPacket->setTTL(1000);
+			sendData(dataPacket);
 			// processBufferedPacket();
 			break;
 		}
 		case END_ROUND:{	
-			E_min = DBL_MAX;
+			double E_min = DBL_MAX;
 			double E_total = 0;
 			for (int i=0; i<numNodes; i++) {
 				if (i == self) continue;
@@ -126,13 +128,9 @@ void globecom::processBufferedPacket()
 }
 
 
-
-
-
 void globecom::mainAlg() {
-
-	vector<int> nodes;
-	for (int i=0; i<numNodes; i++) nodes.push_back(i);
+	vector<int> nodeList;
+	for (int i=0; i<numNodes; i++) nodeList.push_back(i);
 	
 	int k = 0;
 	bool fl;
@@ -141,7 +139,7 @@ void globecom::mainAlg() {
 		trace() << "k = " << k;
 		fl = false;
 		A.clear();
-		auto Clusters = kMeansClustering(nodes, k);
+		auto Clusters = kMeansClustering(nodeList, k);
 		for (auto p : Clusters) {
 			int l = p.first;
 			A.push_back(l);
@@ -158,9 +156,9 @@ void globecom::mainAlg() {
 	for (int jj=0; jj<10; jj++) trace() << "buildTrajectories";
 	buildTrajectories();
 	clearData();
-	for (int l : A) isLandmark[l] = true;
+	for (int l : A) isCH[l] = true;
 	growBalls(A);
-	config.save(A, cent, next, trajectories);
+	config.save(A, clus_id, nextHop, trajectories);
 
 	double maxLength = 0;
 	for (auto T : config.trajectories) {
@@ -179,25 +177,23 @@ void globecom::init() {
 	graph.init(numNodes, self, d0);
 	trajectories.resize(numUAVs, vector<int>());
 
-	dLandmark.resize(N, 0.);
-	cent.resize(N, -1);
-	next.resize(N, -1);
-	centList.resize(N);
-	isLandmark.resize(N, false);
+	d2CH.resize(N, 0.);
+	clus_id.resize(N, -1);
+	nextHop.resize(N, -1);
+	isCH.resize(N, false);
 	representSet.resize(N);
 	w_max.resize(N);
 }
 
 void globecom::reset() {
-	
+	config.clear();
 	trajectories = vector<vector<int>>(numUAVs, vector<int>());
 
 	A.clear();
-	dLandmark = vector<double>(N, 0.);
-	cent = vector<int>(N, -1);
-	next = vector<int>(N, -1);
-	centList = vector<list<int>>(N);
-	isLandmark = vector<bool>(N, false);
+	d2CH = vector<double>(N, 0.);
+	clus_id = vector<int>(N, -1);
+	nextHop = vector<int>(N, -1);
+	isCH = vector<bool>(N, false);
 	representSet = vector<list<int>>(N);
 	w_max = vector<double>(N, 0);
 }
@@ -205,12 +201,12 @@ void globecom::reset() {
 void globecom::growBalls(vector<int> landmarkSet){
 	// for (int i=0; i<20; i++) trace() << "growBalls Asize " << A.size();
 	for (int u : landmarkSet) {
-		dLandmark[u] = 0;
+		d2CH[u] = 0;
 		representSet[u].clear();
-		cent[u] = u;
+		clus_id[u] = u;
 	}
 
-	dCompare =  &dLandmark;
+	dCompare =  &d2CH;
 	priority_queue<int,vector<int>, decltype(&Comparebydistance)> queue(Comparebydistance);
 	for (int l : landmarkSet) {
 		queue.push(l);
@@ -222,15 +218,15 @@ void globecom::growBalls(vector<int> landmarkSet){
 		queue.pop();
 		if (removedSet.find(u) != removedSet.end()) continue;
 		removedSet.insert(u);
-		if (!isLandmark[u]) representSet[cent[u]].push_back(u);
+		if (!isCH[u]) representSet[clus_id[u]].push_back(u);
 		for (int v : graph.getAdjExceptSink(u)) {
 			if ((removedSet.find(v) != removedSet.end())) continue;
-			double alt = dLandmark[u] + graph.getLength(u,v);
+			double alt = d2CH[u] + graph.getLength(u,v);
 			
-			if (alt - dLandmark[v] < -EPSILON){
-				dLandmark[v] = alt;
-				cent[v] = cent[u];
-				next[v] = u;
+			if (alt - d2CH[v] < -EPSILON){
+				d2CH[v] = alt;
+				clus_id[v] = clus_id[u];
+				nextHop[v] = u;
 				queue.push(v);
 			}
 		}
@@ -239,11 +235,10 @@ void globecom::growBalls(vector<int> landmarkSet){
 
 void globecom::clearData(){
 	for (int u : graph.getNodesExceptSink()){
-		isLandmark[u] = false;
-		dLandmark[u] = DBL_MAX;
-		cent[u] = -1;
-		next[u] = -1;
-		centList[u].clear();
+		isCH[u] = false;
+		d2CH[u] = DBL_MAX;
+		clus_id[u] = -1;
+		nextHop[u] = -1;
 		representSet[u].clear();
 	}
 }
@@ -296,8 +291,8 @@ void globecom::alphaHopClustering(int alpha){
 				dhop[v] = dhop[u] + 1;
 				if (dhop[v] <= alpha) {
 					isRemoved[v] = true;
-					cent[v] = i;
-					next[v] = u;
+					clus_id[v] = i;
+					nextHop[v] = u;
 					if (dhop[v] < alpha) q.push(v);
 				}
 			}

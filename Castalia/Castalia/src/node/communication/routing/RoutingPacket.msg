@@ -35,8 +35,8 @@ packet RoutingPacket {
 	int TTL = 10000;
 	int hopCount = 0;
 	double distanceCount = 0;
-	string source;
-	string destination;
+	int source;
+	int destination;
 	unsigned int sequenceNumber; 
 }
 

@@ -79,17 +79,17 @@ void GPkMeansRouting::timerFiredCallback(int index)
 			// resMgrModule->resetBattery();
 			if (isSink) {
 				trace() << "START_ROUND";
-				setTimer(START_CLUSTERING, 1);
+				setTimer(START_MAINALG, 1);
 				setTimer(END_ROUND, 3);
 			} else {
-				setTimer(START_SLOT, 2);
+				setTimer(SEND_DATA, 2);
 			}
 			roundNumber++;
 			setTimer(START_ROUND, roundLength);
 			// for (int i=0; i<5; i++) trace() << "setTimer " << (roundLength + simTime());
 			break;
 		}
-		case START_CLUSTERING:{	
+		case START_MAINALG:{	
 			totalConsumed = 0;
 			maxConsumed = 0;
 			maxTxSize = 0;
@@ -97,8 +97,8 @@ void GPkMeansRouting::timerFiredCallback(int index)
 			break;
 		}
 		
-		case START_SLOT:{
-			sendAggregate();
+		case SEND_DATA:{
+			sendData();
 			// trace() << "Send aggregated packet to " << -1;
 			// processBufferedPacket();
 			break;
@@ -264,11 +264,11 @@ void GPkMeansRouting::GPinit() {
 	graph.init(numNodes, self, d0);
 	trajectories.resize(numUAVs);
 
-	dLandmark.resize(N, 0.);
+	d2CH.resize(N, 0.);
 	cent.resize(N, -1);
 	next.resize(N, -1);
 	centList.resize(N);
-	isLandmark.resize(N, false);
+	isCH.resize(N, false);
 	representSet.resize(N);
 	w_max.resize(N);
 }
@@ -278,11 +278,11 @@ void GPkMeansRouting::reset() {
 	trajectories = vector<vector<int>>(numUAVs);
 
 	A.clear();
-	dLandmark = vector<double>(N, 0.);
+	d2CH = vector<double>(N, 0.);
 	cent = vector<int>(N, -1);
 	next = vector<int>(N, -1);
 	centList = vector<list<int>>(N);
-	isLandmark = vector<bool>(N, false);
+	isCH = vector<bool>(N, false);
 	representSet = vector<list<int>>(N);
 	w_max = vector<double>(N, 0);
 }
@@ -293,18 +293,18 @@ vector<int> GPkMeansRouting::TZ_sample(vector<int>W, double s) {
 	if (nodeW > 0) {
 		if (nodeW < s) {
 			for (int node : W) {
-				isLandmark[node] = true;
+				isCH[node] = true;
 			}
 			return W;
 		} else {
 			double prob_net = s / nodeW;
 			vector<int> new_W;
 			for (int node : W) {
-				if (isLandmark[node]) continue;
+				if (isCH[node]) continue;
 				double random_float = uniform(0,1);
 				if (random_float < prob_net) {
 					new_W.push_back(node);
-					isLandmark[node] = true;
+					isCH[node] = true;
 				}
 			}
 			if (new_W.empty()) return TZ_sample(W, s);
@@ -320,12 +320,12 @@ vector<int> GPkMeansRouting::TZ_sample(vector<int>W, double s) {
 void GPkMeansRouting::growBalls(vector<int> landmarkSet){
 	// for (int i=0; i<20; i++) trace() << "growBalls Asize " << A.size();
 	for (int u : landmarkSet) {
-		dLandmark[u] = 0;
+		d2CH[u] = 0;
 		representSet[u].clear();
 		cent[u] = u;
 	}
 
-	dCompare =  &dLandmark;
+	dCompare =  &d2CH;
 	priority_queue<int,vector<int>, decltype(&Comparebydistance)> queue(Comparebydistance);
 	for (int l : landmarkSet) {
 		queue.push(l);
@@ -336,27 +336,27 @@ void GPkMeansRouting::growBalls(vector<int> landmarkSet){
 		// // for (int i=0; i<5; i++) trace() << "queue " << queue.size() << " removedSet " << removedSet.size();
 		int u = queue.top();
 		queue.pop();
-		// // for (int i=0; i<5; i++) trace() << "u " << u << " d[u] " << dLandmark[u];
+		// // for (int i=0; i<5; i++) trace() << "u " << u << " d[u] " << d2CH[u];
 		// auto tmp_q = queue; //copy the original queue to the temporary queue
 		// while (!tmp_q.empty()) {
 		// 	int v = tmp_q.top();
 		// 	tmp_q.pop();
-		// 	trace() << "v " << v << " d[v] " << dLandmark[v];
+		// 	trace() << "v " << v << " d[v] " << d2CH[v];
 		// }
 		if (removedSet.find(u) != removedSet.end()) continue;
 		removedSet.insert(u);
-		// if (!isLandmark[u]) representSet[cent[u]].push_back(u);
+		// if (!isCH[u]) representSet[cent[u]].push_back(u);
 		for (int v : graph.getAdjExceptSink(u)) {
 			if ((removedSet.find(v) != removedSet.end())) continue;
-			double alt = dLandmark[u] + graph.getLength(u,v);
+			double alt = d2CH[u] + graph.getLength(u,v);
 			
-			if (alt - dLandmark[v] < -EPSILON){
-				dLandmark[v] = alt;
+			if (alt - d2CH[v] < -EPSILON){
+				d2CH[v] = alt;
 				cent[v] = cent[u];
 				next[v] = u;
 				queue.push(v);
 			}
-			else if ((abs(alt - dLandmark[v]) < EPSILON) && (computeWeight(representSet[cent[u]]) < computeWeight(representSet[cent[v]]))) {
+			else if ((abs(alt - d2CH[v]) < EPSILON) && (computeWeight(representSet[cent[u]]) < computeWeight(representSet[cent[v]]))) {
 				// representSet[cent[v]].remove(v);
 				cent[v] = cent[u];
 				next[v] = u;
@@ -419,7 +419,7 @@ double GPkMeansRouting::computeClusterWeight(int uNode){
 			double alt = d[u] + graph.getLength(u,v);
 			if (alt < d[v]){
 				d[v] = alt;
-				if (d[v]<dLandmark[v]) queue.push(v);
+				if (d[v]<d2CH[v]) queue.push(v);
 			}
 		}
 	}
@@ -442,7 +442,7 @@ vector<int> GPkMeansRouting::verifyFringeSet(){
 		if (weight > w_max[landmark]) {
 			weight = 0;
 			// for (int i=0; i<5; i++) trace() << "landmark " << landmark << " ballWeight " << weight << " w_max " << w_max[landmark];
-			dCompare =  &dLandmark;
+			dCompare =  &d2CH;
 			priority_queue<int,vector<int>, decltype(&Comparebydistance)> queue(Comparebydistance);
 			for (int u : representSet[landmark]) queue.push(u);
 			while (weight < w_max[landmark]){
@@ -471,7 +471,7 @@ vector<int> GPkMeansRouting::TZ_sample2(vector<int> W, double b) {
 	while (!W.empty()){
 		int i = rand() % W.size();
 		int nextLandmark = W[i];
-		if (isLandmark[nextLandmark]) {
+		if (isCH[nextLandmark]) {
 			W.erase(std::remove(W.begin(), W.end(), nextLandmark), W.end());
 			continue;
 		}
@@ -510,7 +510,7 @@ vector<int> GPkMeansRouting::TZ_sample2(vector<int> W, double b) {
 		}
 		if ((maxTrial == 0) || (intersectBallSize>w_min)){//new_W.empty() &&
 			new_W.push_back(nextLandmark);
-			isLandmark[nextLandmark] = true;
+			isCH[nextLandmark] = true;
 			maxTrial = 3;
 		}
 		else{
@@ -578,11 +578,11 @@ void GPkMeansRouting::recruitNewCHsAlpha(){
 
 void GPkMeansRouting::clearData(){
 	for (int u : graph.getNodesExceptSink()){
-		if (isLandmark[u]){
-			dLandmark[u] = 0;
+		if (isCH[u]){
+			d2CH[u] = 0;
 		}
 		else {
-			dLandmark[u] = DBL_MAX;
+			d2CH[u] = DBL_MAX;
 		}
 		cent[u] = -1;
 		next[u] = -1;

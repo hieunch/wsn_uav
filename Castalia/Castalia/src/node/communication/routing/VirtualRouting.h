@@ -43,44 +43,6 @@ using namespace std::chrono;
 
 using namespace std;
 
-struct NetworkConfig
-{
-	NetworkConfig() {};
-	NetworkConfig(int numNodes, int numUAVs) {
-		cent.resize(numNodes, -1);
-		trajectories.resize(numUAVs);
-	};
-
-	void save(vector<int> A_, vector<int> cent_, vector<int> next_, vector<vector<int>> trajectories_) {
-		A = A_;
-		cent = cent_;
-		next = next_;
-		trajectories = trajectories_;
-	}
-
-	void save(NetworkConfig config) {
-		A = config.A;
-		cent = config.cent;
-		next = config.next;
-		trajectories = config.trajectories;
-	}
-
-	void clear() {
-		A.clear();
-		int numNodes = cent.size();
-		int numUAVs = trajectories.size();
-		cent.clear();
-		trajectories.clear();
-		cent.resize(numNodes, -1);
-		trajectories.resize(numUAVs);
-	}
-
-	vector<int> A;
-	vector<int> cent;
-	vector<int> next;
-	vector<vector<int>> trajectories;
-};
-
 class VirtualRouting: public CastaliaModule, public TimerService {
  public:
 	static vector<double> *dCompare;
@@ -123,15 +85,10 @@ class VirtualRouting: public CastaliaModule, public TimerService {
 	int self;
 	static int sinkId;
 	bool isSink;
-	int roundLength;
-	int roundNumber;
-	int numNodes;
-	int numUAVs;
-	int numExt;
 
 	vector<int> A;
-    vector<int> cent;
-	vector<int> next;
+    vector<int> clus_id;
+	vector<int> nextHop;
 	vector<vector<int>> trajectories;
 	double L_max;
 
@@ -195,7 +152,7 @@ class VirtualRouting: public CastaliaModule, public TimerService {
 	double calculateCHEnergy(int, double);
 	ResourceManager* getResMgrModule(int);
 	double estimateMaxWeight(double);
-	void sendAggregate();
+	void sendData();
 	double calculateRxSize(int i);
 	double calculatePathLength(vector<int>);
 	map<int, vector<int>> kMeansClustering(vector<int> nodes, int k);

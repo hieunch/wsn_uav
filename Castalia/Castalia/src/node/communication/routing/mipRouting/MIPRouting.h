@@ -44,8 +44,8 @@ using namespace std;
 
 enum MIPRoutingTimers {
 	START_ROUND = 1,	
-	START_CLUSTERING = 2,
-	START_SLOT = 3,
+	START_MAINALG = 2,
+	SEND_DATA = 3,
 	END_ROUND = 4,
 	JOIN_CH = 5,
 	SEND_ADV = 6,

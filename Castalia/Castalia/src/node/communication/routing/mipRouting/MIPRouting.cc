@@ -75,22 +75,22 @@ void MIPRouting::timerFiredCallback(int index)
 			
 			if (isSink) {
 				trace() << "START_ROUND";
-				setTimer(START_CLUSTERING, 1);
+				setTimer(START_MAINALG, 1);
 				setTimer(END_ROUND, 3);
 			} else {
-				setTimer(START_SLOT, 2);
+				setTimer(SEND_DATA, 2);
 			}
 			roundNumber++;
 			setTimer(START_ROUND, roundLength);
 			// for (int i=0; i<5; i++) trace() << "setTimer " << (roundLength + simTime());
 			break;
 		}
-		case START_CLUSTERING:{	
+		case START_MAINALG:{	
 			mainAlg();
 			break;
 		}
 		
-		case START_SLOT:{
+		case SEND_DATA:{
 			sendAggregate();
 			// trace() << "Send aggregated packet to " << -1;
 			// processBufferedPacket();

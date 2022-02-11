@@ -78,19 +78,19 @@ void kaswan2016::timerFiredCallback(int index)
 			
 			if (isSink) {
 				trace() << "START_ROUND";
-				setTimer(START_CLUSTERING, 1);
+				setTimer(START_MAINALG, 1);
 				setTimer(END_ROUND, 3);
 				trace1() << "Energy\tE_min\ti_min\tlevel\tconfig.cent[i_min]\tcalculateRxSize(i_min)\tweights[i_min]\tE_total/numNodes\ttotalConsumed\tmaxConsumed\tmaxTxSize\tconfig.A.size()\tdevE\tavgConsumed\tobjective value\tE0_min\ttime_elapse\ttotalCollected\tmaxLengthRatio";
 			} else {
-				setTimer(START_SLOT, 2);
+				setTimer(SEND_DATA, 2);
 			}
 			roundNumber++;
 			setTimer(START_ROUND, roundLength);
 			// for (int i=0; i<5; i++) trace() << "setTimer " << (roundLength + simTime());
 			break;
 		}
-		case START_CLUSTERING:{	
-			// for (int i=0; i<5; i++) trace() << "START_CLUSTERING";
+		case START_MAINALG:{	
+			// for (int i=0; i<5; i++) trace() << "START_MAINALG";
 			totalConsumed = 0;
 			maxConsumed = 0;
 			maxTxSize = 0;
@@ -103,9 +103,9 @@ void kaswan2016::timerFiredCallback(int index)
 			break;
 		}
 		
-		case START_SLOT:{
-			// for (int i=0; i<5; i++) trace() << "START_SLOT";
-			sendAggregate();
+		case SEND_DATA:{
+			// for (int i=0; i<5; i++) trace() << "SEND_DATA";
+			sendData();
 			// trace() << "Send aggregated packet to " << -1;
 			// processBufferedPacket();
 			break;
@@ -290,8 +290,8 @@ void kaswan2016::mainAlg() {
 		for (int l : trajectories[0]) T.push_back(location(l));
 		debugPath(T, "green");
 		A = RP;
-		isLandmark = vector<bool>(N, false);
-		for (int l : A) isLandmark[l] = true;
+		isCH = vector<bool>(N, false);
+		for (int l : A) isCH[l] = true;
 		clearData();
 		for (int i=0; i<10; i++) trace1() << "growBalls";
 		growBalls(A);
@@ -344,7 +344,7 @@ void kaswan2016::mainAlg() {
 	// 	} else {
 	// 		for (int i=0; i<1; i++) trace() << "save config";
 	// 		clearData();
-	// 		for (int l : A) isLandmark[l] = true;
+	// 		for (int l : A) isCH[l] = true;
 	// 		growBalls(A);
 	// 		trace() << "A.size " << A.size();
 	// 		for (int l : A) cent[l] = -1;
@@ -381,11 +381,11 @@ void kaswan2016::init() {
 	graph.init(numNodes, self, d0);
 	trajectories.resize(numUAVs, vector<int>());
 
-	dLandmark.resize(N, 0.);
+	d2CH.resize(N, 0.);
 	cent.resize(N, -1);
 	next.resize(N, -1);
 	centList.resize(N);
-	isLandmark.resize(N, false);
+	isCH.resize(N, false);
 	representSet.resize(N);
 	w_max.resize(N);
 }
@@ -395,11 +395,11 @@ void kaswan2016::reset() {
 	trajectories = vector<vector<int>>(numUAVs, vector<int>());
 
 	A.clear();
-	dLandmark = vector<double>(N, 0.);
+	d2CH = vector<double>(N, 0.);
 	cent = vector<int>(N, -1);
 	next = vector<int>(N, -1);
 	centList = vector<list<int>>(N);
-	isLandmark = vector<bool>(N, false);
+	isCH = vector<bool>(N, false);
 	representSet = vector<list<int>>(N);
 	w_max = vector<double>(N, 0);
 }
@@ -407,13 +407,13 @@ void kaswan2016::reset() {
 void kaswan2016::growBalls(vector<int> landmarkSet){
 	// for (int i=0; i<20; i++) trace() << "growBalls Asize " << A.size();
 	for (int u : landmarkSet) {
-		dLandmark[u] = 0;
+		d2CH[u] = 0;
 		representSet[u].clear();
 		cent[u] = u;
 		next[u] = -1;
 	}
 
-	dCompare =  &dLandmark;
+	dCompare =  &d2CH;
 	priority_queue<int,vector<int>, decltype(&Comparebydistance)> queue(Comparebydistance);
 	for (int l : landmarkSet) {
 		queue.push(l);
@@ -425,13 +425,13 @@ void kaswan2016::growBalls(vector<int> landmarkSet){
 		queue.pop();
 		if (removedSet.find(u) != removedSet.end()) continue;
 		removedSet.insert(u);
-		if (!isLandmark[u]) representSet[cent[u]].push_back(u);
+		if (!isCH[u]) representSet[cent[u]].push_back(u);
 		for (int v : graph.getAdjExceptSink(u)) {
 			if ((removedSet.find(v) != removedSet.end())) continue;
-			double alt = dLandmark[u] + graph.getLength(u,v);
+			double alt = d2CH[u] + graph.getLength(u,v);
 			
-			if (alt - dLandmark[v] < -EPSILON){
-				dLandmark[v] = alt;
+			if (alt - d2CH[v] < -EPSILON){
+				d2CH[v] = alt;
 				cent[v] = cent[u];
 				next[v] = u;
 				queue.push(v);
@@ -442,8 +442,8 @@ void kaswan2016::growBalls(vector<int> landmarkSet){
 
 void kaswan2016::clearData(){
 	for (int u : graph.getNodesExceptSink()){
-		isLandmark[u] = false;
-		dLandmark[u] = DBL_MAX;
+		isCH[u] = false;
+		d2CH[u] = DBL_MAX;
 		cent[u] = -1;
 		next[u] = -1;
 		centList[u].clear();

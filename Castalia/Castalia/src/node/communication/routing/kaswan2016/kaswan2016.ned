@@ -41,7 +41,7 @@ parameters:
 	double epsilon = default (0.5);
 	double d0 = 100;
 	int numNodesPerCluster = 10;
-	double maxUAVLength = default (9600);
+	double maxUAVFlyingDistance = default (9600);
 	double gamma = default (0.9999999);
 
 	//Parameters used to power control.

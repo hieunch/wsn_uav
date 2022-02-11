@@ -78,27 +78,27 @@ void wu2019::timerFiredCallback(int index)
 			
 			if (isSink) {
 				trace() << "START_ROUND";
-				setTimer(START_CLUSTERING, 1);
+				setTimer(START_MAINALG, 1);
 				setTimer(END_ROUND, 3);
 			} else {
-				setTimer(START_SLOT, 2);
+				setTimer(SEND_DATA, 2);
 			}
 			roundNumber++;
 			setTimer(START_ROUND, roundLength);
 			// for (int i=0; i<5; i++) trace() << "setTimer " << (roundLength + simTime());
 			break;
 		}
-		case START_CLUSTERING:{	
-			// for (int i=0; i<5; i++) trace() << "START_CLUSTERING";
+		case START_MAINALG:{	
+			// for (int i=0; i<5; i++) trace() << "START_MAINALG";
 			totalConsumed = 0;
 			maxConsumed = 0;
 			mainAlg();
 			break;
 		}
 		
-		case START_SLOT:{
-			// for (int i=0; i<5; i++) trace() << "START_SLOT";
-			sendAggregate();
+		case SEND_DATA:{
+			// for (int i=0; i<5; i++) trace() << "SEND_DATA";
+			sendData();
 			// trace() << "Send aggregated packet to " << -1;
 			// processBufferedPacket();
 			break;
@@ -191,11 +191,11 @@ void wu2019::init() {
 	graph.init(numNodes, self, d0);
 	trajectories.resize(numUAVs, vector<int>());
 
-	dLandmark.resize(N, 0.);
+	d2CH.resize(N, 0.);
 	cent.resize(N, -1);
 	next.resize(N, -1);
 	centList.resize(N);
-	isLandmark.resize(N, false);
+	isCH.resize(N, false);
 	representSet.resize(N);
 	w_max.resize(N);
 }
@@ -205,11 +205,11 @@ void wu2019::reset() {
 	trajectories = vector<vector<int>>(numUAVs, vector<int>());
 
 	A.clear();
-	dLandmark = vector<double>(N, 0.);
+	d2CH = vector<double>(N, 0.);
 	cent = vector<int>(N, -1);
 	next = vector<int>(N, -1);
 	centList = vector<list<int>>(N);
-	isLandmark = vector<bool>(N, false);
+	isCH = vector<bool>(N, false);
 	representSet = vector<list<int>>(N);
 	w_max = vector<double>(N, 0);
 }
@@ -217,12 +217,12 @@ void wu2019::reset() {
 void wu2019::growBalls(vector<int> landmarkSet){
 	// for (int i=0; i<20; i++) trace() << "growBalls Asize " << A.size();
 	for (int u : landmarkSet) {
-		dLandmark[u] = 0;
+		d2CH[u] = 0;
 		representSet[u].clear();
 		cent[u] = u;
 	}
 
-	dCompare =  &dLandmark;
+	dCompare =  &d2CH;
 	priority_queue<int,vector<int>, decltype(&Comparebydistance)> queue(Comparebydistance);
 	for (int l : landmarkSet) {
 		queue.push(l);
@@ -234,13 +234,13 @@ void wu2019::growBalls(vector<int> landmarkSet){
 		queue.pop();
 		if (removedSet.find(u) != removedSet.end()) continue;
 		removedSet.insert(u);
-		if (!isLandmark[u]) representSet[cent[u]].push_back(u);
+		if (!isCH[u]) representSet[cent[u]].push_back(u);
 		for (int v : graph.getAdjExceptSink(u)) {
 			if ((removedSet.find(v) != removedSet.end())) continue;
-			double alt = dLandmark[u] + graph.getLength(u,v);
+			double alt = d2CH[u] + graph.getLength(u,v);
 			
-			if (alt - dLandmark[v] < -EPSILON){
-				dLandmark[v] = alt;
+			if (alt - d2CH[v] < -EPSILON){
+				d2CH[v] = alt;
 				cent[v] = cent[u];
 				next[v] = u;
 				queue.push(v);
@@ -251,11 +251,11 @@ void wu2019::growBalls(vector<int> landmarkSet){
 
 void wu2019::clearData(){
 	for (int u : graph.getNodesExceptSink()){
-		if (isLandmark[u]){
-			dLandmark[u] = 0;
+		if (isCH[u]){
+			d2CH[u] = 0;
 		}
 		else {
-			dLandmark[u] = DBL_MAX;
+			d2CH[u] = DBL_MAX;
 		}
 		cent[u] = -1;
 		next[u] = -1;
