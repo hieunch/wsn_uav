@@ -67,7 +67,8 @@ void VirtualRouting::initialize()
 
 	if (weights.empty()) weights.resize(numNodes);
 	weights[self] = par("dataPacketSize");
-	weights[self] = weights[self]*4;
+	int dataScaleFactor = par("dataScaleFactor");
+	weights[self] = weights[self]*4*dataScaleFactor;
 
 	if (isSink) {
 		sinkId = self;
@@ -496,7 +497,7 @@ double VirtualRouting::estimateMaxWeight(double Ec) {
 void VirtualRouting::sendAggregate() {
 	for (int jj=0; jj<1; jj++) trace() << "sendAggregate " << self;
 	energyConsumeds[self] = 0;
-	rxSizes[self] = calculateRxSize(self);
+	rxSizes[self] = calculateRxSize0(self);
 	//resMgrModule->resetBattery();
 	// trace1() << "rxEnergy " << self << " " << rxSizes[self]/1000 << " " << rxEnergy(rxSizes[self]) << " " << resMgrModule->getRemainingEnergy();
 	if (rxSizes[self] > 0) resMgrModule->consumeEnergy(rxEnergy(rxSizes[self]));
@@ -508,9 +509,10 @@ void VirtualRouting::sendAggregate() {
 		resMgrModule->consumeEnergy(txEnergy(txSize, D2UAV));
 		// trace1() << "txEnergy " << self << " " << txSize/1000 << " " << txEnergy(txSize, D2UAV);
 		// resMgrModule->consumeEnergy(rxEnergy(txSize));
-		//totalConsumed += txEnergy(txSize, D2UAV);
+		totalConsumed += txEnergy(txSize, D2UAV);
 		energyConsumeds[self] += txEnergy(txSize, D2UAV);
 		totalCollected += txSize;
+		trace1() << self << " calculateRxSize " << rxSizes[self] << " calculateRxSize0 " << calculateRxSize(self) << " txSize " << txSize;
 		if (energyConsumeds[self] > maxConsumed) maxConsumed = energyConsumeds[self];
 		debugPoint(selfLocation, "red");
 		debugCircle(selfLocation, resMgrModule->getRemainingEnergy()/500, "blue");
@@ -551,6 +553,25 @@ void VirtualRouting::sendAggregate() {
 }
 
 double VirtualRouting::calculateRxSize(int curnode) {
+	double rxSize = 0;
+	queue<int> q;
+	q.push(curnode);
+	while (!q.empty()) {
+		int u = q.front();
+		q.pop();
+
+		for (int i=0; i<numNodes; i++) {
+			if (i == sinkId) continue;
+			if (config.next[i] == u) {
+				rxSize += weights[i];
+				q.push(i);
+			}
+		}
+	}
+	return rxSize;
+}
+
+double VirtualRouting::calculateRxSize0(int curnode) {
 	double rxSize = 0;
 	queue<int> q;
 	q.push(curnode);
@@ -683,7 +704,7 @@ void VirtualRouting::logConfig() {
 		for (int i=0; i<trajectories[k].size()-1; i++){
 			auto P = GlobalLocationService::getLocation(trajectories[k][i]);
 			auto Q = GlobalLocationService::getLocation(trajectories[k][i+1]);
-			CastaliaModule::trace2() << roundNumber << "\tLINE\tred\t" << P.x() << "\t" << P.y() << "\t" << Q.x() << "\t" << Q.y();
+			CastaliaModule::trace2() << roundNumber << "\tLINE\tblack\t" << P.x() << "\t" << P.y() << "\t" << Q.x() << "\t" << Q.y();
 		}
 	}
 }

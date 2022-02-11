@@ -28,6 +28,7 @@ void konstant2019::startup()
 
 	d0 = par("d0");
 	gamma = par("gamma");
+	max_retries = par("max_retries");
 	Wt_opt = -1;
 	Wt_max = 0;
 	E_tmp = vector<double>(numNodes, 0);
@@ -354,7 +355,7 @@ void konstant2019::growBallsKonstant(vector<int> landmarkSet){
 			double alt = - E_tmp[u] / (d[u] + graph.getLength(u,v)) / (d[u] + graph.getLength(u,v));
 			
 			// trace() << "v" << v << " val " << vals[v] << " alt " << alt;
-			if (alt - vals[v] < -EPSILON){
+			if (alt - vals[v] < -EPSILON/1000){
 				vals[v] = alt;
 				cent[v] = cent[u];
 				next[v] = u;
@@ -1032,6 +1033,17 @@ void konstant2019::findEnergyEfficientSolution() {
 		}
 	}
 
+	calculateConsumption(basicTours);
+	config.save(A, cent, next, trajectories);
+	// logConfig();
+	for (int k=0; k<trajectories.size(); k++) {
+		for (int i=0; i<trajectories[k].size()-1; i++){
+			auto P = GlobalLocationService::getLocation(trajectories[k][i]);
+			auto Q = GlobalLocationService::getLocation(trajectories[k][i+1]);
+			CastaliaModule::trace2() << roundNumber << "\tLINE\tred\t" << P.x() << "\t" << P.y() << "\t" << Q.x() << "\t" << Q.y();
+		}
+	}
+
 	vector<vector<int>> finalTours = basicTours;
 	for (int ii=0; ii<1; ii++) trace1() << "findEnergyEfficientSolution";
 
@@ -1047,11 +1059,13 @@ void konstant2019::findEnergyEfficientSolution() {
 	}
 
 	for (int ii=0; ii<1; ii++) trace() << "findEnergyEfficientSolution 0";
-	int retries = 1;
-	int maxIter = 2000;
+	int retries = max_retries*4;
+	int maxIter = 100;
 	stringstream ss_cnsmptn;
 	stringstream ss_issaved;
 	double cur_cnsmptn = DBL_MAX;//calculateConsumption(finalTours);
+	double best_cnsmptn = DBL_MAX;
+	NetworkConfig best_config;
 	string ss_rxsize_str;
 	string ss_next_str;
 	for (int i=0; i<retries; i++) {
@@ -1089,7 +1103,7 @@ void konstant2019::findEnergyEfficientSolution() {
 				for (int k=0; k<numUAVs; k++)  {
 					double minPer = DBL_MAX;
 					vector<int> minTour;
-					if (basicTours[k].size() > 8) continue;
+					// if (basicTours[k].size() > 8) continue;
 
 					for (int h=0; h<basicTours[k].size(); h++) {
 						vector<int> newTour;
@@ -1134,11 +1148,14 @@ void konstant2019::findEnergyEfficientSolution() {
 			auto p_result = calculateConsumption(basicTours);
 			double new_cnsmptn = p_result.first;
 			trace() << "consumption cur " << cur_cnsmptn << " new " << new_cnsmptn;
-			ss_cnsmptn << new_cnsmptn << " ";
 			double delta = new_cnsmptn - cur_cnsmptn;
-			// if (delta < 0 || exp(delta*j/maxIter) > ((double) rand() / RAND_MAX)) {
+			// if (delta < 0 || exp(-delta*std::log(j)/10) > ((double) rand() / RAND_MAX)) {
+			if (cur_cnsmptn < best_cnsmptn) {
+				best_cnsmptn = cur_cnsmptn;
+				best_config.save(config);
+			}
 			if (cur_cnsmptn/j > new_cnsmptn/maxIter) {
-				ss_issaved << 1 << " ";
+				// ss_issaved << 1 << " ";
 				ss_rxsize_str = p_result.second;
 				stringstream ss_next;
 				for (int i=0; i<numNodes; i++) ss_next << next[i] << " ";
@@ -1155,12 +1172,17 @@ void konstant2019::findEnergyEfficientSolution() {
 					}
 				}
 			}
-			else ss_issaved << 0 << " ";
+			// else ss_issaved << 0 << " ";
+			ss_cnsmptn << cur_cnsmptn << " ";
+			// if (delta < 0) ss_issaved << "";
+			// else ss_issaved << exp(-delta*std::log(j)/10) << "\t";
 			finish = std::chrono::high_resolution_clock::now();
 			microseconds = std::chrono::duration_cast<std::chrono::microseconds>(finish-start);
 			for (int ii=0; ii<1; ii++) trace() << "TIME STAGE_3 " << microseconds.count() << " us";
 		}
 	}
+	config.save(best_config);
+	trace1() << "cur_cnsmptn " << cur_cnsmptn << " best_cnsmptn " << best_cnsmptn;
 	trace1() << "ss_cnsmptn " << ss_cnsmptn.str();
 	trace1() << "ss_issaved " << ss_issaved.str();
 	// trace1() << "ss_rxsize " << ss_rxsize_str;
@@ -1248,7 +1270,9 @@ pair<double, string> konstant2019::calculateConsumption(vector<vector<int>> tour
 	for (int i=0; i<numNodes; i++) {
 		double Er_i = E_tmp[i];
 		if (i == sinkId) continue;
-		double rxSize = rxSizes[i];//calculateRxSize(i);
+		double rxSize = rxSizes[i];//
+		// double calculatedSize = calculateRxSize(i);
+		// if (rxSize != calculatedSize) trace1() << "rxSize " << i << " " << rxSize << " " << calculatedSize;
 		new_cnsmptn += rxEnergy(rxSize);
 		ss3 << rxEnergy(rxSize) << " ";
 		Er_i -= rxEnergy(rxSize);

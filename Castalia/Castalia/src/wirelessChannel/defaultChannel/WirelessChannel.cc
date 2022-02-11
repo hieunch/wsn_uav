@@ -497,8 +497,10 @@ void WirelessChannel::finishSpecific()
 
 void WirelessChannel::readIniFileParameters(void)
 {
+	string debugInfoFileName = getParentModule()->par("debugInfoFileName").stringValue();
+	debugInfoFileName = debugInfoFileName.substr(0, debugInfoFileName.size()-4) + "_random" + debugInfoFileName.substr(debugInfoFileName.size()-4, 4);
 	DebugInfoWriter::setDebugFileName(
-		getParentModule()->par("debugInfoFileName").stringValue());
+		debugInfoFileName);
 
 	onlyStaticNodes = par("onlyStaticNodes");
 	pathLossExponent = par("pathLossExponent");

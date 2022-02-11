@@ -16,8 +16,10 @@ Define_Module(TraceChannel);
 
 void TraceChannel::initialize()
 {
+	string debugInfoFileName = getParentModule()->par("debugInfoFileName").stringValue();
+	debugInfoFileName += "_level1";
 	DebugInfoWriter::setDebugFileName(
-		getParentModule()->par("debugInfoFileName").stringValue());
+		debugInfoFileName);
 
 	numNodes = getParentModule()->par("numNodes");
 	coordinator = par("coordinator");

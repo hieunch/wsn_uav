@@ -197,6 +197,7 @@ class VirtualRouting: public CastaliaModule, public TimerService {
 	double estimateMaxWeight(double);
 	void sendAggregate();
 	double calculateRxSize(int i);
+	double calculateRxSize0(int i);
 	double calculatePathLength(vector<int>);
 	map<int, vector<int>> kMeansClustering(vector<int> nodes, int k);
 	// map<int, vector<int>> kMeansClustering(int k);

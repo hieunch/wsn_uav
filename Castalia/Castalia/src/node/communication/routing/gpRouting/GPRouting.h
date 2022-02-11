@@ -18,6 +18,7 @@
 #ifndef _GPROUTING_H_
 #define _GPROUTING_H_
 
+#include <exception>
 #include <queue>
 #include <vector>
 #include <map>
@@ -115,6 +116,8 @@ private:
 	double Wt_max;
 	double Wt_min;
 	vector<double> w_max;
+	vector<int> branchId;
+	vector<double> branchWeight;
 	double E_opt;
 	double E_max;
 	double E_min;
@@ -124,6 +127,13 @@ private:
 
 	double gamma;
 	vector<double> E_tmp;
+	vector<double> E_0;
+	vector<int> A_old;
+
+	vector<int> TSP_tour;
+	vector<int> TSP_tour_saved;
+	vector<vector<int>> new_trajectories;
+	vector<vector<int>> new_trajectories_saved;
 
 //////////////////////////////////////////////////
 
@@ -139,21 +149,31 @@ protected:
 	void GPinit();
 	void reset();
 	void mainAlg();
+	void mainAlg2();
+	void mainAlg3();
 	vector<int> TZ_sample(vector<int>W, double s);
 	void growBalls(vector<int> lanmarkSet);
 	void growBalls2(vector<int> lanmarkSet);
+	void growBallsPercent(vector<int> lanmarkSet, double p);
+	void growBallsKonstant(vector<int> lanmarkSet);
 	double computeClusterWeight(int uNode);
 	vector<int> verifyFringeSet();
+	vector<int> TSP(vector<int>);
 	vector<int> TZ_sample2(vector<int> W, double b);
 	void computeBallWeight();
 	void recruitNewCHsAlpha();
 	void clearData();
 	int constructClusters(int k);
+	int constructClusters3(double p);
+	int constructClusters3SF(double p);
 	void updateNodeWeight();
 	void updateCentList();
 	void buildTrajectories();
+	void buildTrajectories(bool isBreak);
 	vector<int> sortedCHVector();
 	double computeWeight(list<int>);
+	template <typename T>
+	vector<size_t> sort_indexes(const vector<T> &v);
 };
 
 #endif			

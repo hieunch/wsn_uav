@@ -84,6 +84,7 @@ private:
     int N;
     int k0;
 	double d0;
+	int max_retries;
 
 	stringstream ss0;
 

@@ -18,6 +18,7 @@ moduleinterface iRouting {
 	int maxNetFrameSize;		// in bytes
 	int netDataFrameOverhead;	// in bytes
 	int netBufferSize;			// in number of messages
+	int dataScaleFactor;
 
  gates: 
 	output toCommunicationModule;

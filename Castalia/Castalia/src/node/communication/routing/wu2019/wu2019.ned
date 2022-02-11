@@ -36,6 +36,7 @@ parameters:
 	//routing layer packet sizes
 	int controlPacketSize = default (9); // Type + Source + Destination + CHid + nextCH + isCH = 16 bytes
 	int dataPacketSize = default (9);
+	int dataScaleFactor = default(1);
 
 	int k0 = default (250);
 	double epsilon = default (0.5);

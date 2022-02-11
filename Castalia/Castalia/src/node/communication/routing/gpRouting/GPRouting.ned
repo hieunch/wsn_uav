@@ -32,6 +32,7 @@ parameters:
 	double helloLength @unit(s) = default (0.01s);	
 	double discoverLength @unit(s) = default (0.04s);	
 	double slotLength;
+	int dataScaleFactor = default(1);
 
 	//routing layer packet sizes
 	int controlPacketSize = default (9); // Type + Source + Destination + CHid + nextCH + isCH = 16 bytes
