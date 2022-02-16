@@ -110,10 +110,10 @@ private:
 	int countAdjusment;
 	bool debugRecruitProcess;
 
-	double Wt;
-	double Wt_opt;
-	double Wt_max;
-	double Wt_min;
+	double W;
+	double W_opt;
+	double W_max;
+	double W_min;
 	vector<double> w_max;
 	double E_opt;
 	double E_max;

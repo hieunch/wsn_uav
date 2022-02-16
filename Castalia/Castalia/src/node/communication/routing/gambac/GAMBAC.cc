@@ -148,7 +148,6 @@ void GAMBAC::timerFiredCallback(int index)
 				}
 				E_total += E_i;
 				ss << E_i << " ";
-				// trace1() << "E " << i << " " << E_i << " " << config.clus_id[i] << " " << config.nextHop[i] << " " << rxSizes[i]/1000 << " " << energyConsumeds[i];
 			}
 			trace1() << ss.str();
 
@@ -176,9 +175,6 @@ void GAMBAC::timerFiredCallback(int index)
 			double objVal = -E_min/E0_min/2 + 1000*avgConsumed/1.8937;
 			// trace1() << "E_min " << E_min;
 			trace1() << "Energy\t" << E_min << "\t" << i_min << "\t" << level << "\t" << config.clus_id[i_min] << "\t" << calculateRxSize(i_min) << "\t" << weights[i_min] << "\t" << E_total/numNodes << "\t" << totalConsumed << "\t" << maxConsumed << "\t" << maxTxSize << "\t" << config.A.size() << "\t" << devE << "\t" << avgConsumed << "\t" << objVal  << "\t" << E0_min << "\t" << time_elapse.count() << "\t" << totalCollected << "\t" << maxLengthRatio;
-			// for (int u : outerSet_0) debugPoint(location(u), "blue");
-			// for (int u : innerSet_0) debugPoint(location(u), "yellow");
-			// for (int u : A2_0) debugPoint(location(u), "green");
 			break;
 		}
 	}
@@ -416,9 +412,7 @@ void GAMBAC::growBalls(vector<int> CHSet){
 	computeBallWeight();
 }
 
-vector<int> GAMBAC::getOuterSet(){
-	for (int i=0; i<1; i++) trace() << "getOuterSet A.size " << A.size();
-	int count = 1;
+vector<int> GAMBAC::getOuterOversizePart(){
 	outerSet.clear();
 	innerSet.clear();
 	vector<int> returnlist;
@@ -547,7 +541,7 @@ void GAMBAC::recruitNewCHs(){
 	for (int i=0; i<0; i++) trace1() << "recruitNewCHs";;
 	vector<int> W;
 	if (Cand.empty()){
-		vector<int> outerSet = getOuterSet();
+		vector<int> outerSet = getOuterOversizePart();
 		
 		for (int w : outerSet){
 			auto P = GlobalLocationService::getLocation(w);
