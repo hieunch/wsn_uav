@@ -43,6 +43,54 @@ using namespace std::chrono;
 
 using namespace std;
 
+enum RoundTimers {
+	START_ROUND = 1,	
+	START_MAINALG = 2,
+	SEND_DATA = 3,
+	END_ROUND = 4,
+	JOIN_CH = 5,
+	SEND_ADV = 6,
+	SEND_CONTROL = 7,
+};
+
+struct NetworkConfig
+{
+	NetworkConfig() {};
+	NetworkConfig(int numNodes, int numUAVs) {
+		clus_id.resize(numNodes, -1);
+		trajectories.resize(numUAVs);
+	};
+
+	void save(vector<int> A_, vector<int> clus_id_, vector<int> nextHop_, vector<vector<int>> trajectories_) {
+		A = A_;
+		clus_id = clus_id_;
+		nextHop = nextHop_;
+		trajectories = trajectories_;
+	}
+
+	void save(NetworkConfig config) {
+		A = config.A;
+		clus_id = config.clus_id;
+		nextHop = config.nextHop;
+		trajectories = config.trajectories;
+	}
+
+	void clear() {
+		A.clear();
+		int numNodes = clus_id.size();
+		int numUAVs = trajectories.size();
+		clus_id.clear();
+		trajectories.clear();
+		clus_id.resize(numNodes, -1);
+		trajectories.resize(numUAVs);
+	}
+
+	vector<int> A;
+	vector<int> clus_id;
+	vector<int> nextHop;
+	vector<vector<int>> trajectories;
+};
+
 class VirtualRouting: public CastaliaModule, public TimerService {
  public:
 	static vector<double> *dCompare;
@@ -85,6 +133,10 @@ class VirtualRouting: public CastaliaModule, public TimerService {
 	int self;
 	static int sinkId;
 	bool isSink;
+	int roundLength;
+	int roundNumber;
+	int numNodes;
+	int numUAVs;
 
 	vector<int> A;
     vector<int> clus_id;
@@ -152,7 +204,7 @@ class VirtualRouting: public CastaliaModule, public TimerService {
 	double calculateCHEnergy(int, double);
 	ResourceManager* getResMgrModule(int);
 	double estimateMaxWeight(double);
-	void sendData();
+	void sendData(cPacket * pkt);
 	double calculateRxSize(int i);
 	double calculatePathLength(vector<int>);
 	map<int, vector<int>> kMeansClustering(vector<int> nodes, int k);

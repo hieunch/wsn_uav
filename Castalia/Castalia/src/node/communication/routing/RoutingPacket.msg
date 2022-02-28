@@ -37,6 +37,8 @@ packet RoutingPacket {
 	double distanceCount = 0;
 	int source;
 	int destination;
+	string sourceAddress;
+	string destinationAddress;
 	unsigned int sequenceNumber; 
 }
 

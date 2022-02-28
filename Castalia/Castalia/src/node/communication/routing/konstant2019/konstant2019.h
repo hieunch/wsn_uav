@@ -45,16 +45,6 @@
 
 using namespace std;
 
-enum konstant2019Timers {
-	START_ROUND = 1,	
-	START_MAINALG = 2,
-	SEND_DATA = 3,
-	END_ROUND = 4,
-	JOIN_CH = 5,
-	SEND_ADV = 6,
-	SEND_CONTROL = 7,
-};
-
 struct CHInfo
 {
 	int src;
@@ -75,54 +65,26 @@ private:
 
 	queue <cPacket *> tempTXBuffer;
 	vector <konstant2019Packet> bufferAggregate;
-	vector <int> clusterMembers;
-	list <NeighborInfo> neighborTable;
+	int dataPacketSize;
 
 	////////////////////////////////////////////////
 
 	UDG graph;
     int N;
-    int k0;
-	double d0;
+	double neighborRange;
 
 	stringstream ss0;
-
-    int nloop;
-
-	vector<vector<int>> basicTours0;
 	
-    vector<double> d2CH;
-    map<int, double> ballWeight;
-    double maxThres;
-    double epsilon;
-    double Eavg = 0;
-	vector<list<int>> representSet;
+    vector<double> distanceToCH;
+	vector<list<int>> clusterMembers;
     double maxBallWeight;
     double minBallWeight;
     unordered_set<int> rmSet;
-	vector<list<int>> centList;
     vector<bool> isCH;
-	vector<int> fringeSet;
-	vector<int> innerSet;
-	vector<int> A2;
-	vector<int> fringeSet_0;
-	vector<int> innerSet_0;
-	vector<int> A2_0;
 
-	double Wt;
-	double Wt_opt;
-	double Wt_max;
-	double Wt_min;
-	vector<double> w_max;
-	double E_opt;
-	double E_max;
 	double E_min;
+
 	vector<double> E0;
-	double w_min;
-	double w_total;
-
-	double gamma;
-
 	vector<double> E_tmp;
 
 //////////////////////////////////////////////////
@@ -136,28 +98,14 @@ protected:
 	void timerFiredCallback(int);
 	void processBufferedPacket();
 
-	void GPinit();
+	void init();
 	void reset();
 	void mainAlg();
-	vector<int> TZ_sample(vector<int>W, double s);
-	void growBalls(vector<int> lanmarkSet);
-	void growBallsKonstant(vector<int> lanmarkSet);
-	double computeClusterWeight(int uNode);
-	vector<int> verifyFringeSet();
-	vector<int> TZ_sample2(vector<int> W, double b);
-	void computeBallWeight();
-	void recruitNewCHsAlpha();
-	void clearData();
-	void constructClusters();
-	void updateNodeWeight();
-	void updateCentList();
-	void buildTrajectories();
 	vector<vector<int>> partitionIntoSectors();
 	vector<vector<int>> basicToursPlanning();
 	void findEnergyEfficientSolution();
-	double computeWeight(list<int>);
 	pair<double,string> calculateConsumption(vector<vector<int>> tours);
-	double clusterTreeBuilding(vector<int> A);
+	void clusterTreeBuilding(vector<int> A);
 };
 
 #endif			

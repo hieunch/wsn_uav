@@ -26,8 +26,8 @@ simple WirelessChannel like wirelessChannel.iWirelessChannel {
 	int zCellSize = default (1);
 
 	double pathLossExponent = default (2.4);	// how fast is the signal strength fading
-	double PLd0 = default (55);					// path loss at reference distance d0 (in dBm)
-	double d0 = default (1.0);					// reference distance d0 (in meters)
+	double PLneighborRange = default (55);					// path loss at reference distance neighborRange (in dBm)
+	double neighborRange = default (1.0);					// reference distance neighborRange (in meters)
 
 	double sigma = default (4.0);				// how variable is the average fade for nodes at the same distance
 												// from eachother. std of a gaussian random variable.

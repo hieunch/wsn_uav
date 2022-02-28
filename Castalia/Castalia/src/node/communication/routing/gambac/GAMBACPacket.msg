@@ -26,18 +26,17 @@ class noncobject IntVector;
 
 class RoutingPacket;
 
-enum wu2019Packet_Type
+enum GAMBACPacket_Type
 {
-	GP_ROUTING_CONTROL_PACKET = 1;			
-	GP_ROUTING_DATA_PACKET = 2;
-	GP_ROUTING_JOIN_PACKET = 3;
-	GP_ROUTING_ADV_PACKET = 4;
+	GAMBAC_ROUTING_CONTROL_PACKET = 1;			
+	GAMBAC_ROUTING_DATA_PACKET = 2;
+	GAMBAC_ROUTING_JOIN_PACKET = 3;
+	GAMBAC_ROUTING_ADV_PACKET = 4;
 };
 
-packet wu2019Packet extends RoutingPacket
+packet GAMBACPacket extends RoutingPacket
 {	
-	int wu2019PacketKind enum (wu2019Packet_Type); 
-	int sourceId;  
+	int GAMBACPacketKind enum (GAMBACPacket_Type); 
 	int schedule[];	
 	double remainingEnergy;
 	IntVector isCH;

@@ -12,7 +12,7 @@ class UDG {
 public:
     int V;
     int E;
-    double d0;
+    double neighborRange;
     int sinkId;
     
 protected:
@@ -24,9 +24,9 @@ protected:
 public:
     UDG() {}
 
-    void init(int numNodes, int sinkId, double d0){
+    void init(int numNodes, int sinkId, double neighborRange){
         V = numNodes;
-        this->d0 = d0;
+        this->neighborRange = neighborRange;
         this->sinkId = sinkId;
 
         for (int v = 0; v < numNodes; v++) {
@@ -35,7 +35,7 @@ public:
         for (int v = 0; v < numNodes; v++) {
             for (int u = v+1; u < numNodes; u++) {
                 double d = G::distance(GlobalLocationService::getLocation(u), GlobalLocationService::getLocation(v));
-                if (d < d0) {
+                if (d < neighborRange) {
                     addEdge(v, u);
                 }
             }

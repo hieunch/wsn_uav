@@ -24,7 +24,7 @@ void GAMBAC::startup()
 	/*--- The .ned file's parameters ---*/
 	applicationID = par("applicationID").stringValue(); 	
 
-	d0 = par("d0");
+	neighborRange = par("neighborRange");
 	gamma = par("gamma");
 	maxCHperUAV = par("maxCHperUAV");
 	W_opt = -1;
@@ -32,6 +32,7 @@ void GAMBAC::startup()
 	countSuccess = 0;
 	countAdjusment = 0;
 	debugRecruitProcess = par("debugRecruitProcess");
+	dataPacketSize = par("dataPacketSize");
 	epsilon = par("epsilon");
 	if (isSink) GAMBACinit();
 		
@@ -46,7 +47,7 @@ void GAMBAC::fromApplicationLayer(cPacket *pkt, const char *destination)
 		string dst(destination);
 		GAMBACPacket *netPacket = new GAMBACPacket("GAMBAC routing data packet", NETWORK_LAYER_PACKET);
 		netPacket->setGAMBACPacketKind(GAMBAC_ROUTING_DATA_PACKET);
-		netPacket->setSource(SELF_NETWORK_ADDRESS);
+		netPacket->setSourceAddress(SELF_NETWORK_ADDRESS);
 		encapsulatePacket(netPacket, pkt);
 		bufferAggregate.push_back(*netPacket);
 	}	
@@ -61,9 +62,9 @@ void GAMBAC::fromMacLayer(cPacket *pkt, int macAddress, double rssi, double lqi)
 	switch (netPacket->getGAMBACPacketKind()) {
 
 		case GAMBAC_ROUTING_DATA_PACKET:{
-			string dst(netPacket->getDestination());
+			string dst(netPacket->getDestinationAddress());
 			if (dst.compare(SELF_NETWORK_ADDRESS) == 0){
-				int sourceId = netPacket->getSourceId();
+				int sourceId = netPacket->getSource();
 				if (isSink) {
 					toApplicationLayer(decapsulatePacket(netPacket));
 				} else {
@@ -124,11 +125,12 @@ void GAMBAC::timerFiredCallback(int index)
 		
 		case SEND_DATA:{
 			trace() << "SEND_DATA";
-			RoutingPacket *dataPacket = check_and_cast <RoutingPacket*>(pkt);
+			RoutingPacket *dataPacket = new GAMBACPacket("GAMBAC data packet", NETWORK_LAYER_PACKET);;
 			dataPacket->setByteLength(dataPacketSize);
 			dataPacket->setKind(NETWORK_LAYER_PACKET);
 			dataPacket->setSource(self);
-			dataPacket->setDestination(config.clus_id[self]);
+			dataPacket->setSourceAddress(SELF_NETWORK_ADDRESS);
+			dataPacket->setDestinationAddress(to_string(config.clus_id[self]).c_str());
   			dataPacket->setTTL(1000);
 			sendData(dataPacket);
 			// processBufferedPacket();
@@ -195,7 +197,7 @@ void GAMBAC::mainAlg() {
 	for (int i=0; i<10; i++) trace() << "mainAlg";
 	W_total = 0;
 	for (int i=0; i<numNodes; i++) W_total += weights[i];
-	W_start = 4*W_total/numUAVs;
+	W_start = W_total/numUAVs/2;
 	W_end = 1000;
 
 	W = (W_start+W_end)/2;
@@ -209,15 +211,17 @@ void GAMBAC::mainAlg() {
 	
 	do {
 		reset();
-		clearData();
 		
-		W = (1 + epsilon) * W_total / k;
+		// W = (1 + epsilon) * W_total / k;
 		
-		trace1() << "k " << k << " k_start " << k_start << " k_end " << k_end;
+		trace1() << "W " << W << " W_start " << W_start << " W_end " << W_end;
 		trace1() << "buildDFT";
-		int loop_count = buildDFT(k);
+		int loop_count = buildDFT(W);
 		trace1() << "buildTrajectories " << A.size();
-		buildTrajectories();
+		if (A == config.A) {
+			trajectories = config.trajectories;
+		}
+		else buildTrajectories(true);
 		lengthViolated = false;
 		maxLen = 0;
 			
@@ -230,49 +234,48 @@ void GAMBAC::mainAlg() {
 			if (len > maxLen) maxLen = len;
 		}
 		ratioToLmax = pow(maxLen / L_max, 2);
+		trace1() << "ratioToLmax " << ratioToLmax;
 
 
 		if (lengthViolated) {
 			// Increase W
 			retry += 1;
 			if (retry >= 5) {
-				W_start = W;
+				W_end = W;
+				W = W*ratioToLmax;
 				retry = 0;
 			}
 			else continue;
 		} else {
 			if (A.size() > config.A.size() && loop_count <= 50){
 				trace1() << "save config";
-				config.save(A, clus_id, next, trajectories);
+				config.save(A, clus_id, nextHop, trajectories);
 				isSaved = true;
-				k_start = k;
-				// if (ratio > 0.95) break;
+				W_start = W;
+				W = W*ratioToLmax;
 			}
 			else {
 				retry += 1;
 				if (retry >= 5) {
 					if (!isSaved) {
-						config.save(A, clus_id, next, trajectories);
-						epsilon_saved = epsilon0;
+						config.save(A, clus_id, nextHop, trajectories);
 						isSaved = true;
 					}
-					W_end = W;
+					W_start = W;
+					W = W*ratioToLmax;
 					retry = 0;
 				}
 				continue;
 			}
 			
-			W_end = W;
 			retry = 0;
 		}
 
-		W = W*ratioToLmax;
-		trace() << "New value of W: " << W << " ratioToLmax " << ratioToLmax;
-		if (W - W_end <= 10000) break;
+		if (W_start - W <= 10000) break;
 		
 		
 		if ((W_start-W_end <= 10000) && !isSaved) {
-			W_start = 4*W_total/numUAVs;
+			W_start = W_total/numUAVs/2;
 			W_end = 1000;
 			W_opt = -1;
 		}
@@ -285,7 +288,7 @@ void GAMBAC::mainAlg() {
 	for(int l : A) {
 		ssA << l << " ";
 	}
-	trace1() << "CH list: " << ss1.str();
+	trace1() << "CH list: " << ssA.str();
 
 	///////////////////////////////////////////////////////////
 
@@ -310,13 +313,13 @@ void GAMBAC::GAMBACinit() {
 	trace() << "GAMBACinit";
 	
 	N = numNodes;
-	graph.init(numNodes, self, d0);
+	graph.init(numNodes, self, neighborRange);
 	trajectories.resize(numUAVs);
-	d2CH.resize(N, 0.);
+	distanceToCH.resize(N, 0.);
 	clus_id.resize(N, -1);
 	nextHop.resize(N, -1);
 	isCH.resize(N, false);
-	representSet.resize(N);
+	clusterMembers.resize(N);
 	w_max.resize(N);
 	E_tmp = vector<double>(numNodes, 0);
 }
@@ -326,50 +329,63 @@ void GAMBAC::reset() {
 	trajectories = vector<vector<int>>(numUAVs);
 
 	A.clear();
-	d2CH = vector<double>(N, 0.);
+	distanceToCH = vector<double>(N, 0.);
 	clus_id = vector<int>(N, -1);
 	nextHop = vector<int>(N, -1);
 	isCH = vector<bool>(N, false);	
-	representSet = vector<list<int>>(N);
+	clusterMembers = vector<list<int>>(N);
 	w_max = vector<double>(N, 0);
 }
 
-vector<int> GAMBAC::randomInitCHSet(vector<int>W, double s) {
-	int nodeW = Cand.size();
+vector<int> GAMBAC::randomFromSet(vector<int> Candidates, double s) {
+	int nodeW = Candidates.size();
 	if (nodeW > 0) {
 		if (nodeW < s) {
-			for (int node : W) {
+			for (int node : Candidates) {
 				isCH[node] = true;
 			}
-			return W;
+			return Candidates;
 		} else {
 			double prob_net = s / nodeW;
-			vector<int> new_W;
-			for (int node : W) {
+			vector<int> new_Candidates;
+			for (int node : Candidates) {
 				if (isCH[node]) continue;
 				double random_float = uniform(0,1);
 				if (random_float < prob_net) {
-					new_Cand.push_back(node);
+					new_Candidates.push_back(node);
 					isCH[node] = true;
 				}
 			}
-			if (new_Cand.empty()) return randomInitCHSet(W, s);
+			if (new_Candidates.empty()) return randomFromSet(Candidates, s);
 			else {
-				return new_W;
+				return new_Candidates;
 			}
 		}
 	}
-	return W;
+	return Candidates;
 }
 
 void GAMBAC::growBalls(vector<int> CHSet){
+
+	for (int u : graph.getNodesExceptSink()){
+		if (isCH[u]){
+			distanceToCH[u] = 0;
+		}
+		else {
+			distanceToCH[u] = DBL_MAX;
+		}
+		clus_id[u] = -1;
+		nextHop[u] = -1;
+		clusterMembers[u].clear();
+	}
+	
 	for (int u : CHSet) {
-		d2CH[u] = 0;
-		representSet[u].clear();
+		distanceToCH[u] = 0;
+		clusterMembers[u].clear();
 		clus_id[u] = u;
 	}
 
-	dCompare =  &d2CH;
+	dCompare =  &distanceToCH;
 	priority_queue<int,vector<int>, decltype(&Comparebydistance)> queue(Comparebydistance);
 	for (int l : CHSet) {
 		queue.push(l);
@@ -379,16 +395,16 @@ void GAMBAC::growBalls(vector<int> CHSet){
 	while (!queue.empty()) {
 		int u = queue.top();
 		queue.pop();
-		trace() << "u " << u << " d[u] " << d2CH[u];
+		trace() << "u " << u << " d[u] " << distanceToCH[u];
 		if (removedSet.find(u) != removedSet.end()) continue;
 		removedSet.insert(u);
-		if (!isCH[u]) representSet[clus_id[u]].push_back(u);
+		if (!isCH[u]) clusterMembers[clus_id[u]].push_back(u);
 		for (int v : graph.getAdjExceptSink(u)) {
 			if ((removedSet.find(v) != removedSet.end())) continue;
-			double alt = d2CH[u] + graph.getLength(u,v);
+			double alt = distanceToCH[u] + graph.getLength(u,v);
 			
-			if (alt - d2CH[v] < -EPSILON){
-				d2CH[v] = alt;
+			if (alt - distanceToCH[v] < -EPSILON){
+				distanceToCH[v] = alt;
 				clus_id[v] = clus_id[u];
 				nextHop[v] = u;
 				queue.push(v);
@@ -422,19 +438,19 @@ vector<int> GAMBAC::getOuterOversizePart(){
 
 		if (weight > W) {
 			weight = 0;
-			dCompare =  &d2CH;
+			dCompare =  &distanceToCH;
 			priority_queue<int,vector<int>, decltype(&Comparebydistance)> queue(Comparebydistance);
-			for (int u : representSet[CH]) queue.push(u);
+			for (int u : clusterMembers[CH]) queue.push(u);
 			while (weight < W){
 				int u = queue.top();
 				queue.pop();
-				if (debugRecruitProcess) for (int i=0; i<1; i++) trace1() << "CH " << CH << " inner " << u << " d2CH " << d2CH[u] << " weight " << weight;
+				if (debugRecruitProcess) for (int i=0; i<1; i++) trace1() << "CH " << CH << " inner " << u << " distanceToCH " << distanceToCH[u] << " weight " << weight;
 				innerSet.push_back(u);
 				weight += weights[u];
 			}
 			while (!queue.empty()) {
 				int u = queue.top();
-				if (debugRecruitProcess) for (int i=0; i<1; i++) trace1() << "CH " << CH << " fringe " << u << " d2CH " << d2CH[u];
+				if (debugRecruitProcess) for (int i=0; i<1; i++) trace1() << "CH " << CH << " fringe " << u << " distanceToCH " << distanceToCH[u];
 				queue.pop();
 				outerSet.push_back(u);
 			}
@@ -443,18 +459,18 @@ vector<int> GAMBAC::getOuterOversizePart(){
 	return returnlist.empty() ? outerSet : returnlist;
 }
 
-vector<int> GAMBAC::samplingCH(vector<int> W, double b) {
+vector<int> GAMBAC::samplingCH(vector<int> Candidates, double b) {
 	for (int i=0; i<0; i++) trace1() << "samplingCH";
 	int maxTrial = 3;
-	vector<int> new_W;
-	while (!Cand.empty()){
+	vector<int> new_Candidates;
+	while (!Candidates.empty()){
 		double Etotal = 0;
-		for (int u : W) {
+		for (int u : Candidates) {
 			Etotal += E_tmp[u];
 		}
 		double f = (double)rand() / RAND_MAX * Etotal;
 		int nextLandmark = 0;
-		for (int u : W) {
+		for (int u : Candidates) {
 			f -= getResMgrModule(u)->getRemainingEnergy();
 			if (f <= 0) {
 				nextLandmark = u;
@@ -462,7 +478,7 @@ vector<int> GAMBAC::samplingCH(vector<int> W, double b) {
 			}
 		}
 		if (isCH[nextLandmark]) {
-			Cand.erase(std::remove(Cand.begin(), Cand.end(), nextLandmark), Cand.end());
+			Candidates.erase(std::remove(Candidates.begin(), Candidates.end(), nextLandmark), Candidates.end());
 			continue;
 		}
 
@@ -483,8 +499,8 @@ vector<int> GAMBAC::samplingCH(vector<int> W, double b) {
 			removedSet.insert(v);
 			newBallSize += weights[v];
 			if (newBallSize > w_max[nextLandmark]) break;
-			if (std::find(Cand.begin(), Cand.end(), v) != Cand.end()){
-				Cand.erase(std::remove(Cand.begin(), Cand.end(), v), Cand.end());
+			if (std::find(Candidates.begin(), Candidates.end(), v) != Candidates.end()){
+				Candidates.erase(std::remove(Candidates.begin(), Candidates.end(), v), Candidates.end());
 				intersectBall.push_back(v);
 				intersectBallSize += weights[v];
 			}
@@ -498,13 +514,13 @@ vector<int> GAMBAC::samplingCH(vector<int> W, double b) {
 				}
 			}
 		}
-		if ((maxTrial == 0) || (intersectBallSize>w_min)){//new_Cand.empty() &&
-			new_Cand.push_back(nextLandmark);
+		if ((maxTrial == 0) || (intersectBallSize>w_min)){//new_Candidates.empty() &&
+			new_Candidates.push_back(nextLandmark);
 			isCH[nextLandmark] = true;
 			maxTrial = 3;
 		}
 		else{
-			for (int v : intersectBall) Cand.push_back(v);
+			for (int v : intersectBall) Candidates.push_back(v);
 			if (maxTrial>0){
 				maxTrial--;
 				continue;
@@ -512,22 +528,22 @@ vector<int> GAMBAC::samplingCH(vector<int> W, double b) {
 			else break;
 		}
 	}
-	return new_W;
+	return new_Candidates;
 }
 
 void GAMBAC::computeBallWeight(){
 	maxBallWeight = 0;
 	minBallWeight = INT64_MAX;
 	for (int u : graph.getNodesExceptSink()){
-		representSet[clus_id[u]].push_back(u);
+		clusterMembers[clus_id[u]].push_back(u);
 	}
 
 	double tempBallWeight[A.size()];
 	for (int i=0; i<A.size(); i++) tempBallWeight[i] = 0;
 	int size = 0;
 	for (int i=0; i<A.size(); i++){
-		size += representSet[A[i]].size();
-		for (int u : representSet[A[i]]) {
+		size += clusterMembers[A[i]].size();
+		for (int u : clusterMembers[A[i]]) {
 			tempBallWeight[i] += weights[u];
 		}
 	}
@@ -539,36 +555,21 @@ void GAMBAC::computeBallWeight(){
 
 void GAMBAC::recruitNewCHs(){
 	for (int i=0; i<0; i++) trace1() << "recruitNewCHs";;
-	vector<int> W;
-	if (Cand.empty()){
+	vector<int> Candidates;
+	if (Candidates.empty()){
 		vector<int> outerSet = getOuterOversizePart();
 		
 		for (int w : outerSet){
 			auto P = GlobalLocationService::getLocation(w);
-			Cand.push_back(w);
+			Candidates.push_back(w);
 		};
 	}
-	A_recruited = samplingCH(Cand, 0);
-	if (!A_recruited.empty()) A.insert(A.end(), A_recruited.begin(), A_recruited.end());
-	clearData();
+	vector<int> newCHs = samplingCH(Candidates, 0);
+	if (!newCHs.empty()) A.insert(A.end(), newCHs.begin(), newCHs.end());
 	growBalls(A);
 }
 
-void GAMBAC::clearData(){
-	for (int u : graph.getNodesExceptSink()){
-		if (isCH[u]){
-			d2CH[u] = 0;
-		}
-		else {
-			d2CH[u] = DBL_MAX;
-		}
-		clus_id[u] = -1;
-		nextHop[u] = -1;
-		representSet[u].clear();
-	}
-}
-
-int GAMBAC::buildDFT(int k){
+int GAMBAC::buildDFT(double W){
 	E_min = DBL_MAX;
 	E_max = 0;
 	for (int i=0; i<numNodes; i++) {
@@ -582,29 +583,27 @@ int GAMBAC::buildDFT(int k){
 		w_max[i] = W;
 	}
 
-	int k_max;
-	vector<double> w_max_ordered (w_max);
-	sort(w_max_ordered.begin(), w_max_ordered.end(), greater<double>());
-	double W_total_tmp = W_total;
-	trace() << "W_total " << W_total;
-	for (int i=0; i<N; i++) {
-		trace() << "w_max_ordered " << i << " " << w_max_ordered[i];
-		W_total_tmp -= w_max_ordered[i];
-		if (W_total_tmp < 0) {
-			k_max = i+1;
-			break;
-		}
-	}
+	// int k_max;
+	// vector<double> w_max_ordered (w_max);
+	// sort(w_max_ordered.begin(), w_max_ordered.end(), greater<double>());
+	// double W_total_tmp = W_total;
+	// trace() << "W_total " << W_total;
+	// for (int i=0; i<N; i++) {
+	// 	trace() << "w_max_ordered " << i << " " << w_max_ordered[i];
+	// 	W_total_tmp -= w_max_ordered[i];
+	// 	if (W_total_tmp < 0) {
+	// 		k_max = i+1;
+	// 		break;
+	// 	}
+	// }
 	
-	k_max = (int) ((1 + epsilon) * W_total / W);
-	W = (1 + epsilon) * W_total / k;
+	int k_max = (int) ((1 + epsilon) * W_total / W);
 	
 	int count = 0;
-	clearData();
 	vector<int> allSNs;
 	for (int i=0; i<N; i++) allSNs.push_back(i);
 	while (A.empty()) {
-		A = randomInitCHSet(allSNs, 8);
+		A = randomFromSet(allSNs, 8);
 	}
 	growBalls(A);
 	bool isBalance;
@@ -612,7 +611,7 @@ int GAMBAC::buildDFT(int k){
 		int Asize = A.size();
 		recruitNewCHs();
 
-		isBalance = false;
+		isBalance = true;
 		double W_new = min(W, (1 + epsilon) * W_total / A.size());
 		double maxWeight = 0;
 		double totalWeight = 0;
@@ -621,7 +620,7 @@ int GAMBAC::buildDFT(int k){
 				maxWeight = pair.second;
 			}
 		}
-		if (maxWeight > W_new) isBalance = true;
+		if (maxWeight > W_new) isBalance = false;
 
 		if (A.size() > k_max) {
 			vector<double> tempBallWeight(N, 0);
@@ -637,22 +636,21 @@ int GAMBAC::buildDFT(int k){
 					WeightTotal += 1./tempBallWeight[l];
 				}
 				double f = (double)rand() / RAND_MAX * WeightTotal;
-				int removed2CH;
+				int removedistanceToCH;
 				for (int l : A) {
 					f -= 1./tempBallWeight[l];
 					if (f <= 0) {
-						removed2CH = l;
+						removedistanceToCH = l;
 						break;
 					}
 				}
-				A.erase(std::remove(A.begin(), A.end(), removed2CH), A.end());
-				isCH[removed2CH] = false;
+				A.erase(std::remove(A.begin(), A.end(), removedistanceToCH), A.end());
+				isCH[removedistanceToCH] = false;
 			}
 		}
-		clearData();
 		growBalls(A);
 
-		fl = false;
+		isBalance = true;
 		W_new = min(W, (1 + epsilon) * W_total / A.size());
 		maxWeight = 0;
 		totalWeight = 0;
@@ -661,7 +659,7 @@ int GAMBAC::buildDFT(int k){
 				maxWeight = pair.second;
 			}
 		}
-		if (maxWeight > W_new) fl = true;
+		if (maxWeight > W_new) isBalance = false;
 
 		if (count++ > 50) {
 			break;
@@ -669,30 +667,27 @@ int GAMBAC::buildDFT(int k){
 
 		countAdjusment++;
 		nloop = count;
-	} while (fl);
+	} while (!isBalance);
 
 	double maxWeight = 0;
 	for (auto pair : ballWeight) {
 		if (pair.second > maxWeight) maxWeight = pair.second;
 	}
-	trace() << "epsilon " << maxWeight/W_total*A.size();
+	trace1() << "epsilon " << maxWeight/W_total*A.size() << " count " << count;
 	epsilon0 = maxWeight/W_total*A.size();
-	// updateCentList();
 	clus_id[self] = -1;
 	for (int l : A) clus_id[l] = -1;
 	for (int i=0; i<1; i++) trace() << "A size " << A.size();
 	trace() << "W " << W;
 	trace() << "k_max " << k_max;
-	stringstream ss;
-	for(int l : A) {
-		// ss << l << " ";
-		trace() << l << " " << ballWeight[l];
-	}
-	// trace() << ss.str();
 	return count;
 }
 
 void GAMBAC::buildTrajectories(){
+	buildTrajectories(false);
+}
+
+void GAMBAC::buildTrajectories(bool isBreak){
 	for (int i=0; i<numUAVs; i++) trajectories[i].clear();
 	if (A.size() < numUAVs) {
 		for (int i=0; i<A.size(); i++) {
@@ -703,7 +698,8 @@ void GAMBAC::buildTrajectories(){
 	}
 	else {
 		for (int i=0; i<10; i++) trace() << "buildTrajectories";
-		trajectories = Vrptw::call(*this, sinkId, A, numUAVs, L_max);
+		// trajectories = Vrptw::call(*this, sinkId, A, numUAVs, L_max);
+		trajectories = Vrptw::call(*this, sinkId, A, numUAVs, L_max, isBreak, buildInitialTrajectories());
 		while (trajectories.size() < numUAVs) {
 			trajectories.push_back(vector<int>());
 		}
@@ -733,3 +729,147 @@ void GAMBAC::buildTrajectories(){
 		}
 	}
 };
+
+vector<vector<int>> GAMBAC::buildInitialTrajectories(){
+	vector<int> A_tmp = A;
+	vector<int> TSP_tour = TSP(A_tmp);
+	vector<vector<int>> new_trajectories;
+
+	trace1() << "TSPLength = " << calculatePathLength(TSP_tour);
+	stringstream ss_tsp;
+	for (int l : TSP_tour) {
+		ss_tsp << l << " ";
+	}
+	trace1() << "TSP tour: " << ss_tsp.str();
+	double minMaxLength = DBL_MAX;
+	for (int offset=0; offset<TSP_tour.size(); offset++) {
+		double L_max_last = L_max;
+		double maxLengthLast;
+		double maxLength = DBL_MAX;
+		vector<vector<int>> tmp_trajectories;
+		do {
+			maxLengthLast = maxLength;
+			maxLength = 0;
+			tmp_trajectories = vector<vector<int>>(numUAVs);
+			for (auto &trajectory : tmp_trajectories) trajectory.push_back(sinkId);
+			int cur_trajectory_id = 0;
+			double curLength = 0;
+			double totalLength = 0;
+			for (int i=0; i<TSP_tour.size(); i++) {
+				int node = TSP_tour[(i+offset)%TSP_tour.size()];
+				vector<int> &cur_trajectory = tmp_trajectories[cur_trajectory_id];
+				int lastNode = cur_trajectory[cur_trajectory.size()-1];
+				double curLengthLast = curLength;
+				curLength += distance(lastNode, node) + distance(node, sinkId) - distance(lastNode, sinkId);
+				if (curLength > L_max_last) {
+					if (cur_trajectory_id < numUAVs-1) {
+						cur_trajectory.push_back(sinkId);
+						totalLength += curLengthLast;
+						cur_trajectory_id++;
+						vector<int> &next_trajectory = tmp_trajectories[cur_trajectory_id];
+						next_trajectory.push_back(node);
+						curLength = distance(sinkId, node)*2;
+						if (curLength > maxLength) maxLength = curLength;
+					}
+					else {
+						cur_trajectory.push_back(node);
+						if (curLength > maxLength) maxLength = curLength;
+					}
+				}
+				else {
+					cur_trajectory.push_back(node);
+					if (curLength > maxLength) maxLength = curLength;
+				}
+			}
+			tmp_trajectories[cur_trajectory_id].push_back(sinkId);
+			totalLength += curLength;
+			L_max_last = totalLength / numUAVs;
+			if (maxLength < minMaxLength) {
+				minMaxLength = maxLength;
+				new_trajectories = tmp_trajectories;
+			}
+		} while (maxLength < maxLengthLast);
+	}
+
+	trace1() << "minMaxLength = " << minMaxLength;
+	// if (minMaxLength < L_max) {
+	// 	trajectories = new_trajectories;
+	// 	return;
+	// }
+	int jj = 1;
+	for (auto trajectory : new_trajectories) {
+		stringstream ss_tra;
+		for (int u : trajectory) ss_tra << u << " ";
+		trace1() << "Tour " << jj << ": " << ss_tra.str() << " - Length: " << calculatePathLength(trajectory);
+		jj++;
+	}
+	vector<vector<int>> tours(numUAVs);
+	vector<int> A_new;
+	int matchingId = 1;
+	for (int i=0; i<numUAVs; i++) {
+		for (int u : new_trajectories[i]) {
+			if (u != sinkId) {
+				A_new.push_back(u);
+				tours[i].push_back(matchingId);
+				matchingId++;
+			}
+		}
+	}
+	A = A_new;
+	return tours;
+}
+
+vector<int> GAMBAC::TSP(vector<int> AA) {
+	vector<int> TSP_tour;
+	vector<Point> sites;
+	for (int l : AA) {
+		Point p = location(l);
+		p.id_ = l;
+		sites.push_back(p);
+	}
+	// Point p0 = location(sinkId);
+	// p0.id_ = sinkId;
+	// sites.push_back(p0);
+	while (!sites.empty()) {
+		vector<Point> convexHull = G::convexHull(sites);
+		if (convexHull.empty()) {
+			convexHull = sites;
+		}
+		stringstream ss;
+		for (Point p : convexHull) {
+			sites.erase(std::remove(sites.begin(), sites.end(), p), sites.end());
+			ss << p.id_ << " ";
+		}
+		// trace1() << ss.str();
+		if (TSP_tour.empty()) {
+			for (Point p : convexHull) {
+				TSP_tour.push_back(p.id_);
+			}
+		}
+		else {
+			while (!convexHull.empty()) {
+				double minIncreased = DBL_MAX;
+				int i_min = -1;
+				int pos = -1;
+				for (int i=0; i<convexHull.size(); i++) {
+					Point p = convexHull[i];
+					for (int j=0; j<TSP_tour.size(); j++) {
+						Point A = location(TSP_tour[j]);
+						Point B = location(TSP_tour[(j+1)%TSP_tour.size()]);
+						double lengthIncreased = G::distance(A, p) + G::distance(p, B) - G::distance(A, B);
+						if (lengthIncreased < minIncreased) {
+							minIncreased = lengthIncreased;
+							i_min = i;
+							pos = (j+1)%TSP_tour.size();
+						}
+					}
+				}
+
+				Point insertedNode = convexHull[i_min];
+				convexHull.erase(convexHull.begin() + i_min);
+				TSP_tour.insert(TSP_tour.begin() + pos, insertedNode.id_);
+			}
+		}
+	}
+	return TSP_tour;
+}

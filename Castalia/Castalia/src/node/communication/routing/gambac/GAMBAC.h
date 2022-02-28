@@ -44,16 +44,6 @@
 
 using namespace std;
 
-enum GAMBACTimers {
-	START_ROUND = 1,	
-	START_MAINALG = 2,
-	SEND_DATA = 3,
-	END_ROUND = 4,
-	JOIN_CH = 5,
-	SEND_ADV = 6,
-	SEND_CONTROL = 7,
-};
-
 struct CHInfo
 {
 	int src;
@@ -74,32 +64,31 @@ private:
 
 	queue <cPacket *> tempTXBuffer;
 	vector <GAMBACPacket> bufferAggregate;
-	vector <int> clusterMembers;
-	list <NeighborInfo> neighborTable;
+	int dataPacketSize;
 
 	////////////////////////////////////////////////
 
 	UDG graph;
     int N;
     int k0;
-	double d0;
+	double neighborRange;
 
     int nloop;
 	int countSuccess;
 	int maxCHperUAV;
 	
-    vector<double> d2CH;
+    vector<double> distanceToCH;
     map<int, double> ballWeight;
     double maxThres;
     double epsilon;
     double Eavg = 0;
-	vector<list<int>> representSet;
+	vector<list<int>> clusterMembers;
     double maxBallWeight;
     double minBallWeight;
     unordered_set<int> rmSet;
 	vector<list<int>> centList;
     vector<bool> isCH;
-	vector<int> fringeSet;
+	vector<int> outerSet;
 	vector<int> innerSet;
 	vector<int> A2;
 	vector<int> fringeSet_0;
@@ -112,15 +101,15 @@ private:
 
 	double W;
 	double W_opt;
-	double W_max;
-	double W_min;
+	double W_start;
+	double W_end;
 	vector<double> w_max;
 	double E_opt;
 	double E_max;
 	double E_min;
 	double E0_min;
 	double w_min;
-	double w_total;
+	double W_total;
 
 	double gamma;
 	vector<double> E_tmp;
@@ -136,22 +125,24 @@ protected:
 	void timerFiredCallback(int);
 	void processBufferedPacket();
 
-	void GPinit();
+	void GAMBACinit();
 	void reset();
 	void mainAlg();
-	vector<int> TZ_sample(vector<int>W, double s);
+	vector<int> randomFromSet(vector<int> Candidates, double s);
 	void growBalls(vector<int> lanmarkSet);
 	void growBalls2(vector<int> lanmarkSet);
 	double computeClusterWeight(int uNode);
-	vector<int> verifyFringeSet();
-	vector<int> TZ_sample2(vector<int> W, double b);
+	vector<int> getOuterOversizePart();
+	vector<int> samplingCH(vector<int> Candidates, double b);
 	void computeBallWeight();
-	void recruitNewCHsAlpha();
-	void clearData();
-	int constructClusters(int k);
+	void recruitNewCHs();
+	int buildDFT(double W);
 	void updateNodeWeight();
 	void updateCentList();
 	void buildTrajectories();
+	void buildTrajectories(bool isBreak);
+	vector<vector<int>> buildInitialTrajectories();
+	vector<int> TSP(vector<int>);
 	vector<int> sortedCHVector();
 	double computeWeight(list<int>);
 };

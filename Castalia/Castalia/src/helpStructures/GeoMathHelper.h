@@ -43,11 +43,13 @@ struct Point {
   Point() {
     x_ = INVALID;
     y_ = INVALID;
+    id_ = -1;
   }
 
   Point(double x, double y) {
     x_ = x;
     y_ = y;
+    id_ = -1;
   }
 
   inline double x() const {
@@ -64,6 +66,7 @@ struct Point {
 
   double x_;
   double y_;
+  int id_;
 
   inline bool operator==(const Point& rhs) const {
     return x_ == rhs.x_ && y_ == rhs.y_;

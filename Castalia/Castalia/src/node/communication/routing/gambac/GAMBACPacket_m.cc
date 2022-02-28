@@ -1,5 +1,5 @@
 //
-// Generated file, do not edit! Created by nedtool 4.6 from src/node/communication/routing/uavCollectionRouting/uavCollectionRoutingPacket.msg.
+// Generated file, do not edit! Created by nedtool 4.6 from src/node/communication/routing/gambac/GAMBACPacket.msg.
 //
 
 // Disable warnings about unused variables, empty switch stmts, etc:
@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <sstream>
-#include "uavCollectionRoutingPacket_m.h"
+#include "GAMBACPacket_m.h"
 
 USING_NAMESPACE
 
@@ -54,38 +54,37 @@ template<typename T>
 inline std::ostream& operator<<(std::ostream& out,const T&) {return out;}
 
 EXECUTE_ON_STARTUP(
-    cEnum *e = cEnum::find("globecomPacket_Type");
-    if (!e) enums.getInstance()->add(e = new cEnum("globecomPacket_Type"));
-    e->insert(GP_ROUTING_CONTROL_PACKET, "GP_ROUTING_CONTROL_PACKET");
-    e->insert(GP_ROUTING_DATA_PACKET, "GP_ROUTING_DATA_PACKET");
-    e->insert(GP_ROUTING_JOIN_PACKET, "GP_ROUTING_JOIN_PACKET");
-    e->insert(GP_ROUTING_ADV_PACKET, "GP_ROUTING_ADV_PACKET");
+    cEnum *e = cEnum::find("GAMBACPacket_Type");
+    if (!e) enums.getInstance()->add(e = new cEnum("GAMBACPacket_Type"));
+    e->insert(GAMBAC_ROUTING_CONTROL_PACKET, "GAMBAC_ROUTING_CONTROL_PACKET");
+    e->insert(GAMBAC_ROUTING_DATA_PACKET, "GAMBAC_ROUTING_DATA_PACKET");
+    e->insert(GAMBAC_ROUTING_JOIN_PACKET, "GAMBAC_ROUTING_JOIN_PACKET");
+    e->insert(GAMBAC_ROUTING_ADV_PACKET, "GAMBAC_ROUTING_ADV_PACKET");
 );
 
-Register_Class(globecomPacket);
+Register_Class(GAMBACPacket);
 
-globecomPacket::globecomPacket(const char *name, int kind) : ::RoutingPacket(name,kind)
+GAMBACPacket::GAMBACPacket(const char *name, int kind) : ::RoutingPacket(name,kind)
 {
-    this->globecomPacketKind_var = 0;
-    this->sourceId_var = 0;
+    this->GAMBACPacketKind_var = 0;
     schedule_arraysize = 0;
     this->schedule_var = 0;
     this->remainingEnergy_var = 0;
 }
 
-globecomPacket::globecomPacket(const globecomPacket& other) : ::RoutingPacket(other)
+GAMBACPacket::GAMBACPacket(const GAMBACPacket& other) : ::RoutingPacket(other)
 {
     schedule_arraysize = 0;
     this->schedule_var = 0;
     copy(other);
 }
 
-globecomPacket::~globecomPacket()
+GAMBACPacket::~GAMBACPacket()
 {
     delete [] schedule_var;
 }
 
-globecomPacket& globecomPacket::operator=(const globecomPacket& other)
+GAMBACPacket& GAMBACPacket::operator=(const GAMBACPacket& other)
 {
     if (this==&other) return *this;
     ::RoutingPacket::operator=(other);
@@ -93,10 +92,9 @@ globecomPacket& globecomPacket::operator=(const globecomPacket& other)
     return *this;
 }
 
-void globecomPacket::copy(const globecomPacket& other)
+void GAMBACPacket::copy(const GAMBACPacket& other)
 {
-    this->globecomPacketKind_var = other.globecomPacketKind_var;
-    this->sourceId_var = other.sourceId_var;
+    this->GAMBACPacketKind_var = other.GAMBACPacketKind_var;
     delete [] this->schedule_var;
     this->schedule_var = (other.schedule_arraysize==0) ? NULL : new int[other.schedule_arraysize];
     schedule_arraysize = other.schedule_arraysize;
@@ -108,11 +106,10 @@ void globecomPacket::copy(const globecomPacket& other)
     this->trace_var = other.trace_var;
 }
 
-void globecomPacket::parsimPack(cCommBuffer *b)
+void GAMBACPacket::parsimPack(cCommBuffer *b)
 {
     ::RoutingPacket::parsimPack(b);
-    doPacking(b,this->globecomPacketKind_var);
-    doPacking(b,this->sourceId_var);
+    doPacking(b,this->GAMBACPacketKind_var);
     b->pack(schedule_arraysize);
     doPacking(b,this->schedule_var,schedule_arraysize);
     doPacking(b,this->remainingEnergy_var);
@@ -121,11 +118,10 @@ void globecomPacket::parsimPack(cCommBuffer *b)
     doPacking(b,this->trace_var);
 }
 
-void globecomPacket::parsimUnpack(cCommBuffer *b)
+void GAMBACPacket::parsimUnpack(cCommBuffer *b)
 {
     ::RoutingPacket::parsimUnpack(b);
-    doUnpacking(b,this->globecomPacketKind_var);
-    doUnpacking(b,this->sourceId_var);
+    doUnpacking(b,this->GAMBACPacketKind_var);
     delete [] this->schedule_var;
     b->unpack(schedule_arraysize);
     if (schedule_arraysize==0) {
@@ -140,27 +136,17 @@ void globecomPacket::parsimUnpack(cCommBuffer *b)
     doUnpacking(b,this->trace_var);
 }
 
-int globecomPacket::getGlobecomPacketKind() const
+int GAMBACPacket::getGAMBACPacketKind() const
 {
-    return globecomPacketKind_var;
+    return GAMBACPacketKind_var;
 }
 
-void globecomPacket::setGlobecomPacketKind(int globecomPacketKind)
+void GAMBACPacket::setGAMBACPacketKind(int GAMBACPacketKind)
 {
-    this->globecomPacketKind_var = globecomPacketKind;
+    this->GAMBACPacketKind_var = GAMBACPacketKind;
 }
 
-int globecomPacket::getSourceId() const
-{
-    return sourceId_var;
-}
-
-void globecomPacket::setSourceId(int sourceId)
-{
-    this->sourceId_var = sourceId;
-}
-
-void globecomPacket::setScheduleArraySize(unsigned int size)
+void GAMBACPacket::setScheduleArraySize(unsigned int size)
 {
     int *schedule_var2 = (size==0) ? NULL : new int[size];
     unsigned int sz = schedule_arraysize < size ? schedule_arraysize : size;
@@ -173,68 +159,68 @@ void globecomPacket::setScheduleArraySize(unsigned int size)
     this->schedule_var = schedule_var2;
 }
 
-unsigned int globecomPacket::getScheduleArraySize() const
+unsigned int GAMBACPacket::getScheduleArraySize() const
 {
     return schedule_arraysize;
 }
 
-int globecomPacket::getSchedule(unsigned int k) const
+int GAMBACPacket::getSchedule(unsigned int k) const
 {
     if (k>=schedule_arraysize) throw cRuntimeError("Array of size %d indexed by %d", schedule_arraysize, k);
     return schedule_var[k];
 }
 
-void globecomPacket::setSchedule(unsigned int k, int schedule)
+void GAMBACPacket::setSchedule(unsigned int k, int schedule)
 {
     if (k>=schedule_arraysize) throw cRuntimeError("Array of size %d indexed by %d", schedule_arraysize, k);
     this->schedule_var[k] = schedule;
 }
 
-double globecomPacket::getRemainingEnergy() const
+double GAMBACPacket::getRemainingEnergy() const
 {
     return remainingEnergy_var;
 }
 
-void globecomPacket::setRemainingEnergy(double remainingEnergy)
+void GAMBACPacket::setRemainingEnergy(double remainingEnergy)
 {
     this->remainingEnergy_var = remainingEnergy;
 }
 
-IntVector& globecomPacket::getIsCH()
+IntVector& GAMBACPacket::getIsCH()
 {
     return isCH_var;
 }
 
-void globecomPacket::setIsCH(const IntVector& isCH)
+void GAMBACPacket::setIsCH(const IntVector& isCH)
 {
     this->isCH_var = isCH;
 }
 
-IntVector& globecomPacket::getNextCH()
+IntVector& GAMBACPacket::getNextCH()
 {
     return nextCH_var;
 }
 
-void globecomPacket::setNextCH(const IntVector& nextCH)
+void GAMBACPacket::setNextCH(const IntVector& nextCH)
 {
     this->nextCH_var = nextCH;
 }
 
-IntVector& globecomPacket::getTrace()
+IntVector& GAMBACPacket::getTrace()
 {
     return trace_var;
 }
 
-void globecomPacket::setTrace(const IntVector& trace)
+void GAMBACPacket::setTrace(const IntVector& trace)
 {
     this->trace_var = trace;
 }
 
-class globecomPacketDescriptor : public cClassDescriptor
+class GAMBACPacketDescriptor : public cClassDescriptor
 {
   public:
-    globecomPacketDescriptor();
-    virtual ~globecomPacketDescriptor();
+    GAMBACPacketDescriptor();
+    virtual ~GAMBACPacketDescriptor();
 
     virtual bool doesSupport(cObject *obj) const;
     virtual const char *getProperty(const char *propertyname) const;
@@ -253,34 +239,34 @@ class globecomPacketDescriptor : public cClassDescriptor
     virtual void *getFieldStructPointer(void *object, int field, int i) const;
 };
 
-Register_ClassDescriptor(globecomPacketDescriptor);
+Register_ClassDescriptor(GAMBACPacketDescriptor);
 
-globecomPacketDescriptor::globecomPacketDescriptor() : cClassDescriptor("globecomPacket", "RoutingPacket")
+GAMBACPacketDescriptor::GAMBACPacketDescriptor() : cClassDescriptor("GAMBACPacket", "RoutingPacket")
 {
 }
 
-globecomPacketDescriptor::~globecomPacketDescriptor()
+GAMBACPacketDescriptor::~GAMBACPacketDescriptor()
 {
 }
 
-bool globecomPacketDescriptor::doesSupport(cObject *obj) const
+bool GAMBACPacketDescriptor::doesSupport(cObject *obj) const
 {
-    return dynamic_cast<globecomPacket *>(obj)!=NULL;
+    return dynamic_cast<GAMBACPacket *>(obj)!=NULL;
 }
 
-const char *globecomPacketDescriptor::getProperty(const char *propertyname) const
+const char *GAMBACPacketDescriptor::getProperty(const char *propertyname) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     return basedesc ? basedesc->getProperty(propertyname) : NULL;
 }
 
-int globecomPacketDescriptor::getFieldCount(void *object) const
+int GAMBACPacketDescriptor::getFieldCount(void *object) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 7+basedesc->getFieldCount(object) : 7;
+    return basedesc ? 6+basedesc->getFieldCount(object) : 6;
 }
 
-unsigned int globecomPacketDescriptor::getFieldTypeFlags(void *object, int field) const
+unsigned int GAMBACPacketDescriptor::getFieldTypeFlags(void *object, int field) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -290,17 +276,16 @@ unsigned int globecomPacketDescriptor::getFieldTypeFlags(void *object, int field
     }
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,
-        FD_ISEDITABLE,
         FD_ISARRAY | FD_ISEDITABLE,
         FD_ISEDITABLE,
         FD_ISCOMPOUND,
         FD_ISCOMPOUND,
         FD_ISCOMPOUND,
     };
-    return (field>=0 && field<7) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<6) ? fieldTypeFlags[field] : 0;
 }
 
-const char *globecomPacketDescriptor::getFieldName(void *object, int field) const
+const char *GAMBACPacketDescriptor::getFieldName(void *object, int field) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -309,32 +294,30 @@ const char *globecomPacketDescriptor::getFieldName(void *object, int field) cons
         field -= basedesc->getFieldCount(object);
     }
     static const char *fieldNames[] = {
-        "globecomPacketKind",
-        "sourceId",
+        "GAMBACPacketKind",
         "schedule",
         "remainingEnergy",
         "isCH",
         "nextCH",
         "trace",
     };
-    return (field>=0 && field<7) ? fieldNames[field] : NULL;
+    return (field>=0 && field<6) ? fieldNames[field] : NULL;
 }
 
-int globecomPacketDescriptor::findField(void *object, const char *fieldName) const
+int GAMBACPacketDescriptor::findField(void *object, const char *fieldName) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     int base = basedesc ? basedesc->getFieldCount(object) : 0;
-    if (fieldName[0]=='g' && strcmp(fieldName, "globecomPacketKind")==0) return base+0;
-    if (fieldName[0]=='s' && strcmp(fieldName, "sourceId")==0) return base+1;
-    if (fieldName[0]=='s' && strcmp(fieldName, "schedule")==0) return base+2;
-    if (fieldName[0]=='r' && strcmp(fieldName, "remainingEnergy")==0) return base+3;
-    if (fieldName[0]=='i' && strcmp(fieldName, "isCH")==0) return base+4;
-    if (fieldName[0]=='n' && strcmp(fieldName, "nextCH")==0) return base+5;
-    if (fieldName[0]=='t' && strcmp(fieldName, "trace")==0) return base+6;
+    if (fieldName[0]=='G' && strcmp(fieldName, "GAMBACPacketKind")==0) return base+0;
+    if (fieldName[0]=='s' && strcmp(fieldName, "schedule")==0) return base+1;
+    if (fieldName[0]=='r' && strcmp(fieldName, "remainingEnergy")==0) return base+2;
+    if (fieldName[0]=='i' && strcmp(fieldName, "isCH")==0) return base+3;
+    if (fieldName[0]=='n' && strcmp(fieldName, "nextCH")==0) return base+4;
+    if (fieldName[0]=='t' && strcmp(fieldName, "trace")==0) return base+5;
     return basedesc ? basedesc->findField(object, fieldName) : -1;
 }
 
-const char *globecomPacketDescriptor::getFieldTypeString(void *object, int field) const
+const char *GAMBACPacketDescriptor::getFieldTypeString(void *object, int field) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -345,16 +328,15 @@ const char *globecomPacketDescriptor::getFieldTypeString(void *object, int field
     static const char *fieldTypeStrings[] = {
         "int",
         "int",
-        "int",
         "double",
         "IntVector",
         "IntVector",
         "IntVector",
     };
-    return (field>=0 && field<7) ? fieldTypeStrings[field] : NULL;
+    return (field>=0 && field<6) ? fieldTypeStrings[field] : NULL;
 }
 
-const char *globecomPacketDescriptor::getFieldProperty(void *object, int field, const char *propertyname) const
+const char *GAMBACPacketDescriptor::getFieldProperty(void *object, int field, const char *propertyname) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -364,13 +346,13 @@ const char *globecomPacketDescriptor::getFieldProperty(void *object, int field, 
     }
     switch (field) {
         case 0:
-            if (!strcmp(propertyname,"enum")) return "globecomPacket_Type";
+            if (!strcmp(propertyname,"enum")) return "GAMBACPacket_Type";
             return NULL;
         default: return NULL;
     }
 }
 
-int globecomPacketDescriptor::getArraySize(void *object, int field) const
+int GAMBACPacketDescriptor::getArraySize(void *object, int field) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -378,14 +360,14 @@ int globecomPacketDescriptor::getArraySize(void *object, int field) const
             return basedesc->getArraySize(object, field);
         field -= basedesc->getFieldCount(object);
     }
-    globecomPacket *pp = (globecomPacket *)object; (void)pp;
+    GAMBACPacket *pp = (GAMBACPacket *)object; (void)pp;
     switch (field) {
-        case 2: return pp->getScheduleArraySize();
+        case 1: return pp->getScheduleArraySize();
         default: return 0;
     }
 }
 
-std::string globecomPacketDescriptor::getFieldAsString(void *object, int field, int i) const
+std::string GAMBACPacketDescriptor::getFieldAsString(void *object, int field, int i) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -393,20 +375,19 @@ std::string globecomPacketDescriptor::getFieldAsString(void *object, int field, 
             return basedesc->getFieldAsString(object,field,i);
         field -= basedesc->getFieldCount(object);
     }
-    globecomPacket *pp = (globecomPacket *)object; (void)pp;
+    GAMBACPacket *pp = (GAMBACPacket *)object; (void)pp;
     switch (field) {
-        case 0: return long2string(pp->getGlobecomPacketKind());
-        case 1: return long2string(pp->getSourceId());
-        case 2: return long2string(pp->getSchedule(i));
-        case 3: return double2string(pp->getRemainingEnergy());
-        case 4: {std::stringstream out; out << pp->getIsCH(); return out.str();}
-        case 5: {std::stringstream out; out << pp->getNextCH(); return out.str();}
-        case 6: {std::stringstream out; out << pp->getTrace(); return out.str();}
+        case 0: return long2string(pp->getGAMBACPacketKind());
+        case 1: return long2string(pp->getSchedule(i));
+        case 2: return double2string(pp->getRemainingEnergy());
+        case 3: {std::stringstream out; out << pp->getIsCH(); return out.str();}
+        case 4: {std::stringstream out; out << pp->getNextCH(); return out.str();}
+        case 5: {std::stringstream out; out << pp->getTrace(); return out.str();}
         default: return "";
     }
 }
 
-bool globecomPacketDescriptor::setFieldAsString(void *object, int field, int i, const char *value) const
+bool GAMBACPacketDescriptor::setFieldAsString(void *object, int field, int i, const char *value) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -414,17 +395,16 @@ bool globecomPacketDescriptor::setFieldAsString(void *object, int field, int i, 
             return basedesc->setFieldAsString(object,field,i,value);
         field -= basedesc->getFieldCount(object);
     }
-    globecomPacket *pp = (globecomPacket *)object; (void)pp;
+    GAMBACPacket *pp = (GAMBACPacket *)object; (void)pp;
     switch (field) {
-        case 0: pp->setGlobecomPacketKind(string2long(value)); return true;
-        case 1: pp->setSourceId(string2long(value)); return true;
-        case 2: pp->setSchedule(i,string2long(value)); return true;
-        case 3: pp->setRemainingEnergy(string2double(value)); return true;
+        case 0: pp->setGAMBACPacketKind(string2long(value)); return true;
+        case 1: pp->setSchedule(i,string2long(value)); return true;
+        case 2: pp->setRemainingEnergy(string2double(value)); return true;
         default: return false;
     }
 }
 
-const char *globecomPacketDescriptor::getFieldStructName(void *object, int field) const
+const char *GAMBACPacketDescriptor::getFieldStructName(void *object, int field) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -433,14 +413,14 @@ const char *globecomPacketDescriptor::getFieldStructName(void *object, int field
         field -= basedesc->getFieldCount(object);
     }
     switch (field) {
+        case 3: return opp_typename(typeid(IntVector));
         case 4: return opp_typename(typeid(IntVector));
         case 5: return opp_typename(typeid(IntVector));
-        case 6: return opp_typename(typeid(IntVector));
         default: return NULL;
     };
 }
 
-void *globecomPacketDescriptor::getFieldStructPointer(void *object, int field, int i) const
+void *GAMBACPacketDescriptor::getFieldStructPointer(void *object, int field, int i) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -448,11 +428,11 @@ void *globecomPacketDescriptor::getFieldStructPointer(void *object, int field, i
             return basedesc->getFieldStructPointer(object, field, i);
         field -= basedesc->getFieldCount(object);
     }
-    globecomPacket *pp = (globecomPacket *)object; (void)pp;
+    GAMBACPacket *pp = (GAMBACPacket *)object; (void)pp;
     switch (field) {
-        case 4: return (void *)(&pp->getIsCH()); break;
-        case 5: return (void *)(&pp->getNextCH()); break;
-        case 6: return (void *)(&pp->getTrace()); break;
+        case 3: return (void *)(&pp->getIsCH()); break;
+        case 4: return (void *)(&pp->getNextCH()); break;
+        case 5: return (void *)(&pp->getTrace()); break;
         default: return NULL;
     }
 }

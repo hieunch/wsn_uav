@@ -93,6 +93,47 @@ void solution::random(int maxRoutes, const problem& input){
 	// module->trace() << "fitness " << routes.size() << " " << maxDistance << " " << totalDistance;
 }
 
+void solution::init(int maxRoutes, const problem& input, vector<vector<int>> tours){
+	clear();
+
+	vector< vector<int> > newRoutes = tours;
+
+	for(int i = 0; i < maxRoutes; ++i){
+		if(newRoutes[i].size() > 0){
+			// insert customers according to time windows' position
+			vector<int> sorted;
+			sorted.reserve(newRoutes[i].size());
+
+			for(unsigned int j = 0; j < sorted.capacity(); ++j){
+				int minStart = input[0].end, minEnd = input[0].end, id;
+				// find unrouted customer with smallest end-time, then smallest start-time
+				for(unsigned int k = 0; k < newRoutes[i].size(); ++k){
+					if(input[ newRoutes[i][k] ].end < minEnd){
+						minEnd = input[ newRoutes[i][k] ].end;
+						minStart = input[ newRoutes[i][k] ].start;
+						id = k;
+					}else if(input[ newRoutes[i][k] ].end == minEnd &&
+							 input[ newRoutes[i][k] ].start < minStart ){
+						minStart = input[ newRoutes[i][k] ].start;
+						id = k;
+					}
+				}
+				sorted.push_back(newRoutes[i][id]);
+				newRoutes[i].erase(newRoutes[i].begin() + id);
+			}
+			
+			route newRoute;
+			newRoute.visits = list<int>(sorted.begin(), sorted.end());
+			newRoute.modified = true;
+			routes.push_back(newRoute);
+		}
+	}
+
+	fitness(input);
+
+	// module->trace() << "fitness " << routes.size() << " " << maxDistance << " " << totalDistance;
+}
+
 void solution::random(const problem& input){
 	// random shuffle all customer's id
 	vector<int> ids(input.getNumCusto());

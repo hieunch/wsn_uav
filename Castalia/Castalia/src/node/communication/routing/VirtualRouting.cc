@@ -66,7 +66,7 @@ void VirtualRouting::initialize()
 	currentSequenceNumber = 0;
 
 	if (weights.empty()) weights.resize(numNodes);
-	weights[self] = par("byteLength");
+	weights[self] = par("dataPacketSize");
 	weights[self] = weights[self]*4;
 
 	if (isSink) {
@@ -108,13 +108,13 @@ void VirtualRouting::toMacLayer(cPacket * pkt, int destination)
   // energy ---------
 	double byteLength = netPacket->getByteLength();
 	// for (int i=0; i<10; i++) trace() << "OK " << destination;
-	Point nextHopHopLocation = GlobalLocationService::getLocation(destination);
+	Point nextHopLocation = GlobalLocationService::getLocation(destination);
 	// for (int i=0; i<10; i++) trace() << "OK2";
-	double distance = G::distance(selfLocation, nextHopHopLocation);
+	double distance = G::distance(selfLocation, nextHopLocation);
 	// resMgrModule->consumeEnergy(txEnergy(byteLength, distance));
 	// --------------
 
-	netPacket->getNetMacInfoExchange().nextHopHop = destination;
+	netPacket->getNetMacInfoExchange().nextHop = destination;
 	if (destination == -1) {
 		// for (int i=0; i<10; i++) trace() << "toMacModule";
 	    send(netPacket, "toMacModule");
@@ -143,7 +143,7 @@ void VirtualRouting::encapsulatePacket(cPacket * pkt, cPacket * appPkt)
 	// will add the size of the app packet automatically
 	netPkt->setByteLength(netDataFrameOverhead);
 	netPkt->setKind(NETWORK_LAYER_PACKET);
-	netPkt->setSource(SELF_NETWORK_ADDRESS);
+	netPkt->setSourceAddress(SELF_NETWORK_ADDRESS);
 	netPkt->setSequenceNumber(currentSequenceNumber++);
 	netPkt->encapsulate(appPkt);
 }
@@ -155,7 +155,7 @@ cPacket* VirtualRouting::decapsulatePacket(cPacket * pkt)
 
 	appPkt->getAppNetInfoExchange().RSSI = netPkt->getNetMacInfoExchange().RSSI;
 	appPkt->getAppNetInfoExchange().LQI = netPkt->getNetMacInfoExchange().LQI;
-	appPkt->getAppNetInfoExchange().source = netPkt->getSource();
+	appPkt->getAppNetInfoExchange().source = netPkt->getSourceAddress();
 	return appPkt;
 }
 
@@ -331,7 +331,7 @@ bool VirtualRouting::isNotDuplicatePacket(cPacket * pkt)
 {
 	//extract source address and sequence number from the packet
 	RoutingPacket *netPkt = check_and_cast <RoutingPacket*>(pkt);
-	int src = resolveNetworkAddress(netPkt->getSource());
+	int src = resolveNetworkAddress(netPkt->getSourceAddress());
 	unsigned int sn = netPkt->getSequenceNumber();
 
 	//resize packet history vector if necessary
@@ -472,18 +472,18 @@ void VirtualRouting::sendData(cPacket * pkt) {
 
 	if (config.nextHop[self] == -1) {
 		resMgrModule->consumeEnergy(txEnergy(byteLength, D2UAV));
-		energyConsumeds[self] += txEnergy(txSize, D2UAV);
+		energyConsumeds[self] += txEnergy(byteLength, D2UAV);
 		if (energyConsumeds[self] > maxConsumed) maxConsumed = energyConsumeds[self];
 		debugPoint(selfLocation, "red");
 		debugCircle(selfLocation, resMgrModule->getRemainingEnergy()/500, "blue");
 	} else {
-		double d2nextHop = G::distance(selfLocation, GlobalLocationService::getLocation(config.nextHop[self]));
-		resMgrModule->consumeEnergy(txEnergy(byteLength, d2nextHop));
-		totalConsumed += txEnergy(byteLength, d2nextHop);
-		energyConsumeds[self] += txEnergy(byteLength, d2nextHop);
+		double distanceToNextHop = G::distance(selfLocation, GlobalLocationService::getLocation(config.nextHop[self]));
+		resMgrModule->consumeEnergy(txEnergy(byteLength, distanceToNextHop));
+		totalConsumed += txEnergy(byteLength, distanceToNextHop);
+		energyConsumeds[self] += txEnergy(byteLength, distanceToNextHop);
 		debugLine(selfLocation, location(config.nextHop[self]), "black");
 		
-		cModule* nextModule = getParentModule()->getParentModule()->getParentModule()->getSubmodule("node", nextHop)
+		cModule* nextModule = getParentModule()->getParentModule()->getParentModule()->getSubmodule("node", config.nextHop[self])
             ->getSubmodule("Communication")->getSubmodule("Routing");
 			// for (int i=0; i<10; i++) trace() << "toMacModule";
         sendDirect(dataPacket, nextModule, "fromDirect");

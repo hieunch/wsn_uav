@@ -288,6 +288,8 @@ RoutingPacket::RoutingPacket(const char *name, int kind) : ::cPacket(name,kind)
     this->distanceCount_var = 0;
     this->source_var = 0;
     this->destination_var = 0;
+    this->sourceAddress_var = 0;
+    this->destinationAddress_var = 0;
     this->sequenceNumber_var = 0;
 }
 
@@ -316,6 +318,8 @@ void RoutingPacket::copy(const RoutingPacket& other)
     this->distanceCount_var = other.distanceCount_var;
     this->source_var = other.source_var;
     this->destination_var = other.destination_var;
+    this->sourceAddress_var = other.sourceAddress_var;
+    this->destinationAddress_var = other.destinationAddress_var;
     this->sequenceNumber_var = other.sequenceNumber_var;
 }
 
@@ -328,6 +332,8 @@ void RoutingPacket::parsimPack(cCommBuffer *b)
     doPacking(b,this->distanceCount_var);
     doPacking(b,this->source_var);
     doPacking(b,this->destination_var);
+    doPacking(b,this->sourceAddress_var);
+    doPacking(b,this->destinationAddress_var);
     doPacking(b,this->sequenceNumber_var);
 }
 
@@ -340,6 +346,8 @@ void RoutingPacket::parsimUnpack(cCommBuffer *b)
     doUnpacking(b,this->distanceCount_var);
     doUnpacking(b,this->source_var);
     doUnpacking(b,this->destination_var);
+    doUnpacking(b,this->sourceAddress_var);
+    doUnpacking(b,this->destinationAddress_var);
     doUnpacking(b,this->sequenceNumber_var);
 }
 
@@ -383,24 +391,44 @@ void RoutingPacket::setDistanceCount(double distanceCount)
     this->distanceCount_var = distanceCount;
 }
 
-const char * RoutingPacket::getSource() const
+int RoutingPacket::getSource() const
 {
-    return source_var.c_str();
+    return source_var;
 }
 
-void RoutingPacket::setSource(const char * source)
+void RoutingPacket::setSource(int source)
 {
     this->source_var = source;
 }
 
-const char * RoutingPacket::getDestination() const
+int RoutingPacket::getDestination() const
 {
-    return destination_var.c_str();
+    return destination_var;
 }
 
-void RoutingPacket::setDestination(const char * destination)
+void RoutingPacket::setDestination(int destination)
 {
     this->destination_var = destination;
+}
+
+const char * RoutingPacket::getSourceAddress() const
+{
+    return sourceAddress_var.c_str();
+}
+
+void RoutingPacket::setSourceAddress(const char * sourceAddress)
+{
+    this->sourceAddress_var = sourceAddress;
+}
+
+const char * RoutingPacket::getDestinationAddress() const
+{
+    return destinationAddress_var.c_str();
+}
+
+void RoutingPacket::setDestinationAddress(const char * destinationAddress)
+{
+    this->destinationAddress_var = destinationAddress;
 }
 
 unsigned int RoutingPacket::getSequenceNumber() const
@@ -460,7 +488,7 @@ const char *RoutingPacketDescriptor::getProperty(const char *propertyname) const
 int RoutingPacketDescriptor::getFieldCount(void *object) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 7+basedesc->getFieldCount(object) : 7;
+    return basedesc ? 9+basedesc->getFieldCount(object) : 9;
 }
 
 unsigned int RoutingPacketDescriptor::getFieldTypeFlags(void *object, int field) const
@@ -479,8 +507,10 @@ unsigned int RoutingPacketDescriptor::getFieldTypeFlags(void *object, int field)
         FD_ISEDITABLE,
         FD_ISEDITABLE,
         FD_ISEDITABLE,
+        FD_ISEDITABLE,
+        FD_ISEDITABLE,
     };
-    return (field>=0 && field<7) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<9) ? fieldTypeFlags[field] : 0;
 }
 
 const char *RoutingPacketDescriptor::getFieldName(void *object, int field) const
@@ -498,9 +528,11 @@ const char *RoutingPacketDescriptor::getFieldName(void *object, int field) const
         "distanceCount",
         "source",
         "destination",
+        "sourceAddress",
+        "destinationAddress",
         "sequenceNumber",
     };
-    return (field>=0 && field<7) ? fieldNames[field] : NULL;
+    return (field>=0 && field<9) ? fieldNames[field] : NULL;
 }
 
 int RoutingPacketDescriptor::findField(void *object, const char *fieldName) const
@@ -513,7 +545,9 @@ int RoutingPacketDescriptor::findField(void *object, const char *fieldName) cons
     if (fieldName[0]=='d' && strcmp(fieldName, "distanceCount")==0) return base+3;
     if (fieldName[0]=='s' && strcmp(fieldName, "source")==0) return base+4;
     if (fieldName[0]=='d' && strcmp(fieldName, "destination")==0) return base+5;
-    if (fieldName[0]=='s' && strcmp(fieldName, "sequenceNumber")==0) return base+6;
+    if (fieldName[0]=='s' && strcmp(fieldName, "sourceAddress")==0) return base+6;
+    if (fieldName[0]=='d' && strcmp(fieldName, "destinationAddress")==0) return base+7;
+    if (fieldName[0]=='s' && strcmp(fieldName, "sequenceNumber")==0) return base+8;
     return basedesc ? basedesc->findField(object, fieldName) : -1;
 }
 
@@ -530,11 +564,13 @@ const char *RoutingPacketDescriptor::getFieldTypeString(void *object, int field)
         "int",
         "int",
         "double",
+        "int",
+        "int",
         "string",
         "string",
         "unsigned int",
     };
-    return (field>=0 && field<7) ? fieldTypeStrings[field] : NULL;
+    return (field>=0 && field<9) ? fieldTypeStrings[field] : NULL;
 }
 
 const char *RoutingPacketDescriptor::getFieldProperty(void *object, int field, const char *propertyname) const
@@ -578,9 +614,11 @@ std::string RoutingPacketDescriptor::getFieldAsString(void *object, int field, i
         case 1: return long2string(pp->getTTL());
         case 2: return long2string(pp->getHopCount());
         case 3: return double2string(pp->getDistanceCount());
-        case 4: return oppstring2string(pp->getSource());
-        case 5: return oppstring2string(pp->getDestination());
-        case 6: return ulong2string(pp->getSequenceNumber());
+        case 4: return long2string(pp->getSource());
+        case 5: return long2string(pp->getDestination());
+        case 6: return oppstring2string(pp->getSourceAddress());
+        case 7: return oppstring2string(pp->getDestinationAddress());
+        case 8: return ulong2string(pp->getSequenceNumber());
         default: return "";
     }
 }
@@ -598,9 +636,11 @@ bool RoutingPacketDescriptor::setFieldAsString(void *object, int field, int i, c
         case 1: pp->setTTL(string2long(value)); return true;
         case 2: pp->setHopCount(string2long(value)); return true;
         case 3: pp->setDistanceCount(string2double(value)); return true;
-        case 4: pp->setSource((value)); return true;
-        case 5: pp->setDestination((value)); return true;
-        case 6: pp->setSequenceNumber(string2ulong(value)); return true;
+        case 4: pp->setSource(string2long(value)); return true;
+        case 5: pp->setDestination(string2long(value)); return true;
+        case 6: pp->setSourceAddress((value)); return true;
+        case 7: pp->setDestinationAddress((value)); return true;
+        case 8: pp->setSequenceNumber(string2ulong(value)); return true;
         default: return false;
     }
 }

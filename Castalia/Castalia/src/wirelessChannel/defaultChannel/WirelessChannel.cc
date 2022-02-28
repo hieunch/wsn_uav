@@ -184,14 +184,14 @@ void WirelessChannel::initialize(int stage)
 	 * Calculate the distance, beyond which we cannot
 	 * have connectivity between two nodes. This calculation is
 	 * based on the maximum TXPower the signalDeliveryThreshold
-	 * the pathLossExponent, the PLd0. For the random
+	 * the pathLossExponent, the PLneighborRange. For the random
 	 * shadowing part we use 3*sigma to account for 99.7%
 	 * of the cases. We use this value to considerably
 	 * speed up the filling of the pathLoss array,
 	 * especially for the mobile case.
 	 *******************************************************/
-	float distanceThreshold = d0 *
-		pow(10.0,(maxTxPower - signalDeliveryThreshold - PLd0 + 3 * sigma) /
+	float distanceThreshold = neighborRange *
+		pow(10.0,(maxTxPower - signalDeliveryThreshold - PLneighborRange + 3 * sigma) /
 		(10.0 * pathLossExponent));
 
 	for (int i = 0; i < numOfSpaceCells; i++) {
@@ -234,12 +234,12 @@ void WirelessChannel::initialize(int stage)
 			/* if the distance is very small (arbitrarily: smaller than one tenth
 			 * of the reference distance) then make the path loss 0dB
 			 */
-			if (dist < d0/10.0) {
+			if (dist < neighborRange/10.0) {
 				PLd = 0;
 				bidirectionalPathLossJitter = 0;
 			}
 			else {
-				PLd = PLd0 + 10.0 * pathLossExponent * log10(dist / d0) + normal(0, sigma);
+				PLd = PLneighborRange + 10.0 * pathLossExponent * log10(dist / neighborRange) + normal(0, sigma);
 				bidirectionalPathLossJitter = normal(0, bidirectionalSigma) / 2;
 			}
 
@@ -504,8 +504,8 @@ void WirelessChannel::readIniFileParameters(void)
 	pathLossExponent = par("pathLossExponent");
 	sigma = par("sigma");
 	bidirectionalSigma = par("bidirectionalSigma");
-	PLd0 = par("PLd0");
-	d0 = par("d0");
+	PLneighborRange = par("PLneighborRange");
+	neighborRange = par("neighborRange");
 
 	pathLossMapFile = par("pathLossMapFile");
 	temporalModelParametersFile = par("temporalModelParametersFile");

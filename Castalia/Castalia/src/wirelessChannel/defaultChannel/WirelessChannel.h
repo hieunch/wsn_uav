@@ -57,8 +57,8 @@ class WirelessChannel: public CastaliaModule {
 	// variables corresponding to Wireless Channel module parameters
 	double pathLossExponent;	// the path loss exponent
 	double noiseFloor;			// in dBm
-	double PLd0;				// Power loss at a reference distance d0 (in dBm)
-	double d0;					// reference distance (in meters)
+	double PLneighborRange;				// Power loss at a reference distance neighborRange (in dBm)
+	double neighborRange;					// reference distance (in meters)
 	double sigma;				// std of a zero-mean Gaussian RV
 	double bidirectionalSigma;	// std of a zero-mean Gaussian RV
 
