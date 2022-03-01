@@ -15,6 +15,7 @@
 
 #include <queue>
 #include <vector>
+#include <unordered_set>
 #include <omnetpp.h>
 
 #include "CastaliaModule.h"
@@ -94,7 +95,7 @@ struct NetworkConfig
 class VirtualRouting: public CastaliaModule, public TimerService {
  public:
 	static vector<double> *dCompare;
-	static vector<double> weights;
+	static vector<double> amountData;
 
  protected:
   	static bool initialized;
@@ -104,6 +105,8 @@ class VirtualRouting: public CastaliaModule, public TimerService {
 	chrono::duration<double> time_elapse;
 	static int totalCollected;
 	double maxLengthRatio;
+	static unordered_set<int> uncollectedSet;
+	static vector<int> collectedSet;
 	
 	/*--- The .ned file's parameters ---*/
 	int maxNetFrameSize;		//in bytes

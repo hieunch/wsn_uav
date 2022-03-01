@@ -15,9 +15,9 @@
 //*             Claudio Silva <claudio.silva@itec.ufpa.br>                   *
 //****************************************************************************/
 
-package node.communication.routing.gambac;
+package node.communication.routing.gambacStrongestFirst;
 
-simple GAMBAC like node.communication.routing.iRouting
+simple GAMBACStrongestFirst like node.communication.routing.iRouting
 {
 parameters:
 	string applicationID = default ("throughputTest");

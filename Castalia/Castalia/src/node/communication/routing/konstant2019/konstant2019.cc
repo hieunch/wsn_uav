@@ -37,7 +37,7 @@ void konstant2019::fromApplicationLayer(cPacket *pkt, const char *destination)
 {	
 	if(!isSink)
 	{
-		// weights[self] = pkt->getByteLength();
+		// amountData[self] = pkt->getByteLength();
 		string dst(destination);
 		konstant2019Packet *netPacket = new konstant2019Packet("GP routing data packet", NETWORK_LAYER_PACKET);
 		netPacket->setKonstant2019PacketKind(GP_ROUTING_DATA_PACKET);
@@ -79,7 +79,7 @@ void konstant2019::timerFiredCallback(int index)
 			if (roundNumber == 0) {
 				resMgrModule->resetBattery();
 				if (isSink)
-					trace1() << "Energy\tE_min\ti_min\tlevel\tconfig.clus_id[i_min]\tcalculateRxSize(i_min)\tweights[i_min]\tE_total/numNodes\ttotalConsumed\tmaxConsumed\tmaxTxSize\tconfig.A.size()\tdevE\tavgConsumed\tobjective value\tE0_min\ttime_elapse\ttotalCollected\tmaxLengthRatio";
+					routing_trace() << "Energy\tE_min\ti_min\tlevel\tconfig.clus_id[i_min]\tcalculateRxSize(i_min)\tamountData[i_min]\tE_total/numNodes\ttotalConsumed\tmaxConsumed\tmaxTxSize\tconfig.A.size()\tdevE\tavgConsumed\tobjective value\tE0_min\ttime_elapse\ttotalCollected\tmaxLengthRatio";
 			}
 			
 			if (isSink) {
@@ -102,13 +102,16 @@ void konstant2019::timerFiredCallback(int index)
 			setTimer(START_ROUND, roundLength);
 			
 			// if( remove( "network16000_konstant_trace.txt" ) != 0 )
-			// 	trace1() << ( "Error deleting file" );
+			// 	routing_trace() << ( "Error deleting file" );
 			// else
-			// 	trace1() << ( "File successfully deleted" );
+			// 	routing_trace() << ( "File successfully deleted" );
 			// for (int i=0; i<5; i++) trace() << "setTimer " << (roundLength + simTime());
 			break;
 		}
 		case START_MAINALG:{	
+			uncollectedSet.clear();
+			collectedSet.clear();
+			for (int i=0; i<N; i++) if (i != sinkId) uncollectedSet.insert(i);
 			totalConsumed = 0;
 			maxConsumed = 0;
 			maxTxSize = 0;
@@ -124,7 +127,7 @@ void konstant2019::timerFiredCallback(int index)
 		case SEND_DATA:{
 			trace() << "SEND_DATA";
 			RoutingPacket *dataPacket = new RoutingPacket("Routing data packet", NETWORK_LAYER_PACKET);;
-			dataPacket->setByteLength(dataPacketSize);
+			dataPacket->setByteLength(amountData[self]);
 			dataPacket->setKind(NETWORK_LAYER_PACKET);
 			dataPacket->setSource(self);
 			dataPacket->setSourceAddress(SELF_NETWORK_ADDRESS);
@@ -134,6 +137,11 @@ void konstant2019::timerFiredCallback(int index)
 			break;
 		}
 		case END_ROUND:{	
+			stringstream ss_uncollected;
+			for (int u : uncollectedSet) ss_uncollected << u << " ";
+			routing_trace() << "uncollected " << ss_uncollected.str();
+			routing_trace() << "collected " << collectedSet.size();
+
 			int i_min;	
 			double E0_min = E_min;
 			E_min = DBL_MAX;
@@ -149,7 +157,7 @@ void konstant2019::timerFiredCallback(int index)
 				E_total += E_i;
 				ss << E_i << " ";
 			}
-			trace1() << "E " << ss.str();
+			routing_trace() << "E " << ss.str();
 
 			int level = 0;
 			int current = i_min;
@@ -173,8 +181,8 @@ void konstant2019::timerFiredCallback(int index)
 			}
 			avgConsumed = avgConsumed/(N-1);
 			double objVal = -E_min/E0_min/2 + 1000*avgConsumed/1.8937;
-			// trace1() << "E_min " << E_min;
-			trace1() << "Energy\t" << E_min << "\t" << i_min << "\t" << level << "\t" << config.clus_id[i_min] << "\t" << calculateRxSize(i_min) << "\t" << weights[i_min] << "\t" << E_total/numNodes << "\t" << totalConsumed << "\t" << maxConsumed << "\t" << maxTxSize << "\t" << config.A.size() << "\t" << devE << "\t" << avgConsumed << "\t" << objVal  << "\t" << E0_min << "\t" << time_elapse.count() << "\t" << totalCollected << "\t" << maxLengthRatio;
+			// routing_trace() << "E_min " << E_min;
+			routing_trace() << "Energy\t" << E_min << "\t" << i_min << "\t" << level << "\t" << config.clus_id[i_min] << "\t" << calculateRxSize(i_min) << "\t" << amountData[i_min] << "\t" << E_total/numNodes << "\t" << totalConsumed << "\t" << maxConsumed << "\t" << maxTxSize << "\t" << config.A.size() << "\t" << devE << "\t" << avgConsumed << "\t" << objVal  << "\t" << E0_min << "\t" << time_elapse.count() << "\t" << totalCollected << "\t" << maxLengthRatio;
 			break;
 		}
 	}
@@ -188,27 +196,27 @@ void konstant2019::processBufferedPacket()
 
 
 void konstant2019::mainAlg() {
-	for (int i=0; i<1; i++) trace1() << "mainAlg";
+	for (int i=0; i<1; i++) routing_trace() << "mainAlg";
 	reset();
 	for (int u=0; u<numNodes; u++) E_tmp[u] = getResMgrModule(u)->getRemainingEnergy();
 	findEnergyEfficientSolution();
 
 	for (int k=0; k<numUAVs; k++) {
-		// trace1() << "trajectory " << k << " " << calculatePathLength(config.trajectories[k]);
+		// routing_trace() << "trajectory " << k << " " << calculatePathLength(config.trajectories[k]);
 		stringstream ss;
 		for(int l : config.trajectories[k]) {
 			ss << l << " ";
 		}
-		for (int ii=0; ii<1; ii++) trace1() << ss.str();
+		for (int ii=0; ii<1; ii++) routing_trace() << ss.str();
 	}
 	double maxLength = 0;
 	for (auto T : config.trajectories) {
 		double length = calculatePathLength(T);
 		if (length > maxLength) maxLength = length;
 	}
-	for (int ii=0; ii<1; ii++) trace1() << "maxLength " << maxLength;
+	for (int ii=0; ii<1; ii++) routing_trace() << "maxLength " << maxLength;
 	maxLengthRatio = maxLength / L_max;
-	// trace1() << "A size " << config.A.size();
+	// routing_trace() << "A size " << config.A.size();
 }
 
 
@@ -375,7 +383,7 @@ vector<vector<int>> konstant2019::partitionIntoSectors() {
 
 vector<vector<int>> konstant2019::basicToursPlanning() {
 	vector<vector<int>> Sectors = partitionIntoSectors();
-	for (int ii=0; ii<1; ii++) trace1() << "basicToursPlanning";
+	for (int ii=0; ii<1; ii++) routing_trace() << "basicToursPlanning";
 	
 	vector<vector<int>> basicTours;
 	for (int k=0; k<numUAVs; k++) {
@@ -440,7 +448,7 @@ void konstant2019::findEnergyEfficientSolution() {
 	}
 
 	vector<vector<int>> finalTours = basicTours;
-	for (int ii=0; ii<1; ii++) trace1() << "findEnergyEfficientSolution";
+	for (int ii=0; ii<1; ii++) routing_trace() << "findEnergyEfficientSolution";
 
 	string str0 = "";
 
@@ -464,7 +472,7 @@ void konstant2019::findEnergyEfficientSolution() {
 	for (int i=0; i<retries; i++) {
 		for (int j=0; j<maxIter; j++) {
 			trace() << "iter " << j << " retry " << i;
-			// if (j%10 == 0) trace1() << "iter " << j;
+			// if (j%10 == 0) routing_trace() << "iter " << j;
 			int rdm;
 			trace() << "findEnergyEfficientSolution 1";
 			auto start = std::chrono::high_resolution_clock::now();
@@ -563,8 +571,8 @@ void konstant2019::findEnergyEfficientSolution() {
 			trace() << "TIME STAGE_3 " << microseconds.count() << " us";
 		}
 	}
-	trace1() << "ss_cnsmptn " << ss_cnsmptn.str();
-	trace1() << "ss_issaved " << ss_issaved.str();
+	routing_trace() << "ss_cnsmptn " << ss_cnsmptn.str();
+	routing_trace() << "ss_issaved " << ss_issaved.str();
 	trace() << "findEnergyEfficientSolution done";
 }
 
@@ -627,7 +635,7 @@ pair<double, string> konstant2019::calculateConsumption(vector<vector<int>> tour
 	for (int u=0; u<numNodes; u++) {
 		int tmp = u;
 		while (config.nextHop[tmp] != -1) {
-			rxSizes[config.nextHop[tmp]] += weights[u];
+			rxSizes[config.nextHop[tmp]] += amountData[u];
 			tmp = config.nextHop[tmp];
 		}
 	}
@@ -650,7 +658,7 @@ pair<double, string> konstant2019::calculateConsumption(vector<vector<int>> tour
 		ss3 << rxEnergy(rxSize) << " ";
 		Er_i -= rxEnergy(rxSize);
 		ss0 << "\ne_rxEnergy " << i << " " << rxEnergy(rxSize);
-		double txSize = rxSize + weights[i];
+		double txSize = rxSize + amountData[i];
 		if (config.clus_id[i] == -1) {
 			new_cnsmptn += txEnergy(txSize, D2UAV);
 			Er_i -= txEnergy(txSize, D2UAV);

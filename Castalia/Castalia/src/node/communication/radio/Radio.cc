@@ -98,7 +98,7 @@ void Radio::handleMessage(cMessage * msg)
 				newSignal.bitErrors = ALL_ERRORS;
 				receivedSignals.push_front(newSignal);
 				stats.RxFailedNoRxState++;
-				if (wcMsg->getDestID() == self) trace1() << "Failed packet (WC_SIGNAL_START) from node " << newSignal.ID << ", radio not in RX state, state = " << state;
+				if (wcMsg->getDestID() == self) routing_trace() << "Failed packet (WC_SIGNAL_START) from node " << newSignal.ID << ", radio not in RX state, state = " << state;
 				break;	// exit case WC_SIGNAL_START
 			}
 
@@ -161,11 +161,11 @@ void Radio::handleMessage(cMessage * msg)
 				// collect stats
 				if (newSignal.power_dBm < RXmode->sensitivity) {
 					stats.RxFailedSensitivity++;
-					if (wcMsg->getDestID() == self) trace1() << "Failed packet (WC_SIGNAL_START) from node " << newSignal.ID << ", below sensitivity";
+					if (wcMsg->getDestID() == self) routing_trace() << "Failed packet (WC_SIGNAL_START) from node " << newSignal.ID << ", below sensitivity";
 				}
 				else {
 					stats.RxFailedModulation++;
-					if (wcMsg->getDestID() == self) trace1() << "Failed packet (WC_SIGNAL_START) from node " << newSignal.ID << ", wrong modulation";
+					if (wcMsg->getDestID() == self) routing_trace() << "Failed packet (WC_SIGNAL_START) from node " << newSignal.ID << ", wrong modulation";
 				}
 			}
 
@@ -210,9 +210,9 @@ void Radio::handleMessage(cMessage * msg)
 			if ((state != RX) || (changingToState != -1)) {
 				if (endingSignal->bitErrors != ALL_ERRORS) {
 					stats.RxFailedNoRxState++;
-					if (wcMsg->getDestID() == self) trace1() << "Failed packet (WC_SIGNAL_END) from node " << signalID << ", no RX state";
+					if (wcMsg->getDestID() == self) routing_trace() << "Failed packet (WC_SIGNAL_END) from node " << signalID << ", no RX state";
 				}
-				if (wcMsg->getDestID() == self) trace1() << "Failed packet (WC_SIGNAL_END) from node " << signalID << ", no RX state";
+				if (wcMsg->getDestID() == self) routing_trace() << "Failed packet (WC_SIGNAL_END) from node " << signalID << ", no RX state";
 				receivedSignals.erase(endingSignal);
 				break;	// exit case WC_SIGNAL_END
 			}
@@ -262,11 +262,11 @@ void Radio::handleMessage(cMessage * msg)
 					// collect stats
 					if (endingSignal->maxInterference == RXmode->noiseFloor) {
 						stats.RxFailedNoInterference++;
-						if (wcMsg->getDestID() == self) trace1() << "Failed packet (WC_SIGNAL_END) from node " << signalID << ", NO interference";
+						if (wcMsg->getDestID() == self) routing_trace() << "Failed packet (WC_SIGNAL_END) from node " << signalID << ", NO interference";
 					}
 					else {
 						stats.RxFailedInterference++;
-						if (wcMsg->getDestID() == self) trace1() << "Failed packet (WC_SIGNAL_END) from node " << signalID << ", with interference";
+						if (wcMsg->getDestID() == self) routing_trace() << "Failed packet (WC_SIGNAL_END) from node " << signalID << ", with interference";
 					}
 				}
 			} else {

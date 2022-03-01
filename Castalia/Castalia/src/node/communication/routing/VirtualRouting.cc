@@ -15,7 +15,7 @@
 bool VirtualRouting::initialized = false;
 int VirtualRouting::sinkId;
 NetworkConfig VirtualRouting::config;
-vector<double> VirtualRouting::weights;
+vector<double> VirtualRouting::amountData;
 vector<double>* VirtualRouting::dCompare;
 double VirtualRouting::totalConsumed;
 double VirtualRouting::maxConsumed;
@@ -23,6 +23,8 @@ int VirtualRouting::maxTxSize;
 vector<double> VirtualRouting::energyConsumeds;
 vector<double> VirtualRouting::rxSizes;
 int VirtualRouting::totalCollected;
+unordered_set<int> VirtualRouting::uncollectedSet;
+vector<int> VirtualRouting::collectedSet;
 void VirtualRouting::initialize()
 {
   GlobalLocationService::initialize(getParentModule()->getParentModule()->getParentModule());
@@ -65,17 +67,18 @@ void VirtualRouting::initialize()
 	disabled = true;
 	currentSequenceNumber = 0;
 
-	if (weights.empty()) weights.resize(numNodes);
-	weights[self] = par("dataPacketSize");
-	weights[self] = weights[self]*4;
+	if (amountData.empty()) amountData.resize(numNodes);
+	amountData[self] = par("dataPacketSize");
+	int dataScaleFactor = par("dataScaleFactor");
+	amountData[self] = amountData[self]*4*dataScaleFactor;
 
 	if (isSink) {
 		sinkId = self;
-		// weights.resize(numNodes, 250);
+		// amountData.resize(numNodes, 250);
 		// for (int i=0; i<numNodes; i++) {
 		// 	int p = rand()%3;
-		// 	if (p == 0) weights[i] = 500;
-		// 	else if (p == 1) weights[i] = 1000;
+		// 	if (p == 0) amountData[i] = 500;
+		// 	else if (p == 1) amountData[i] = 1000;
 		// }
 		energyConsumeds.resize(numNodes);
 		rxSizes.resize(numNodes);
@@ -188,7 +191,7 @@ void VirtualRouting::handleMessage(cMessage * msg)
 				    ", max Network packet size:" << maxNetFrameSize;
 				break;
 			}
-			// trace1() << "Received [" << appPacket->getName() << "] from application layer";
+			// routing_trace() << "Received [" << appPacket->getName() << "] from application layer";
 
 			/* Control is now passed to a specific routing protocol by calling fromApplicationLayer()
 			 * Notice that after the call we RETURN (not BREAK) so that the packet is not deleted.
@@ -216,16 +219,19 @@ void VirtualRouting::handleMessage(cMessage * msg)
       		// energy ---------
 			double byteLength = netPacket->getByteLength();
     		resMgrModule->consumeEnergy(rxEnergy(byteLength));
+			energyConsumeds[self] += rxEnergy(byteLength);
+			rxSizes[self] += byteLength;
       		
 			// --------------
 			if (netPacket->getTTL() > 0) {
 				int dst = netPacket->getDestination();
 				netPacket->setTTL(netPacket->getTTL() - 1);
 				netPacket->setHopCount(netPacket->getHopCount() + 1);
-				if (dst != self) {
-					sendData(netPacket);
-				}
+				// if (dst != self) {
+					// sendData(netPacket->dup());
+				// }
 			}
+			sendData(netPacket->dup());
 
 			break;
 		}
@@ -291,7 +297,7 @@ void VirtualRouting::handleRadioControlMessage(cMessage * msg)
 
 void VirtualRouting::finish()
 {
-  // trace1() << "WSN_EVENT STATISTICS " << "id:" << self << " totalPacketReceived:" << numPacketReceived << " "
+  // routing_trace() << "WSN_EVENT STATISTICS " << "id:" << self << " totalPacketReceived:" << numPacketReceived << " "
     // << "estimateLifetime:" << resMgrModule->estimateLifetime() << " x:" << selfLocation.x() << " y:" << selfLocation.y()
     // << " endPointCount:" << endCount
     // << " energyConsumed:" << resMgrModule->getSpentEnergy();
@@ -457,7 +463,7 @@ double VirtualRouting::rxEnergy(double byteLength) {
 }
 
 double VirtualRouting::calculateCHEnergy(int u, double byteLength) {
-	return getResMgrModule(u)->getRemainingEnergy() - rxEnergy(byteLength) - txEnergy(byteLength + weights[u], D2UAV);
+	return getResMgrModule(u)->getRemainingEnergy() - rxEnergy(byteLength) - txEnergy(byteLength + amountData[u], D2UAV);
 }
 
 ResourceManager* VirtualRouting::getResMgrModule(int id) {
@@ -469,10 +475,14 @@ ResourceManager* VirtualRouting::getResMgrModule(int id) {
 void VirtualRouting::sendData(cPacket * pkt) {
 	RoutingPacket *dataPacket = check_and_cast <RoutingPacket*>(pkt);
 	double byteLength = dataPacket->getByteLength();
+	int src = dataPacket->getSource();
 
 	if (config.nextHop[self] == -1) {
 		resMgrModule->consumeEnergy(txEnergy(byteLength, D2UAV));
 		energyConsumeds[self] += txEnergy(byteLength, D2UAV);
+		totalCollected += byteLength;
+		uncollectedSet.erase(src);
+		collectedSet.push_back(src);
 		if (energyConsumeds[self] > maxConsumed) maxConsumed = energyConsumeds[self];
 		debugPoint(selfLocation, "red");
 		debugCircle(selfLocation, resMgrModule->getRemainingEnergy()/500, "blue");
@@ -500,7 +510,7 @@ double VirtualRouting::calculateRxSize(int curnode) {
 
 		for (int i=0; i<numNodes; i++) {
 			if (config.nextHop[i] == u) {
-				rxSize += weights[i];
+				rxSize += amountData[i];
 				q.push(i);
 			}
 		}
@@ -534,7 +544,7 @@ void VirtualRouting::logConfig() {
 	int N = numNodes;
 	for (int i=0; i<N; i++) {
 		auto P = GlobalLocationService::getLocation(i);
-		CastaliaModule::trace2() << roundNumber << "\tPOINT\tblue\t" << P.x() << "\t" << P.y() << "\t" << weights[i] << "\t" << clus_id[i] << "\t" << i;
+		CastaliaModule::trace2() << roundNumber << "\tPOINT\tblue\t" << P.x() << "\t" << P.y() << "\t" << amountData[i] << "\t" << clus_id[i] << "\t" << i << "\t" << nextHop[i];
 	}
 	for (int i=0; i<N; i++) {
 		if (clus_id[i] != -1) {

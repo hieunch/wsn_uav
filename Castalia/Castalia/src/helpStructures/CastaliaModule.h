@@ -77,9 +77,9 @@ class CastaliaModule: public virtual cSimpleModule {
 	void collectHistogramNocheck(const char *, int, double);
 
  public:
-    static bool trace1Enabled;
+    static bool routing_traceEnabled;
 	std::ostream & trace();
-	std::ostream & trace1();
+	std::ostream & routing_trace();
 	std::ostream & trace2();
 
  protected:

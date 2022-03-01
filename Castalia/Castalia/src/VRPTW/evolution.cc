@@ -337,9 +337,9 @@ void ranking(const std::list<solution> &population, std::vector< std::list<solut
 
 	// if ((curRank < 90) || (curRank > 202)) {
 	// 	for(unsigned int p = 0; p < solutions.size(); p++){
-	// 		solution::module->trace1() << p << " " << solutions[p].maxDistance;
-	// 		solution::module->trace1() << D_ss[p];
-	// 		solution::module->trace1() << C_ss[p];
+	// 		solution::module->routing_trace() << p << " " << solutions[p].maxDistance;
+	// 		solution::module->routing_trace() << D_ss[p];
+	// 		solution::module->routing_trace() << C_ss[p];
 	// 	}
 	// }
 
@@ -366,14 +366,14 @@ void environmental(const vector< list<solution> > &frank, const vector< list<sol
 		if ((curRank >= frank.size()) && (curRank >= irank.size())) break;
 		// if (curRank > 200) {
 		// 	for(unsigned int rank = 0; rank < frank.size(); ++rank){
-		// 		solution::module->trace1() << "frank " << rank << " size " << frank[rank].size();
+		// 		solution::module->routing_trace() << "frank " << rank << " size " << frank[rank].size();
 		// 	}
 
 		// 	for(unsigned int rank = 0; rank < irank.size(); ++rank){
-		// 		solution::module->trace1() << "irank " << rank << " size " << irank[rank].size();
+		// 		solution::module->routing_trace() << "irank " << rank << " size " << irank[rank].size();
 		// 	}
 
-		// 	solution::module->trace1() << "curRank " << curRank << " size " << output->size();
+		// 	solution::module->routing_trace() << "curRank " << curRank << " size " << output->size();
 		// 	exit(EXIT_FAILURE);
 		// }
 	}

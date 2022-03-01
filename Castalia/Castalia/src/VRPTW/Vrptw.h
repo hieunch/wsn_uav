@@ -240,7 +240,7 @@ class Vrptw {
 		for(list<solution>::iterator it = population.begin(); it != population.end(); ++it){
 			if (count++ < 10) {
 				it->init(numUAVs, input, tours);
-				module.trace1() << "maxDistance = " << it->maxDistance;
+				module.routing_trace() << "maxDistance = " << it->maxDistance;
 			}
 			else it->random(numUAVs, input);
 			it->generation = 0;

@@ -162,7 +162,7 @@ void ResourceManager::consumeEnergy(double amount)
 		collectOutput("Dead Node", "yes?", 1);
 		collectOutput("Dead Node", "time", SIMTIME_DBL(simTime()));
 
-		trace1() << "LIFETIME";
+		routing_trace() << "LIFETIME";
 		endSimulation();
 	} else
 		remainingEnergy -= amount;

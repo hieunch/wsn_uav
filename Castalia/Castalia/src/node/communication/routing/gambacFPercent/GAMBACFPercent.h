@@ -15,45 +15,22 @@
 //*             Claudio Silva <claudio.silva@itec.ufpa.br>                   *
 //****************************************************************************/
 
-package node.communication.routing.konstant2019;
+#ifndef _GAMBACFPercent_H_
+#define _GAMBACFPercent_H_
 
-simple konstant2019 like node.communication.routing.iRouting
-{
-parameters:
-	string applicationID = default ("throughputTest");
-	bool collectTraceInfo;
-	int maxNetFrameSize = default (0);
-	int netDataFrameOverhead = default (14);
-	int netBufferSize = default (32);		
-	bool isSink = default (false);
-	
-	double percentage = default (0.05);	
-	double roundLength @unit(s);	
-	double helloLength @unit(s) = default (0.01s);	
-	double discoverLength @unit(s) = default (0.04s);	
-	double slotLength;
+#include "GAMBAC.h"
 
-	//routing layer packet sizes
-	int controlPacketSize = default (9); // Type + Source + Destination + CHid + nextCH + isCH = 16 bytes
-	int dataPacketSize = default (9);
-	int dataScaleFactor = default(1);
+using namespace std;
 
-	int k0 = default (250);
-	double epsilon = default (0.5);
-	double neighborRange = 100;
-	int numNodesPerCluster = 10;
-	double maxUAVFlyingDistance = default (2400);
-	double gamma = default (0.9999999);
+class GAMBACFPercent : public GAMBAC {
 
-	//Parameters used to power control.
-	xml powersConfig;
+protected:
+	void timerFiredCallback(int);
+	void mainAlg();
+	int selectCHsAndBuildDFT(double W);
+	void growBallsPercent(vector<int> CHSet, double percent);
+	template <typename T>
+	vector<size_t> sort_indexes(const vector<T> &v);
+};
 
-gates: 
-	output toCommunicationModule;
-	output toMacModule;
-	input fromCommunicationModule;
-	input fromMacModule;
-	input fromCommModuleResourceMgr;
-	input fromDirect @directIn;
-}
-
+#endif			

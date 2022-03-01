@@ -343,7 +343,7 @@ void TMAC::resetDefaultState(const char *descr)
 	} else if (primaryWakeup) {
 		simtime_t randomContentionInterval = genk_dblrand(1) * contentionPeriod;
 		if (needResync) {
-			// trace1() << "needResync";
+			// routing_trace() << "needResync";
 			if (syncPacket)
 				cancelAndDelete(syncPacket);
 			syncPacket = new TMacPacket("TMAC SYNC packet", MAC_LAYER_PACKET);
@@ -358,12 +358,12 @@ void TMAC::resetDefaultState(const char *descr)
 			return;
 		}
 
-		// trace1() << "TXBuffer.size = " << TXBuffer.size();
+		// routing_trace() << "TXBuffer.size = " << TXBuffer.size();
 		while (!TXBuffer.empty()) {
-			// trace1() << TXBuffer.front()->getName();
+			// routing_trace() << TXBuffer.front()->getName();
 			trace() << "Try to send first, txRetries = " << txRetries;
 			if (txRetries <= 0) {
-				// trace1() << "Transmission failed to " << txAddr;
+				// routing_trace() << "Transmission failed to " << txAddr;
 				popTxBuffer();
 			} else {
 				if (useRtsCts && txAddr != BROADCAST_MAC_ADDRESS) {
@@ -614,7 +614,7 @@ void TMAC::fromRadioLayer(cPacket * pkt, double RSSI, double LQI)
 				trace() << "Transmission succesful to " << txAddr;
 				cancelTimer(TRANSMISSION_TIMEOUT);
 				popTxBuffer();
-				// trace1() << "transmission successful (ACK received)";
+				// routing_trace() << "transmission successful (ACK received)";
 				resetDefaultState("transmission successful (ACK received)");
 
 				cMessage *netCmd = new cMessage("ACK", NETWORK_CONTROL_COMMAND);
@@ -674,7 +674,7 @@ void TMAC::carrierIsClear()
 
 		/* MAC requested carrier sense to transmit an RTS packet */
 		case MAC_CARRIER_SENSE_FOR_TX_RTS:{
-			// trace1() << "MAC_CARRIER_SENSE_FOR_TX_RTS";
+			// routing_trace() << "MAC_CARRIER_SENSE_FOR_TX_RTS";
 			if (TXBuffer.empty()) {
 				trace() << "WARNING! BUFFER_IS_EMPTY in MAC_CARRIER_SENSE_FOR_TX_RTS, will reset state";
 				resetDefaultState("empty transmission buffer");
@@ -695,7 +695,7 @@ void TMAC::carrierIsClear()
 
 			if (useRtsCts) {
 				txRetries--;
-				// trace1() << "failed MAC_CARRIER_SENSE_FOR_TX_RTS " << txRetries;
+				// routing_trace() << "failed MAC_CARRIER_SENSE_FOR_TX_RTS " << txRetries;
 			}
 			collectOutput("Sent packets breakdown", "RTS");
 			rtsPacket = NULL;
@@ -786,7 +786,7 @@ void TMAC::sendDataPacket()
 		// (NOTE: with RTS/CTS exchange sending RTS packet decrements counter)
 		if (!useRtsCts) {
 			txRetries--;
-			// trace1() << "failed sendDataPacket " << txRetries;
+			// routing_trace() << "failed sendDataPacket " << txRetries;
 		}
 		setMacState(MAC_STATE_WAIT_FOR_ACK, "sent DATA packet to UNICAST address");
 		setTimer(TRANSMISSION_TIMEOUT, txTime + waitTimeout);
@@ -850,10 +850,10 @@ void TMAC::popTxBuffer()
 {
 	cancelAndDelete(TXBuffer.front());
 	TXBuffer.pop();
-	// trace1() << "popTxBuffer";
+	// routing_trace() << "popTxBuffer";
 	if (TXBuffer.empty()) {
 		cMessage *netCmd = new cMessage("TXBUFFER0", NETWORK_CONTROL_COMMAND);
-		// trace1() << "command TXBUFFER0";
+		// routing_trace() << "command TXBUFFER0";
 		toNetworkLayer(netCmd);
 	}
 	checkTxBuffer();

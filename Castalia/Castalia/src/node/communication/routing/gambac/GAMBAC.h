@@ -67,7 +67,7 @@ private:
 	int dataPacketSize;
 
 	////////////////////////////////////////////////
-
+protected:
 	UDG graph;
     int N;
     int k0;
@@ -90,12 +90,6 @@ private:
     vector<bool> isCH;
 	vector<int> outerSet;
 	vector<int> innerSet;
-	vector<int> A2;
-	vector<int> fringeSet_0;
-	vector<int> innerSet_0;
-	vector<int> A2_0;
-	double epsilon0;
-	double epsilon_saved;
 	int countAdjusment;
 	bool debugRecruitProcess;
 
@@ -129,14 +123,13 @@ protected:
 	void reset();
 	void mainAlg();
 	vector<int> randomFromSet(vector<int> Candidates, double s);
-	void growBalls(vector<int> lanmarkSet);
-	void growBalls2(vector<int> lanmarkSet);
+	void growBalls(vector<int> CHSet);
 	double computeClusterWeight(int uNode);
 	vector<int> getOuterOversizePart();
 	vector<int> samplingCH(vector<int> Candidates, double b);
 	void computeBallWeight();
 	void recruitNewCHs();
-	int buildDFT(double W);
+	int selectCHsAndBuildDFT(double W);
 	void updateNodeWeight();
 	void updateCentList();
 	void buildTrajectories();

@@ -14,7 +14,7 @@
 
 #define CASTALIA_PREFIX "Castalia|\t"
 
-bool CastaliaModule::trace1Enabled = true;
+bool CastaliaModule::routing_traceEnabled = true;
 
 void CastaliaModule::finish()
 {
@@ -87,9 +87,9 @@ std::ostream & CastaliaModule::trace()
 	}
 }
 
-std::ostream & CastaliaModule::trace1()
+std::ostream & CastaliaModule::routing_trace()
 {
-	if (trace1Enabled) {
+	if (routing_traceEnabled) {
 		return (ostream &) DebugInfoWriter::getStream() <<
 			"\n" << setw(18) << simTime() << setw(40) << getFullPath() << " ";
 	} else {
@@ -99,7 +99,7 @@ std::ostream & CastaliaModule::trace1()
 
 std::ostream & CastaliaModule::trace2()
 {
-	if (trace1Enabled) {
+	if (routing_traceEnabled) {
 		return (ostream &) DebugInfoWriter::getStream() << "\n";
 	} else {
 		return empty;
