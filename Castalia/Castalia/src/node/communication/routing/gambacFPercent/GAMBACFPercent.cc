@@ -184,10 +184,24 @@ int GAMBACFPercent::selectCHsAndBuildDFT(double f){
 			if (u != sinkId) uncovered_nodes.insert(u);
 		}
 		while (!uncovered_nodes.empty()) {
-			auto it = std::begin(uncovered_nodes);
-			auto r = rand() % uncovered_nodes.size();
-			std::advance(it,r);
-			int new_CH = *it;
+			// auto it = std::begin(uncovered_nodes);
+			// auto r = rand() % uncovered_nodes.size();
+			// std::advance(it,r);
+			// int new_CH = *it;
+
+			int new_CH = *std::begin(uncovered_nodes);
+			double total = 0;
+			for (int u : uncovered_nodes) {
+				total += E_tmp[u];
+			}
+			double value = rand() / (RAND_MAX + 1.) * total;
+			for (int u : uncovered_nodes) {
+				value -= E_tmp[u];
+				if (value <= 0) {
+					new_CH = u;
+					break;
+				}
+			}
 
 			// Grow Ball
 			A.push_back(new_CH);

@@ -481,6 +481,20 @@ vector<int> GAMBAC::samplingCH(vector<int> Candidates, double b) {
 	while (!Candidates.empty()){
 		int nextLandmark = Candidates[rand() % Candidates.size()];
 
+		nextLandmark = Candidates[0];
+		double total = 0;
+		for (int u : Candidates) {
+			total += E_tmp[u];
+		}
+		double value = rand() / (RAND_MAX + 1.) * total;
+		for (int u : Candidates) {
+			value -= E_tmp[u];
+			if (value <= 0) {
+				nextLandmark = u;
+				break;
+			}
+		}
+
 		if (isCH[nextLandmark]) {
 			Candidates.erase(std::remove(Candidates.begin(), Candidates.end(), nextLandmark), Candidates.end());
 			continue;

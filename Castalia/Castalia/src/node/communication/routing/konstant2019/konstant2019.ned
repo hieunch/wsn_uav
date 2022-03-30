@@ -40,7 +40,7 @@ parameters:
 
 	int k0 = default (250);
 	double epsilon = default (0.5);
-	double neighborRange = 100;
+	double neighborRange = default (100);
 	int numNodesPerCluster = 10;
 	double maxUAVFlyingDistance = default (2400);
 	double gamma = default (0.9999999);
