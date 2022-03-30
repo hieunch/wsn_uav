@@ -1,0 +1,1 @@
+Castalia -i network900-hole.ini -c [GAMBACStrongestFirst_100_5,GAMBAC_100_5,GAMBACStrongestFirst_90_5,GAMBAC_90_5,GAMBACStrongestFirst_80_5,GAMBAC_80_5,GAMBACStrongestFirst_70_5,GAMBAC_70_5,GAMBACStrongestFirst_60_5,GAMBAC_60_5,GAMBACStrongestFirst_50_5,GAMBAC_50_5,GAMBACStrongestFirst_40_5,GAMBAC_40_5,GAMBACStrongestFirst_30_5,GAMBAC_30_5] --debug
