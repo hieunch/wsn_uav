@@ -455,10 +455,12 @@ int VirtualRouting::getRandomNumber(int from, int to) {
 }
 
 double VirtualRouting::txEnergy(double byteLength, double distance) {
+	return 16.8 * 1e-3 * 3 * 3600 * (byteLength * 8 / 250000);
 	return 1 * (50e-9 * byteLength * 8 + 10e-12 * byteLength * 8 * distance * distance);
 }
 
 double VirtualRouting::rxEnergy(double byteLength) {
+	return 15.7 * 1e-3 * 3 * 3600 * (byteLength * 8 / 250000);
 	return 1 * (50e-9 * byteLength * 8);
 }
 
