@@ -24,11 +24,11 @@ using namespace std;
 
 class GAMBACBalanceNew : public GAMBAC {
 
-protected:
-	void timerFiredCallback(int);
-	void mainAlg();
-	int selectCHsAndBuildDFT(double W);
-	void growBallsWeightBounded(vector<int> CHSet, double W);
+// protected:
+// 	void timerFiredCallback(int);
+// 	void mainAlg();
+// 	int selectCHsAndBuildDFT(double W);
+// 	void growBallsWeightBounded(vector<int> CHSet, double W);
 };
 
 #endif			

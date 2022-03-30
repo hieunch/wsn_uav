@@ -10,12 +10,13 @@ std::vector<std::map<int, int>> GlobalLocationService::colors;
 std::vector<Point> GlobalLocationService::locations;
 std::vector<std::vector<NeighborRecord>> GlobalLocationService::neighborTables;
 map<tuple<int, int>, int> GlobalLocationService::spCache;
-const double range = 100;
+double range = 100;
 
 void GlobalLocationService::initialize(cModule *module) {
   if (!initialized) {
     networkModule = module;
     initialized = true;
+    range = networkModule->getSubmodule("node", 0)->getSubmodule("Communication")->getSubmodule("Routing")->par("neighborRange").doubleValue();
 
     int numNodes = (int) module->par("numNodes").longValue();
     locations.assign(numNodes, Point());

@@ -332,6 +332,11 @@ void GAMBAC::GAMBACinit() {
 	clusterMembers.resize(N);
 	w_max.resize(N);
 	E_tmp = vector<double>(numNodes, 0);
+
+	// routing_trace() << "neighborRange " << neighborRange;
+	// for (int i=0; i<numNodes; i++) {
+	// 	routing_trace() << "neighbor " << i << " " << graph.getAdjExceptSink(i).size();
+	// }
 }
 
 void GAMBAC::reset() {
